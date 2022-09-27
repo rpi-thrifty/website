@@ -1,0 +1,20 @@
+@import "../../theme.css";
+
+.bar{
+    width: 100vw;
+    height: 7vh;
+    z-index: 1;
+    top: 0;
+
+    /*how it feels*/
+    display: flex;
+    transition: 0.1s;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+
+    /*colors*/
+    color: var(--text-color);
+    background: var(--nav-color);
+}
