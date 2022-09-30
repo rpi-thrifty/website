@@ -1,4 +1,4 @@
-import { Sidebar } from "../../components/sidebar";
+import { Sidebar } from "../../components/sidebar/sidebar";
 import { Header } from "../../components/header";
 import { Box, Button } from "@mui/material";
 import "./home.css";
