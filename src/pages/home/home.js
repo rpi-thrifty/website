@@ -1,5 +1,5 @@
 import { Sidebar } from "../../components/sidebar/sidebar";
-import { Header } from "../../components/header";
+import { Header } from "../../components/header/header";
 import { Box, Button } from "@mui/material";
 import "./home.css";
 
