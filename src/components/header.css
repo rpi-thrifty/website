@@ -1,8 +1,6 @@
-@import "../../theme.css";
 
 .bar{
     width: 100vw;
-    height: 7vh;
     z-index: 1;
     top: 0;
 
@@ -12,9 +10,28 @@
     position: relative;
     flex-direction: row;
     justify-content: center;
-    justify-content: space-evenly;
 
     /*colors*/
     color: var(--text-color);
     background: var(--nav-color);
+}
+
+.header-item{
+    transition: 0.3s;
+    color: var(--bg-color) !important;
+    transform: scale(1.1);
+}
+
+.bar>.header-item{
+    margin-left: 1vw;
+    margin-right: 1vw;
+    transition: 0.5s;
+    padding: 0.65vh  2.08vw 1.3vh 2.08vw;
+}
+
+.bar>.header-item:hover {
+    transition: 0.3s;
+    color: var(--bg-color) !important;
+    background: var(--highlight-color) !important;
+    transform: scale(1.1);
 }

@@ -1,10 +1,9 @@
 :root{
-    background-color: ivory;  
-    --nav-color: #e2e2e2;
+    --nav-color: #FFFFF0;
     --bg-color: peachpuff;
-    --text-color: #767676;
+    --text-color: #57201B;
     --accent-color: grey;
-    --highlight-color: #383838;
+    --highlight-color: #e4f992;
     --header-color: #000000;
 }
 

@@ -5,9 +5,10 @@ import "./home.css";
 
 export const HomePage = () => {
     return (
-        <Box sx = {{ display: "inline-block", position: "fixed"}}>
+        <div className="App">
             <Header/>
             <Sidebar/>
-        </Box>
+            Head
+        </div>
     )
 };

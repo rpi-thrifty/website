@@ -6,9 +6,9 @@ export const Header = () => {
     return(
 
         <Box className="bar">
-            <div>
-                ----------------------------hi----------------------------
-            </div>
+            <div className="header-item">ABOUT</div>
+            <div className="header-item">HOME</div>
+            <div className="header-item">GITHUB</div>
         </Box>
         
     )
