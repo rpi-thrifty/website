@@ -10,29 +10,23 @@ export const Sidebar = () => {
     const showSideBar = () => setShowing(!showing);
 
     const button_sidebar = (name) => {
-        return <Button sx = {{ display: "block", margin: "2vh 0vw 2vh 2vw", color: "#57201B" }}>
+        return <Button sx = {{ display: "block", margin: "2vh 0vw 2vh 2vw", color: "#57201B", fontSize: "1.5vh" }}>
             {name}
         </Button>
     }
 
     const showing_sidebar = () => {
-        return <Box sx = {{height: "100%", component: "span", width: "18vw", display: "block"}}>
+        return <Box sx = {{height: "20vh", component: "span", width: "18vw", display: "block", backgroundColor: "#C8AFAB"}}>
             <IconButton onClick = {showSideBar}>
                 <ListIcon sx = {{fontSize: "4vh", color: "#57201B"}}/>
             </IconButton>
-            <>{button_sidebar("hi")}</>
-            <>{button_sidebar("bye")}</>
-            <>{button_sidebar("hi")}</>
-            <>{button_sidebar("bye")}</>
-            <>{button_sidebar("hi")}</>
-            <>{button_sidebar("bye")}</>
-            <>{button_sidebar("hi")}</>
-            <>{button_sidebar("bye")}</>
+            <>{button_sidebar("Home")}</>
+            <>{button_sidebar("Categories")}</>
         </Box>
     }
 
     const hidden_sidebar = () => {
-        return <Box sx = {{height: "100%", width: "18vw", backgroundColor: "pink"}}>
+        return <Box sx = {{height: "100%", width: "18vw", backgroundColor: "#C8AFAB"}}>
             <IconButton onClick = {showSideBar}>
                 <ListIcon sx = {{fontSize: "4vh"}}/>
             </IconButton>
