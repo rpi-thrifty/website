@@ -1,6 +1,6 @@
 import { Sidebar } from "../components/sidebar";
 import { Header } from "../components/header";
-import { Box, Button, Typography, borderRadius, Avatar } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import ITEM_ENTRY from "../components/entry";
 
 
@@ -27,7 +27,7 @@ export const HomePage = () => {
                 left: "0",
                 top: "0",
                 height: "7vh", 
-                backgroundColor: "#E4D6D4", 
+                backgroundColor: "#C8AFAB", 
                 position: "fixed"
             }}>
                 {/* sidebar */}
@@ -41,7 +41,7 @@ export const HomePage = () => {
 
                 {/* insert header behind sidebar */}
                 <Box>
-                    <Typography> text for sidebar goes here </Typography>
+                    <Typography> text for header goes here </Typography>
                 </Box>
             </Box>
 
