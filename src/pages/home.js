@@ -23,7 +23,7 @@ export const HomePage = () => {
                 {/* text */}
                 <Box sx={{display: "block", width: "200px", height: "70px", margin: "10px 0 0 12.5px"}}>
                     <Typography sx={{fontWeight: "bold", fontSize:"h6.fontSize", textTransform:"uppercase"}}>{price}</Typography>
-                    <Typography variant={"caption"}>{desc}</Typography>
+                    <Typography sx={{}}variant={"caption"}>{desc}</Typography>
                 </Box>
             </Box>
         )
