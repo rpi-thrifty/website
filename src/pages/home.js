@@ -2,15 +2,17 @@ import { Sidebar } from "../components/sidebar";
 import { Header } from "../components/header";
 import { Box, Button, Typography } from "@mui/material";
 import ITEM_ENTRY from "../components/entry";
+import "./home.css"
 
 
 export const HomePage = () => {
 
     const insert_image = (path_to_image) => {
         return (
-            <Box sx={{justifyContent: "center", backgroundColor: "pink", margin: "5px 10px 5px 10px"}}>
-                <Typography variant="h6">SAMPLE ITEMSSSSS</Typography>
-                <img src={path_to_image} width="300" height="300"/>
+            <Box sx={{justifyContent: "center", backgroundColor: "pink", margin: "10px"}}>
+                <img className="item" src={path_to_image}/>
+                <Typography variant="h6">$ FREE</Typography>
+                <Typography variant="caption">Description</Typography>
             </Box>
             
         )
