@@ -6,9 +6,9 @@ export const Header = () => {
     return(
 
         <Box className="bar">
-            <div className="header-item">ABOUT</div>
-            <div className="header-item">HOME</div>
-            <div className="header-item">GITHUB</div>
+            <a className="header-item" href='/about'>ABOUT</a>
+            <a className="header-item" href='/'>HOME</a>
+            <a className="header-item link" target="_blank" href='https://github.com/Thrifty'>GITHUB</a>
         </Box>
         
     )
