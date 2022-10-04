@@ -2,10 +2,11 @@
 
 img.item {
     border-radius: 15px;
-    width: 300px;
-    height: 350px;
+    width: 200px;
+    height: 225px;
 }
 
 .description_text {
     font-family: 'Roboto', sans-serif;
+    font-size: xx-large;
 }
