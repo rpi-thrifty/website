@@ -13,7 +13,7 @@
 
     /*colors*/
     color: var(--text-color);
-    background: var(--nav-color);
+    background: #57201B;
 }
 
 .header-item{
