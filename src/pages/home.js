@@ -1,5 +1,5 @@
 import { Sidebar } from "../components/sidebar";
-import { Header } from "../components/header";
+import { Header } from "../components/header/header";
 import { Box, Button, Typography } from "@mui/material";
 import ITEM_ENTRY from "../components/entry";
 import "./home.css"
@@ -53,9 +53,7 @@ export const HomePage = () => {
                 </Box>
 
                 {/* insert header behind sidebar */}
-                <Box>
-                    <Typography> text for header goes here </Typography>
-                </Box>
+                <Header/>
             </Box>
 
             <Box sx={{ display: "block" } }>
