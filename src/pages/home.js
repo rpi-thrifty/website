@@ -11,7 +11,7 @@ export const HomePage = () => {
     const muhammad = "https://media-exp1.licdn.com/dms/image/C4D03AQF37qOhWVsKxA/profile-displayphoto-shrink_800_800/0/1642638013594?e=1670457600&v=beta&t=9abbtlgwLakweVEnENpG16cEyU6hQW-R9lCpgtCj1-E"
     const adrian = "https://media-exp1.licdn.com/dms/image/C4E03AQERK42PhIDyzA/profile-displayphoto-shrink_800_800/0/1636426986476?e=1670457600&v=beta&t=i844v3lhApOK1MahjqP790O-zPbRnqJpsefdm082xjA"
     const stockIMG = "https://www.apimages.com/Images/Ap_Creative_Stock_Header.jpg"
-    const sampleIMG = "../../public/images/15.jpg"
+    const sampleIMG = "../../../public/images/logo.jpg"
 
     const insert_image = (path_to_image, price, desc) => {
         return (
