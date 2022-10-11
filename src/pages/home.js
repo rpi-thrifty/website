@@ -33,7 +33,7 @@ export const HomePage = () => {
         <Box sx = {{
             display: "flex",
             justifyContent: "space-between",
-            margin: "9vh 0 0 20vw"
+            margin: "0vh 0 0 20vw"
         }}>
             <Box sx = {{
                 width: "100vw", 

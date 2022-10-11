@@ -3,13 +3,14 @@
     width: 100vw;
     z-index: 1;
     top: 0;
+    height: 7vh;
 
     /*how it feels*/
     display: flex;
     transition: 0.1s;
     position: relative;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
 
     /*colors*/
     color: #57201B;
@@ -43,4 +44,14 @@
 .header-logo{
     height: 7vh;
     width: auto;
+    border-bottom-right-radius: 15px;
+}
+
+.right-group{
+    padding-right: 0vw;
+    justify-content: space-around;
+}
+
+.right-group>.header-item{
+    margin-left: 1vw;
 }
