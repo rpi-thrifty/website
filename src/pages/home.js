@@ -23,6 +23,7 @@ export const HomePage = () => {
     const it6 = new Item(82, "This this an example item", "images/a6.jpg", "https://www.google.com");
     const it7 = new Item("free", "This this an example item", "images/a7.jpg", "https://www.google.com");
 
+
     const insert_image = (item_) => {
         return (
             <Box sx={{justifyContent: "center", borderRadius: "10px", backgroundColor: "#E4D6D4", width: "225px", height: "325px", margin: "10px 5px 10px 5px"}}>
@@ -67,7 +68,7 @@ export const HomePage = () => {
         <Box sx = {{
             display: "flex",
             justifyContent: "space-between",
-            margin: "9vh 0 0 20vw"
+            margin: "0vh 0 0 20vw"
         }}>
             <Box sx = {{
                 width: "100vw", 
