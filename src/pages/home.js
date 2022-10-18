@@ -58,7 +58,7 @@ export const HomePage = () => {
 
             <Box sx={{ display: "block" } }>
                 {/* block 1 */}
-                <Box sx={{ display: "block", marginBottom: "50px"}}>
+                <Box sx={{ display: "block", marginTop: "7vh", marginBottom: "6vh"}}>
                     {/* title of the block */}
                     <Typography sx={{marginLeft: "10px"}} variant="h4" textTransform={"uppercase"}>Today's picks</Typography>
                     {/* images for the block */}
