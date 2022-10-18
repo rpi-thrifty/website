@@ -1,6 +1,7 @@
 import { Sidebar } from "../components/sidebar";
 import { Header } from "../components/header/header";
 import { Box, Button, Typography } from "@mui/material";
+import { setData } from "../utilities/firebase";
 import "./home.css"
 
 export const HomePage = () => {
@@ -122,6 +123,7 @@ export const HomePage = () => {
                     {/* title of the block */}
                     {insert_text("miscellaneous", "https://www.google.com")}
                     {/* images for the block */}
+                    <Button onClick={setData("testing/here", 12)}>hi</Button>
                     <Box sx={{display: "flex", flexWrap: "wrap"}}>
                         <>{insert_image(it6)}</>
                         <>{insert_image(it7)}</>
