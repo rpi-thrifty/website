@@ -7,9 +7,11 @@ export const Header = () => {
     return(
 
         <Box className="bar">
-            <a href='/'>
-                <img src={process.env.PUBLIC_URL + 'images/logoH.jpg'} className="header-logo"/>
-            </a>
+            <div className="header-item">
+                <a href='/'>
+                    <img src={process.env.PUBLIC_URL + 'images/logo_transparent.jpg'} className="header-logo"/>
+                </a>
+            </div>
             <a className="header-item" href='/about'>ABOUT</a>
             <div className='right-group'>
                 <a className="header-item" target="_blank" href='https://discord.gg/4crnQu3TSX'>

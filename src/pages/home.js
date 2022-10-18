@@ -94,7 +94,7 @@ export const HomePage = () => {
 
             <Box sx={{ display: "block" } }>
                 {/* block 1 */}
-                <Box sx={{ display: "block", marginBottom: "25px"}}>
+                <Box sx={{ display: "block", marginTop: "7vh", marginBottom: "3vh"}}>
                     {insert_text("today's picks", "https://www.google.com")}
                     {/* images for the block */}
                     <Box sx={{display: "flex", flexWrap: "wrap"}}>

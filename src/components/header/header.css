@@ -3,7 +3,7 @@
     width: 100vw;
     z-index: 1;
     top: 0;
-    height: 7vh;
+    height: 100%;
 
     /*how it feels*/
     display: flex;
@@ -23,6 +23,7 @@
     text-decoration: none;
     transform: scale(1.1);
     font-size: 3vh;
+    align-items: center;
 }
 
 .bar>.header-item{
@@ -35,20 +36,20 @@
 }
 
 .bar>.header-item:hover {
-    transition: 0.3s;
+    transition: 0.2s;
     color: #E4D6D4 !important;
     background: #74423B !important;
-    transform: scale(1.1);
+    /*transform: scale(1.2);*/
 }
 
 .header-logo{
-    height: 7vh;
+    height: 90%;
     width: auto;
     border-bottom-right-radius: 15px;
 }
 
 .right-group{
-    padding-right: 0vw;
+    padding-right: 2vw;
     justify-content: space-around;
 }
 
