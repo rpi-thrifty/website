@@ -6,7 +6,8 @@ img.item {
     height: 225px;
 }
 
-.description_text {
-    font-family: 'Roboto', sans-serif;
-    font-size: xx-large;
+.link {
+    color: black;
+    text-decoration: none;
+    background-color: none;
 }
