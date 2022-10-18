@@ -1,33 +1,68 @@
 import { Sidebar } from "../components/sidebar";
 import { Header } from "../components/header/header";
 import { Box, Button, Typography } from "@mui/material";
-import ITEM_ENTRY from "../components/entry";
 import "./home.css"
 
 export const HomePage = () => {
 
-    // some definitions
-    const jose = "https://media-exp1.licdn.com/dms/image/D4E35AQEzMvlhzem4qg/profile-framedphoto-shrink_800_800/0/1664162625148?e=1665187200&v=beta&t=eNcqwqw9IGj097dQuwk5bBEuvESp3n0Qj1twSxGTNIU"
-    const muhammad = "https://media-exp1.licdn.com/dms/image/C4D03AQF37qOhWVsKxA/profile-displayphoto-shrink_800_800/0/1642638013594?e=1670457600&v=beta&t=9abbtlgwLakweVEnENpG16cEyU6hQW-R9lCpgtCj1-E"
-    const adrian = "https://media-exp1.licdn.com/dms/image/C4E03AQERK42PhIDyzA/profile-displayphoto-shrink_800_800/0/1636426986476?e=1670457600&v=beta&t=i844v3lhApOK1MahjqP790O-zPbRnqJpsefdm082xjA"
-    const stockIMG = "https://www.apimages.com/Images/Ap_Creative_Stock_Header.jpg"
-    const sampleIMG = "../../../public/images/logo.jpg"
+    class Item {
+        constructor(price, desc, img_path, url) {
+            this.price = price;
+            this.desc = desc;
+            this.img_path = img_path;
+            this.url = url;
+        }
+    }
 
-    const insert_image = (path_to_image, price, desc) => {
+    // some definitions
+    const it1 = new Item(12, "This this an example item", "images/logo.jpg", "https://www.google.com");
+    const it2 = new Item(43, "This this an example item", "images/a2.jpg", "https://www.google.com");
+    const it3 = new Item("free", "This this an example item", "images/a3.jpg", "https://www.google.com");
+    const it4 = new Item(9230, "This this an example item", "images/a4.jpg", "https://www.google.com");
+    const it5 = new Item(19923, "This this an example item", "images/a5.jpg", "https://www.google.com");
+    const it6 = new Item(82, "This this an example item", "images/a6.jpg", "https://www.google.com");
+    const it7 = new Item("free", "This this an example item", "images/a7.jpg", "https://www.google.com");
+
+
+    const insert_image = (item_) => {
         return (
-            <Box sx={{justifyContent: "center", borderRadius: "10px", backgroundColor: "#E4D6D4", width: "225px", height: "325px", margin: "10px 17.5px 10px 17.5px"}}>
-                {/* image */}
-                <Box sx={{display: "flex", justifyContent: "center", marginTop: "1vh"}}>
-                    <img className="item" src={path_to_image}/>
-                </Box>
-                {/* text */}
-                <Box sx={{display: "block", width: "200px", height: "70px", margin: "10px 0 0 12.5px"}}>
-                    <Typography sx={{fontWeight: "bold", fontSize:"h6.fontSize", textTransform:"uppercase"}}>{price}</Typography>
-                    <Typography sx={{}}variant={"caption"}>{desc}</Typography>
-                </Box>
+            <Box sx={{justifyContent: "center", borderRadius: "10px", backgroundColor: "#E4D6D4", width: "225px", height: "325px", margin: "10px 5px 10px 5px"}}>
+                <a href={item_.url} className="link">
+                    {/* image */}
+                    <Box sx={{display: "flex", justifyContent: "center", marginTop: "1vh"}}>
+                        <img className="item" src={item_.img_path}/>
+                    </Box>
+                    {/* text */}
+                    <Box sx={{display: "block", width: "200px", height: "70px", margin: "10px 0 0 12.5px", overflow: "hidden"}}>
+                        {
+                            <Typography sx={{
+                                fontWeight: "bold", 
+                                fontSize:"h6.fontSize", 
+                                fontFamily: "Helvetica Neue", 
+                                textTransform:"uppercase"
+                            }}>
+                                {typeof item_.price == "number" ? <>$</> : <></>}
+                                {item_.price}
+                            </Typography>
+
+                        }
+                        
+                        <Typography sx={{fontSize: "11px", fontFamily: "Helvetica Neue", lineHeight: "1"}}>{item_.desc}</Typography>
+                    </Box>
+                </a>
             </Box>
         )
     }
+
+    const insert_text = (title, urlToAll) => {
+        return (
+            <Box sx={{display: "flex", justifyContent: "space-between"}}>
+                <Typography sx={{marginLeft: "15px", fontSize: "25px"}} textTransform={"uppercase"}>{title}</Typography>
+                <Button variant="text" href={urlToAll}>See all</Button>
+            </Box>
+        )
+    }
+
     return (
         // outside box
         <Box sx = {{
@@ -58,27 +93,38 @@ export const HomePage = () => {
 
             <Box sx={{ display: "block" } }>
                 {/* block 1 */}
-                <Box sx={{ display: "block", marginTop: "7vh", marginBottom: "6vh"}}>
-                    {/* title of the block */}
-                    <Typography sx={{marginLeft: "10px"}} variant="h4" textTransform={"uppercase"}>Today's picks</Typography>
+                <Box sx={{ display: "block", marginTop: "7vh", marginBottom: "3vh"}}>
+                    {insert_text("today's picks", "https://www.google.com")}
                     {/* images for the block */}
                     <Box sx={{display: "flex", flexWrap: "wrap"}}>
-                        <>{insert_image(jose, "free", "first photo of Jose")}</>
-                        <>{insert_image(sampleIMG, "$20", "trying to link")}</>
-                        <>{insert_image(muhammad, "free", "this guy uses lots of useless acronyms")}</>
-                        <>{insert_image(adrian, "free", "LAPIS LUPIS")}</>
-                        <>{insert_image(stockIMG, "$890", "this is a sample stock image and I'm filling up more text to see how it holds uppppp")}</>
+                        <>{insert_image(it1)}</>
+                        <>{insert_image(it2)}</>
+                        <>{insert_image(it3)}</>
+                        <>{insert_image(it4)}</>
+                        <>{insert_image(it5)}</>
                     </Box>
                 </Box>
-
+                <hr/>
+                
                 {/* blocks 2 */}
-                <Box sx={{ display: "block", marginBottom: "50px"}}>
+                <Box sx={{ display: "block", marginBottom: "25px"}}>
                     {/* title of the block */}
-                    <Typography sx={{marginLeft: "10px"}} variant="h4" textTransform={"uppercase"}>recommended for you</Typography>
+                    {insert_text("discounted", "https://www.google.com")}
                     {/* images for the block */}
                     <Box sx={{display: "flex", flexWrap: "wrap"}}>
-                        <>{insert_image(jose, "free", "this is a photo of Jose")}</>
-                        <>{insert_image(sampleIMG, "$10", "trying to link this image")}</>
+                        <>{insert_image(it3)}</>
+                        <>{insert_image(it4)}</>
+                    </Box>
+                </Box>
+                <hr/>
+                {/* blocks 2 */}
+                <Box sx={{ display: "block", marginBottom: "25px"}}>
+                    {/* title of the block */}
+                    {insert_text("miscellaneous", "https://www.google.com")}
+                    {/* images for the block */}
+                    <Box sx={{display: "flex", flexWrap: "wrap"}}>
+                        <>{insert_image(it6)}</>
+                        <>{insert_image(it7)}</>
                     </Box>
                 </Box>
             </Box>
