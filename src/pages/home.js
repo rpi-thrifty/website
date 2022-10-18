@@ -58,7 +58,7 @@ export const HomePage = () => {
         return (
             <Box sx={{display: "flex", justifyContent: "space-between"}}>
                 <Typography sx={{marginLeft: "15px", fontSize: "25px"}} textTransform={"uppercase"}>{title}</Typography>
-                <Button variant="text" href={urlToAll}>See all</Button>
+                <Button variant="text" sx={{position: "relative",  zIndex: "0"}} href={urlToAll}>See all</Button>
             </Box>
         )
     }
@@ -76,7 +76,8 @@ export const HomePage = () => {
                 top: "0",
                 height: "7vh", 
                 backgroundColor: "#C8AFAB", 
-                position: "fixed"
+                position: "fixed",
+                zIndex: "1"
             }}>
                 {/* sidebar */}
                 <Box sx = {{ display: "inline-block", 
@@ -93,7 +94,7 @@ export const HomePage = () => {
 
             <Box sx={{ display: "block" } }>
                 {/* block 1 */}
-                <Box sx={{ display: "block", marginBottom: "25px"}}>
+                <Box sx={{ display: "block", marginTop: "8vh", marginBottom: "3.3vh"}}>
                     {insert_text("today's picks", "https://www.google.com")}
                     {/* images for the block */}
                     <Box sx={{display: "flex", flexWrap: "wrap"}}>
