@@ -20,9 +20,20 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const database = getDatabase(app);
+const database = getDatabase();
 
 export const setData = (path, value) => {
-    set(ref(database, path), value);
+  set(ref(database, path), value);
 }
+
+export function writeData(desc, asking_price, contact_info) {
+  const uniqueID = Date.now();
+  const reference = "users/" + uniqueID;
+  setData(reference, 
+    {
+      description: desc,
+      p: asking_price,
+      contact: contact_info
+    })
+}
+
