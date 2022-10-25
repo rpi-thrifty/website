@@ -2,7 +2,7 @@ import { Sidebar } from "../components/sidebar";
 import { Header } from "../components/header/header";
 import { Box, Button, Typography } from "@mui/material";
 import { writeData, setData } from "../utilities/firebase";
-import { upload_button } from "../components/upload_but/upload_button";
+import { Upload_button } from "../components/upload_but/upload_button";
 import "./home.css"
 
 export const HomePage = () => {
@@ -60,7 +60,7 @@ export const HomePage = () => {
         return (
             <Box sx={{display: "flex", justifyContent: "space-between"}}>
                 <Typography sx={{marginLeft: "15px", fontSize: "25px"}} textTransform={"uppercase"}>{title}</Typography>
-                <Button variant="text" href={urlToAll}>See all</Button>
+                <a className="link see_all" href={urlToAll}>See all</a>
             </Box>
         )
     }
@@ -92,7 +92,7 @@ export const HomePage = () => {
                 {/* insert header behind sidebar */}
                 <Header/>
                 {/* upload button */}
-                {upload_button()}
+                <Upload_button/>
             </Box>
 
             <Box sx={{ display: "block" } }>
