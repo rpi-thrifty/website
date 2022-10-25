@@ -7,9 +7,9 @@ export const Header = () => {
     return(
 
         <Box className="bar">
-            <div className="header-item">
+            <div>
                 <a href='/'>
-                    <img src={process.env.PUBLIC_URL + 'images/logo_transparent.jpg'} className="header-logo"/>
+                    <img src={process.env.PUBLIC_URL + 'images/logo_transparent.png'} className="header-logo"/>
                 </a>
             </div>
             <a className="header-item" href='/about'>ABOUT</a>
