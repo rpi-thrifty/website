@@ -5,9 +5,9 @@ import "./upload_button.css"
 // const [upload, setUpload] = useState(false);
 
 export const upload_button = () => {
-    return <a href="https://www.google.come" className="hrefnohighlight">
-        <div className="but">
-            <a style={{marginTop: "3vh"}}>SUBMIT</a>
-        </div>
+    return <a href="https://www.google.com" className="hrefnohighlight">
+        <Box className="but">
+            <Typography sx={{margin: "auto", textAlign: "center", fontSize: "30px"}}>Upload</Typography>
+        </Box>
     </a>
 }
