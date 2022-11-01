@@ -23,7 +23,7 @@
 .butText {
     margin-top: 2vh;
     text-align: center;
-    font-size: 3vh;
+    font-size: 3.25vh;
     font-family: serif;
     color: white;
     font-weight: bold;
@@ -43,5 +43,5 @@
     height: 60vh;
     position: fixed;
     bottom: 12.5vh;
-    right: 2vw;
+    right: 3vw;
 }
