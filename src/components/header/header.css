@@ -17,6 +17,12 @@
     background: #C8AFAB;
 }
 
+.bar-item{
+    max-width: 30%;
+    background-color: green;
+    justify-content: center;
+}
+
 .header-item{
     transition: 0.3s;
     color: var(--bg-color) !important;
