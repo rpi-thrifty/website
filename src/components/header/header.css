@@ -3,7 +3,7 @@
     width: 100vw;
     z-index: 1;
     top: 0;
-    height: 100%;
+    height: 7vh;
 
     /*how it feels*/
     display: flex;
@@ -19,8 +19,8 @@
 
 .bar-item{
     max-width: 30%;
-    background-color: green;
     justify-content: center;
+    text-align: center;
 }
 
 .header-item{

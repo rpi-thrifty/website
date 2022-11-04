@@ -4,6 +4,8 @@ import { Box, Button, Typography } from "@mui/material";
 import "./home.css"
 
 export const HomePage = () => {
+    
+    document.title = 'Why not buy the world @ RPI'; // New title...
 
     class Item {
         constructor(price, desc, img_path, url) {
