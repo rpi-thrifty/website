@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { Box, Button, Typography, TextField, MenuItem } from "@mui/material"
+import { Box, Button, Typography, TextField, MenuItem, FormControl, InputLabel, OutlinedInput } from "@mui/material"
+import InputAdornment from '@mui/material/InputAdornment';
 import { useState } from 'react'
 import "./upload_button.css"
 
@@ -62,12 +63,38 @@ export const Upload_button = () => {
         return (
         <Box sx={{margin: "2vh"}}>
             {text("please enter a title for your post:")}
-            <TextField
-                required
-                label="Title"
-                helperText="Please be specific!"
-            />
+            <FormControl fullWidth>
+                <InputLabel>be specific!</InputLabel>
+                <OutlinedInput label="title"/>
+            </FormControl>
             
+        </Box>
+        )
+    }
+
+    const Price = () => {
+        return (
+        <Box sx={{margin: "2vh"}}>
+            {text("price you are willing to sell for:")}
+            <FormControl fullWidth>
+                <InputLabel>Price</InputLabel>
+                <OutlinedInput label="Price" startAdornment={<InputAdornment position="start">$</InputAdornment>}/>
+            </FormControl>
+            
+        </Box>
+        )
+    }
+
+    const Description = () => {
+        return (
+        <Box sx={{margin: "2vh"}}>
+            {text("describe your product")}
+            <TextField
+                label="Multiline"
+                multiline
+                fullWidth
+                minRows={4}
+            />
         </Box>
         )
     }
@@ -81,6 +108,10 @@ export const Upload_button = () => {
             <Category_dropdown/>
             {/* title */}
             <Title/>
+            {/* price */}
+            <Price/>
+            {/* description */}
+            <Description/>
 
             <Box sx={{margin:"2vh"}}>
 

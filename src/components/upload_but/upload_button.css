@@ -44,4 +44,5 @@
     position: fixed;
     bottom: 12.5vh;
     right: 3vw;
+    overflow-y: auto;
 }
