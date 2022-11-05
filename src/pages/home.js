@@ -1,6 +1,8 @@
 import { Sidebar } from "../components/sidebar";
 import { Header } from "../components/header/header";
 import { Box, Button, Typography } from "@mui/material";
+import { writeData, setData } from "../utilities/firebase";
+import { Upload_button } from "../components/upload_but/upload_button";
 import "./home.css"
 
 export const HomePage = () => {
@@ -58,7 +60,7 @@ export const HomePage = () => {
         return (
             <Box sx={{display: "flex", justifyContent: "space-between"}}>
                 <Typography sx={{marginLeft: "15px", fontSize: "25px"}} textTransform={"uppercase"}>{title}</Typography>
-                <Button variant="text" href={urlToAll}>See all</Button>
+                <a className="link see_all" href={urlToAll}>See all</a>
             </Box>
         )
     }
@@ -89,11 +91,13 @@ export const HomePage = () => {
 
                 {/* insert header behind sidebar */}
                 <Header/>
+                {/* upload button */}
+                <Upload_button/>
             </Box>
 
             <Box sx={{ display: "block" } }>
                 {/* block 1 */}
-                <Box sx={{ display: "block", marginTop: "7vh", marginBottom: "3vh"}}>
+                <Box sx={{ display: "block", marginTop: "8vh", marginBottom: "3vh"}}>
                     {insert_text("today's picks", "https://www.google.com")}
                     {/* images for the block */}
                     <Box sx={{display: "flex", flexWrap: "wrap"}}>
@@ -122,6 +126,7 @@ export const HomePage = () => {
                     {/* title of the block */}
                     {insert_text("miscellaneous", "https://www.google.com")}
                     {/* images for the block */}
+                    {/* <Button onClick={writeData("thisisdescription", 20, {phone: "500", email: "wuj22"})}>hi</Button> */}
                     <Box sx={{display: "flex", flexWrap: "wrap"}}>
                         <>{insert_image(it6)}</>
                         <>{insert_image(it7)}</>

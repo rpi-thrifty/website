@@ -11,3 +11,13 @@ img.item {
     text-decoration: none;
     background-color: none;
 }
+
+.see_all {
+    text-transform: uppercase;
+    color: #74423B;
+}
+
+.see_all:hover {
+    color: #AD8984;
+    transition: ease-in 0.2s;
+}

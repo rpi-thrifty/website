@@ -8,7 +8,7 @@ import { color } from '@mui/system';
 
 export const Sidebar = () => {
     // hide or show the sidebar
-    const [showing, setShowing] = useState(false);
+    const [showing, setShowing] = useState(true);
     const showSideBar = () => setShowing(!showing);
 
     const button_sidebar = (name) => {
