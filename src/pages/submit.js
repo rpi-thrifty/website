@@ -20,9 +20,27 @@ export const SubmitPage = () => {
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
 
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        var input_name=e.target.item_name.value;
+        var image_url=e.target.item_url.value;
+        var input_desc=e.target.item_desc.value;
+        
+        console.log("Name : " +input_name,"\n","Url : " +image_url + "\nDesc : " + input_desc);
+        
+        app.database.ref('items/' + input_name).set({
+            name : input_name,
+            image_url : image_url,
+            description : input_desc
+        })
+        
+          alert('Saved')
+    }
+
+
 
     function save() {
-        var input_name = "test1"
+        var input_name = document.getElementById('item_name').value
         var input_url = "test2"
         var input_desc = "test3"
       
@@ -38,7 +56,12 @@ export const SubmitPage = () => {
     return(
         <div>
             <Header/>
-            sup
+            <form onSubmit={handleSubmit}>
+                <input type="text" name="item_name" placeholder="Item Name"/><br/>
+                <input type="text" name="item_url"  placeholder="Image URL"/><br/>
+                <input type="text" name="item_desc"  placeholder="Item Description"/><br/>
+                <button>Submit</button>
+            </form>
         </div>
     )
 }
