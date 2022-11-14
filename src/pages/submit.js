@@ -1,6 +1,7 @@
 import { Header } from "../components/header/header";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getDatabase, ref, set } from "firebase/database";
 
 export const SubmitPage = () => {
 
@@ -23,16 +24,16 @@ export const SubmitPage = () => {
     const handleSubmit=(e)=>{
         e.preventDefault();
         var input_name=e.target.item_name.value;
-        var image_url=e.target.item_url.value;
+        var input_url=e.target.item_url.value;
         var input_desc=e.target.item_desc.value;
         
-        console.log("Name : " +input_name,"\n","Url : " +image_url + "\nDesc : " + input_desc);
+        console.log("Name : " +input_name,"\n","Url : " +input_url + "\nDesc : " + input_desc);
         
-        app.database.ref('items/' + input_name).set({
+        set(ref(app, 'items/' + input_name), {
             name : input_name,
-            image_url : image_url,
+            image_url : input_url,
             description : input_desc
-        })
+        });
         
           alert('Saved')
     }
