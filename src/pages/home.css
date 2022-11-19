@@ -1,9 +1,14 @@
-
-
 img.item {
     border-radius: 15px;
     width: 200px;
     height: 225px;
+}
+
+.main_div {
+    display: block;
+    width: 82vw;
+    justify-content: space-between;
+    margin-left: 17vw;
 }
 
 .link {
@@ -20,4 +25,19 @@ img.item {
 .see_all:hover {
     color: #AD8984;
     transition: ease-in 0.2s;
+}
+
+.block {
+    display: block;
+    margin-top: 3vh;
+    width: 80vw;
+}
+
+.img-div {
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #E4D6D4;
+    width: 14vw;
+    height: 35vh;
+    margin: 10px 5px 10px 5px ;
 }
