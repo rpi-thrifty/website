@@ -19,15 +19,15 @@ export const Upload_button = () => {
     const categories = [
         {
             value: 0,
-            label: "yes"
+            label: "Electronics"
         },
         {
             value: 1,
-            label: "bhe"
+            label: "Clothing"
         },
         {
             value: 2,
-            label: "jasdoi"
+            label: "Miscellaneous"
         }
     ]
 
@@ -64,7 +64,7 @@ export const Upload_button = () => {
         <Box sx={{margin: "2vh"}}>
             {text("please enter a title for your post:")}
             <FormControl fullWidth>
-                <InputLabel>be specific!</InputLabel>
+                <InputLabel>Title</InputLabel>
                 <OutlinedInput label="title"/>
             </FormControl>
             
@@ -90,7 +90,7 @@ export const Upload_button = () => {
         <Box sx={{margin: "2vh"}}>
             {text("describe your product")}
             <TextField
-                label="Multiline"
+                label="Description"
                 multiline
                 fullWidth
                 minRows={4}
@@ -99,19 +99,26 @@ export const Upload_button = () => {
         )
     }
 
-
+    const Submit = () => {
+        return (
+            <Box sx={{display: "flex", justifyContent: "center"}}>
+                <Button>
+                    <Box className="but_inside">
+                        <a className="but_inside_text">submit</a>
+                    </Box>
+                </Button>
+            </Box>
+        )
+    }
 
     const text_box = () => {
         return (
         <Box className="submit_box">
-            {/* category */}
             <Category_dropdown/>
-            {/* title */}
             <Title/>
-            {/* price */}
             <Price/>
-            {/* description */}
             <Description/>
+            <Submit/>
 
             <Box sx={{margin:"2vh"}}>
 
