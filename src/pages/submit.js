@@ -8,6 +8,8 @@ export const SubmitPage = () => {
 
     document.title = 'Why not sell the world @ RPI!'; // New title :)
 
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
         apiKey: "AIzaSyCsjA4joY2R0ekkxsIyaWsbZLOGAMbad3I",
         authDomain: "thrifty-9baea.firebaseapp.com",
@@ -18,80 +20,55 @@ export const SubmitPage = () => {
         appId: "1:580527692180:web:f2717c6445cc6d9cfa1781",
         measurementId: "G-GX0DZG40S6"
     };
+    
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
-
-    
-    // the website itself
-    // const [inputs, setInputs] = useState({});
-
-    // const handleChange = (event) => {
-    //     const name = event.target.name;
-    //     const value = event.target.value;
-    //     setInputs(values => ({...values, [name]: value}))
-    // }
+    const db = getDatabase(app);
 
 
-    const submit=(e)=>{
+    const submit=()=>{
         console.log("saving");
-        e.preventDefault();
-        console.log("step 1");
-        var input_name=e.target.item_name;
-        console.log("step 2");
-        var input_url=e.target.item_url;
-        console.log("step 3");
-        var input_desc=e.target.item_desc;
-        console.log("step 4");
-        
+
+        var input_name = document.getElementById("item_name").value;
+        var input_url = document.getElementById("item_url").value;
+        var input_desc = document.getElementById("item_desc").value;
+
         console.log("Name : " +input_name,"\n","Url : " +input_url + "\nDesc : " + input_desc);
-        
-        set(ref(app, 'items/' + input_name), {
-            name : input_name,
-            image_url : input_url,
-            description : input_desc
-        });
-        
+
+        //set(ref(app, 'items/' + input_name), {name : input_name,image_url : input_url,description : input_desc});
+        db.ref('items/' + input_name).set({
+            item_name: input_name,
+            item_url: input_url,
+            item_desc: input_desc
+        })
+
+
         alert('Saved')
     }
 
 
 
-    function save() {
+    // function save() {
         // var input_name = document.getElementById('item_name').value
         // var input_url = "test2"
-        // var input_desc = "test3"
-      
+        // var input_desc = "test3"  
         // app.database().ref('items/' + input_name).set({
         //   name : input_name,
         //   image_url : input_url,
         //   description : input_desc
         // })
-        console.log("hi");
-      
-        alert('Saved')
-      };
+    //     console.log("hi");
+    //     alert('Saved')
+    //   };
 
     return(
         <div>
             <Header/>
-            {/* <form onSubmit={handleSubmit}> */}
-                <input type="text" name="item_name" placeholder="Item Name"/><br/>
-                <input type="text" name="item_url"  placeholder="Image URL"/><br/>
-                <input type="text" name="item_desc"  placeholder="Item Description"/><br/>
-                {/* <input type="submit" value="Submit" /> */}
-                <button onClick={submit}>Submit</button>
-            {/* </form> */}
-
-            {/* <form onSubmit={handleSubmit}>
-                <label>Enter your name:
-                    <input type="text" name="username" value={inputs.username || ""} onChange={handleChange}/>
-                </label>
-                <label>Enter your age:
-                    <input type="number" name="age" value={inputs.age || ""} onChange={handleChange}/>
-                </label>
-                <input type="submit" />
-            </form> */}
+            <input type="text" id="item_name" placeholder="Item Name"/><br/>
+            <input type="text" id="item_url"  placeholder="Image URL"/><br/>
+            <input type="text" id="item_desc" placeholder="Item Description"/><br/>
+            <button onClick={submit}>Submit</button>
         </div>
     )
 }
