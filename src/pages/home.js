@@ -1,11 +1,11 @@
-import { Sidebar } from "../components/sidebar";
+import { Sidebar } from "../components/sidebar/sidebar";
 import { Header } from "../components/header/header";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { writeData, setData } from "../utilities/firebase";
+import { Upload_button } from "../components/upload_but/upload_button";
 import "./home.css"
 
 export const HomePage = () => {
-    
-    document.title = 'Why not buy the world @ RPI'; // New title...
 
     class Item {
         constructor(price, desc, img_path, url) {
@@ -28,7 +28,7 @@ export const HomePage = () => {
 
     const insert_image = (item_) => {
         return (
-            <Box sx={{justifyContent: "center", borderRadius: "10px", backgroundColor: "#E4D6D4", width: "225px", height: "325px", margin: "10px 5px 10px 5px"}}>
+            <Box className="img-div">
                 <a href={item_.url} className="link">
                     {/* image */}
                     <Box sx={{display: "flex", justifyContent: "center", marginTop: "1vh"}}>
@@ -59,43 +59,24 @@ export const HomePage = () => {
     const insert_text = (title, urlToAll) => {
         return (
             <Box sx={{display: "flex", justifyContent: "space-between"}}>
-                <Typography sx={{marginLeft: "15px", fontSize: "25px"}} textTransform={"uppercase"}>{title}</Typography>
-                <a href={urlToAll}>See all</a>
+                <Typography sx={{fontSize: "25px"}} textTransform={"uppercase"}>{title}</Typography>
+                <a className="link see_all" href={urlToAll}>See all</a>
             </Box>
         )
     }
 
     return (
         // outside box
-        <Box sx = {{
-            display: "flex",
-            justifyContent: "space-between",
-            margin: "0vh 0 0 20vw"
-        }}>
-            <Box sx = {{
-                width: "100vw", 
-                left: "0",
-                top: "0",
-                height: "7vh", 
-                backgroundColor: "#C8AFAB", 
-                position: "fixed"
-            }}>
-                {/* sidebar */}
-                <Box sx = {{ display: "inline-block", 
-                    position: "fixed",
-                    left: "1vw",
-                    top: "8vh",
-                    width: "18vw",}}>
-                    <Sidebar/>
-                </Box>
+        <Box>
+            
+            <Upload_button/>
+            <Box><Sidebar/></Box>
+            
 
-                {/* insert header behind sidebar */}
+            <Box className="main_div">
                 <Header/>
-            </Box>
-
-            <Box sx={{ display: "block", width: "78vw"} }>
                 {/* block 1 */}
-                <Box sx={{ display: "block", marginTop: "7vh", marginBottom: "3vh"}}>
+                <Box className="block">
                     {insert_text("today's picks", "https://www.google.com")}
                     {/* images for the block */}
                     <Box sx={{display: "flex", flexWrap: "wrap"}}>
@@ -104,15 +85,13 @@ export const HomePage = () => {
                         <>{insert_image(it3)}</>
                         <>{insert_image(it4)}</>
                         <>{insert_image(it5)}</>
-                        <>{insert_image(it4)}</>
-                        <>{insert_image(it3)}</>
-                        <>{insert_image(it2)}</>
                     </Box>
+                    <hr/>
                 </Box>
-                <hr/>
+                
                 
                 {/* blocks 2 */}
-                <Box sx={{ display: "block", marginBottom: "25px"}}>
+                <Box className="block">
                     {/* title of the block */}
                     {insert_text("discounted", "https://www.google.com")}
                     {/* images for the block */}
@@ -120,20 +99,22 @@ export const HomePage = () => {
                         <>{insert_image(it3)}</>
                         <>{insert_image(it4)}</>
                     </Box>
+                    <hr/>
                 </Box>
-                <hr/>
+                
                 {/* blocks 2 */}
-                <Box sx={{ display: "block", marginBottom: "25px"}}>
+                <Box className="block">
                     {/* title of the block */}
                     {insert_text("miscellaneous", "https://www.google.com")}
                     {/* images for the block */}
+                    {/* <Button onClick={writeData("thisisdescription", 20, {phone: "500", email: "wuj22"})}>hi</Button> */}
                     <Box sx={{display: "flex", flexWrap: "wrap"}}>
                         <>{insert_image(it6)}</>
                         <>{insert_image(it7)}</>
                     </Box>
                 </Box>
-            </Box>
-            
+                {/* add footer here */}
+            </Box>  
         </Box>
     )
 };
