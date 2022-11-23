@@ -6,6 +6,9 @@ import CategoryIcon from '@mui/icons-material/Category';
 
 export const Sidebar = () => {
 
+    // make the categories slide down
+    // allow for selections
+
     const button_sidebar = (name) => {
         if (name == "home") {
             return <Button sx = {{ display: "block", margin: "2vh 0vw 2vh 1vw", color: "#57201B", fontSize: "1.5vh" }}>
