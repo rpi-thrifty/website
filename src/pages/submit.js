@@ -6,7 +6,7 @@ import { getDatabase, ref, set } from "firebase/database";
 
 export const SubmitPage = () => {
 
-    document.title = 'Why not sell the world @ RPI!'; // New title :)
+    document.title = 'Why not sell the world!'; // New title :)
 
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -25,7 +25,8 @@ export const SubmitPage = () => {
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
     const db = getDatabase(app);
-
+    // const ref = db.ref('server/saving-data/fireblog');
+    // const itemsRef = ref.child('items')
 
     const submit=()=>{
         console.log("saving");
@@ -37,12 +38,17 @@ export const SubmitPage = () => {
         console.log("Name : " +input_name,"\n","Url : " +input_url + "\nDesc : " + input_desc);
 
         //set(ref(app, 'items/' + input_name), {name : input_name,image_url : input_url,description : input_desc});
-        db.ref('items/' + input_name).set({
+        // itemsRef.set({
+        //     item_name: input_name,
+        //     item_url: input_url,
+        //     item_desc: input_desc
+        // })
+
+        set(ref(db, 'items/' + input_name), {
             item_name: input_name,
             item_url: input_url,
             item_desc: input_desc
-        })
-
+        });
 
         alert('Saved')
     }
