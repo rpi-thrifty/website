@@ -7,6 +7,8 @@ import "./home.css"
 
 export const HomePage = () => {
 
+    document.title = 'Why not buy the world!'; // New title :)
+
     class Item {
         constructor(price, desc, img_path, url) {
             this.price = price;

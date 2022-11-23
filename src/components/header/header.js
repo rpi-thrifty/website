@@ -17,7 +17,6 @@ export const Header = () => {
             {/* right side */}
             <div className='right-group header-text'>
                 <a className='header_link' href='/about'>About</a>
-                <a className='header_link' href='/submit'>Sell</a>
                 <a className='header_link' href='https://github.com/rpi-thrifty'>Github</a>
                 <a className='header_link' href='https://discord.gg/PFqRbcPq'>Discord</a>
             </div>

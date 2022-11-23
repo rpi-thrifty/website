@@ -1,8 +1,8 @@
 
 
 .but {
-    width: 14vw;
     height: 8vh;
+    width: 13vw;
     transition: background-color 1s ease;
     background-color: #91655E;
     border-radius: 15vw;
@@ -17,7 +17,7 @@
 
 .but:hover {
     transition: background-color 0.5s ease;
-    background-color: #AD8984;
+    background-color: #e3bcb7;
 }
 
 .butText {
@@ -65,4 +65,5 @@
     bottom: 12.5vh;
     right: 3vw;
     overflow-y: auto;
+    box-shadow: -5px -2px 15px #91655E;
 }
