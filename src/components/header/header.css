@@ -12,10 +12,49 @@
 }
 
 .header-logo{
-    height: 70%;
+    top: 0px;
+    height: 90%;
     width: auto;
-    margin-top: 2vh;
-    margin-left: 3vh;
+    margin: 1vh;
+    position: relative;
+}
+
+.the-logo{
+    position: absolute;
+    z-index: 9;
+    top: 0px;
+}
+
+.hl_bg{
+    position: relative;
+    top: 0px;
+    width: 7vw;
+    height: 7vw;
+}
+
+.hl_bg:before{
+    position: relative;
+    content: "";
+    display: block;
+    width: 7vw;
+    height: 7vw;
+    transform: rotate(45deg);
+}
+
+.hl_bg:hover{
+    background: rgba(200, 180, 150, .08);
+    animation: 2.5s rotate infinite linear;
+}
+
+.hl_bg:hover:before{
+    background: rgba(200, 180, 150, .08);
+}
+
+.hl_bg:hover .the-logo{
+    animation: 2.5s rotate infinite linear;
+    animation-direction: reverse;
+    top: 0;
+    left: 0;
 }
 
 .right-group{
@@ -41,4 +80,9 @@
 .header_link:hover {
     color: #C8AFAB;
     transition: ease-in 0.1s;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

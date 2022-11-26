@@ -30,7 +30,13 @@ export const Upload_button = () => {
 
         console.log("Name : " +item_title,"\n","Price : " +item_price + "\nDesc : " + item_desc+ "\nCategory : " + item_catg);
 
+        const current = new Date();
+        const date = `${current.getFullYear()}${current.getMonth()+1}${current.getDate()}`;
+        console.log(date);
+
+
         set(ref(db, 'items/' + item_title + ": " + v1()), {
+            date_posted: date,
             item_title: item_title,
             item_price: item_price,
             item_desc: item_desc,
