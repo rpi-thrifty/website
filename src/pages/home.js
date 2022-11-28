@@ -1,4 +1,5 @@
-import { Sidebar } from "../components/sidebar/sidebar";
+import { React, useState} from 'react';
+import { Sidebar, expandedSidebar } from "../components/sidebar/sidebar";
 import { Header } from "../components/header/header";
 import { Box, Typography } from "@mui/material";
 import { writeData, setData } from "../utilities/firebase";
@@ -6,6 +7,13 @@ import { Upload_button } from "../components/upload_but/upload_button";
 import "./home.css"
 
 export const HomePage = () => {
+
+    document.title = 'Why not buy the world!'; // New title :)
+
+    
+    var left_margin_width = "17vw";
+    if(!expandedSidebar)
+        left_margin_width = "5vw";
 
     class Item {
         constructor(price, desc, img_path, url) {
@@ -19,7 +27,7 @@ export const HomePage = () => {
     // some definitions
     const it1 = new Item(12, "This this an example item", "images/logo.jpg", "https://www.google.com");
     const it2 = new Item(43, "This this an example item", "images/a2.jpg", "https://www.google.com");
-    const it3 = new Item("free", "This this an example item", "images/a3.jpg", "https://www.google.com");
+    const it3 = new Item("free", "This this an example item with an endless description so that I can determine how to cut off", "images/a3.jpg", "https://www.google.com");
     const it4 = new Item(9230, "This this an example item", "images/a4.jpg", "https://www.google.com");
     const it5 = new Item(19923, "This this an example item", "images/a5.jpg", "https://www.google.com");
     const it6 = new Item(82, "This this an example item", "images/a6.jpg", "https://www.google.com");
@@ -67,7 +75,7 @@ export const HomePage = () => {
 
     return (
         // outside box
-        <Box>
+        <Box className='everything'>
             
             <Upload_button/>
             <Box><Sidebar/></Box>

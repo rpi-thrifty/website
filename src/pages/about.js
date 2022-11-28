@@ -3,7 +3,7 @@ import { Box } from "@mui/material"
 
 export const AboutPage = () => {
     return(
-        <Box>
+        <Box sx={{marginLeft:"2.5%"}}>
             <Header/>
             <div>
                 Us.
