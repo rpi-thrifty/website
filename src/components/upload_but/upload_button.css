@@ -67,3 +67,14 @@
     overflow-y: auto;
     box-shadow: -5px -2px 15px #91655E;
 }
+
+.black_bg{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    z-index: 1;
+    background: #000D;
+    justify-content: center;
+    align-items: center;
+}

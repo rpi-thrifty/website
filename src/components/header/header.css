@@ -2,7 +2,7 @@
 .bar{
     display: flex;
     justify-content: space-between;
-    width: 80vw;
+    width: 97.5%;
     height: 20vh;
     border-bottom: solid 0.5px;
 }
@@ -21,7 +21,7 @@
 
 .the-logo{
     position: absolute;
-    z-index: 9;
+    z-index: 0;
     top: 0px;
 }
 

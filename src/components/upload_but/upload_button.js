@@ -9,7 +9,7 @@ import { app, analytics, db } from "../../firebase_export";
 import { v1 } from "uuid";
 import SellOutlinedIcon from '@mui/icons-material/SellOutlined';
 import CloseFullscreenOutlinedIcon from '@mui/icons-material/CloseFullscreenOutlined';
-import { bgcolor } from '@mui/system';
+// import { bgcolor } from '@mui/system';
 
 
 export const Upload_button = () => {
@@ -18,13 +18,13 @@ export const Upload_button = () => {
         console.log("saving");
 
         var item_title = document.getElementById("input_title").value;
-        if(item_title == "")
+        if(item_title === "")
             return;
         var item_price = document.getElementById("input_price").value;
         if(item_price < 0)
             return;
         var item_desc = document.getElementById("input_description").value;
-        if(item_desc == "")
+        if(item_desc === "")
             return;
         var item_catg = category;
 
@@ -194,9 +194,7 @@ export const Upload_button = () => {
 
     const obscure_background = () => {
         return (
-            <div>
-                a
-            </div>
+            <div className='black_bg' onClick={() => setUpload(!upload)}/>
         )
     }
     
@@ -206,7 +204,7 @@ export const Upload_button = () => {
         {
             upload ?
             <>
-            {/* {bgcolor()} */}
+            {obscure_background()}
             {button('collapse')}
             {text_box()}
             </>
