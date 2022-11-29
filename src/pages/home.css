@@ -6,9 +6,7 @@ img.item {
 
 .main_div {
     display: block;
-    width: 82vw;
     justify-content: space-between;
-    margin-left: 17vw;
 }
 
 .link {
@@ -30,7 +28,7 @@ img.item {
 .block {
     display: block;
     margin-top: 3vh;
-    width: 80vw;
+    width: 97.5%;
 }
 
 .img-div {
@@ -38,6 +36,6 @@ img.item {
     border-radius: 10px;
     background-color: #E4D6D4;
     width: 14vw;
-    height: 35vh;
+    height: 41vh;
     margin: 10px 5px 10px 5px ;
 }
