@@ -13,31 +13,31 @@
 
 .header-logo{
     top: 0px;
-    height: 90%;
-    width: auto;
-    margin: 1vh;
+    margin-top: 1vh;
+    margin-left: 1vw;
     position: relative;
+    width: 9vw;
+    height: auto;
 }
 
 .the-logo{
     position: absolute;
     z-index: 0;
-    top: 0px;
 }
 
 .hl_bg{
     position: relative;
-    top: 0px;
-    width: 7vw;
-    height: 7vw;
+    margin-left: 1vw;
+    width: 8vw;
+    height: 8vw;
 }
 
 .hl_bg:before{
     position: relative;
     content: "";
     display: block;
-    width: 7vw;
-    height: 7vw;
+    width: 8vw;
+    height: 8vw;
     transform: rotate(45deg);
 }
 

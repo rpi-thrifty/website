@@ -9,11 +9,9 @@ export const Header = () => {
         <Box className="bar">
             {/* left side */}
             <div>
-                
                 <a href='/' className='header-logo'>
-                    <div className='hl_bg'>
-                        <img src={process.env.PUBLIC_URL + 'images/logo_transparent.png'} className="header-logo the-logo" title='Home page'/>
-                    </div>
+                    <img src={process.env.PUBLIC_URL + 'images/logo_transparent.png'} className="header-logo the-logo" title='Home page'/>
+                    <div className='hl_bg'/>
                 </a>
             </div>
 

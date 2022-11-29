@@ -8,14 +8,14 @@ import "./home.css"
 
 export const HomePage = () => {
 
-    document.title = 'Why not buy the world!'; // New title :)
+    // document.title = 'Why not buy the world!'; // New title :)
 
     const [leftMargin, setLeftMargin] = useState("17vw");
     const [mainWidth, setMainWidth] = useState("82vw");
     const handleShift = (value) => {
-        console.log("LeftMargin before:" + leftMargin);
+        // console.log("LeftMargin before:" + leftMargin);
         setLeftMargin(value);
-        console.log("value: " + value + "\nLeftMargin after:" + leftMargin + "\n-\n");
+        // console.log("value: " + value + "\nLeftMargin after:" + leftMargin + "\n-\n");
 
         if(leftMargin === "17vw")
             setMainWidth("93vw");
@@ -51,7 +51,7 @@ export const HomePage = () => {
                         <img className="item" src={item_.img_path}/>
                     </Box>
                     {/* text */}
-                    <Box sx={{display: "block", width: "200px", height: "70px", marginTop: "0px", overflow: "hidden"}}>
+                    <Box sx={{display: "block", width: "200px", height: "70vw", marginTop: "0px", overflow: "hidden"}}>
                         {
                             <Typography sx={{
                                 fontWeight: "bold", 
@@ -97,13 +97,12 @@ export const HomePage = () => {
                     {insert_text("today's picks", "https://www.google.com")}
                     {/* images for the block */}
                     <Box sx={{display: "flex", flexWrap: "wrap"}}>
-                        <>{insert_image(it1)}</>
+                        <>{insert_image(it6)}</>
                         <>{insert_image(it2)}</>
                         <>{insert_image(it3)}</>
                         <>{insert_image(it4)}</>
                         <>{insert_image(it5)}</>
-                        <>{insert_image(it5)}</>
-                        <>{insert_image(it2)}</>
+                        <>{insert_image(it7)}</>
                     </Box>
                     <hr/>
                 </Box>
@@ -128,7 +127,6 @@ export const HomePage = () => {
                     {/* images for the block */}
                     {/* <Button onClick={writeData("thisisdescription", 20, {phone: "500", email: "wuj22"})}>hi</Button> */}
                     <Box sx={{display: "flex", flexWrap: "wrap"}}>
-                        <>{insert_image(it6)}</>
                         <>{insert_image(it7)}</>
                     </Box>
                 </Box>
