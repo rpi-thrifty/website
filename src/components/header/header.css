@@ -18,6 +18,8 @@
     margin-top: 1vh;
     margin-left: 1vw;
     position: relative;
+    width: 7vw;
+    height: 7vw;
 }
 
 .the-logo{
@@ -53,6 +55,8 @@
 .hl_bg:hover .the-logo{
     animation: 2.5s rotate infinite linear;
     animation-direction: reverse;
+    top: 0;
+    left: 0;
 }
 
 .right-group{
