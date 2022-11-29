@@ -23,10 +23,10 @@
 .butText {
     margin-top: 2vh;
     text-align: center;
-    font-size: 3.25vh;
+    font-size: 2vh;
     font-family: sans-serif;
     color: white;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 .but_inside {

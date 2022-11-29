@@ -13,21 +13,21 @@
 
 .header-logo{
     top: 0px;
-    height: 90%;
+    height: 100%;
     width: auto;
-    margin: 1vh;
+    margin-top: 1vh;
+    margin-left: 1vw;
     position: relative;
 }
 
 .the-logo{
     position: absolute;
     z-index: 0;
-    top: 0px;
 }
 
 .hl_bg{
     position: relative;
-    top: 0px;
+    margin-left: 1vw;
     width: 7vw;
     height: 7vw;
 }
@@ -53,8 +53,6 @@
 .hl_bg:hover .the-logo{
     animation: 2.5s rotate infinite linear;
     animation-direction: reverse;
-    top: 0;
-    left: 0;
 }
 
 .right-group{
