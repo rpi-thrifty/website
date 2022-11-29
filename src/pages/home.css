@@ -6,13 +6,7 @@ img.item {
 
 .main_div {
     display: block;
-    width: 82vw;
     justify-content: space-between;
-    margin-left: 5vw;
-}
-
-.main_div [sidebar_expanded=True]{
-    margin-left: 17vw;
 }
 
 .link {
@@ -42,6 +36,6 @@ img.item {
     border-radius: 10px;
     background-color: #E4D6D4;
     width: 14vw;
-    height: 40vh;
+    height: 41vh;
     margin: 10px 5px 10px 5px ;
 }

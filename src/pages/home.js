@@ -1,5 +1,5 @@
 import { React, useState} from 'react';
-import { Sidebar, expandedSidebar } from "../components/sidebar/sidebar";
+import { Sidebar } from "../components/sidebar/sidebar";
 import { Header } from "../components/header/header";
 import { Box, Typography } from "@mui/material";
 import { writeData, setData } from "../utilities/firebase";
@@ -10,10 +10,18 @@ export const HomePage = () => {
 
     document.title = 'Why not buy the world!'; // New title :)
 
-    
-    var left_margin_width = "17vw";
-    if(!expandedSidebar)
-        left_margin_width = "5vw";
+    const [leftMargin, setLeftMargin] = useState("17vw");
+    const [mainWidth, setMainWidth] = useState("82vw");
+    const handleShift = (value) => {
+        console.log("LeftMargin before:" + leftMargin);
+        setLeftMargin(value);
+        console.log("value: " + value + "\nLeftMargin after:" + leftMargin + "\n-\n");
+
+        if(leftMargin === "17vw")
+            setMainWidth("93vw");
+        else
+            setMainWidth("82vw");
+    };
 
     class Item {
         constructor(price, desc, img_path, url) {
@@ -43,13 +51,14 @@ export const HomePage = () => {
                         <img className="item" src={item_.img_path}/>
                     </Box>
                     {/* text */}
-                    <Box sx={{display: "block", width: "200px", height: "70px", margin: "10px 0 0 12.5px", overflow: "hidden"}}>
+                    <Box sx={{display: "block", width: "200px", height: "70px", marginTop: "0px", overflow: "hidden"}}>
                         {
                             <Typography sx={{
                                 fontWeight: "bold", 
                                 fontSize:"h6.fontSize", 
                                 fontFamily: "Helvetica Neue", 
-                                textTransform:"uppercase"
+                                textTransform:"uppercase",
+                                marginLeft: "12.5px"
                             }}>
                                 {typeof item_.price == "number" ? <>$</> : <></>}
                                 {item_.price}
@@ -57,7 +66,7 @@ export const HomePage = () => {
 
                         }
                         
-                        <Typography sx={{fontSize: "11px", fontFamily: "Helvetica Neue", lineHeight: "1"}}>{item_.desc}</Typography>
+                        <Typography sx={{marginLeft: "5px",fontSize: "11px", fontFamily: "Helvetica Neue", lineHeight: "1", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>{item_.desc}</Typography>
                     </Box>
                 </a>
             </Box>
@@ -78,10 +87,10 @@ export const HomePage = () => {
         <Box className='everything'>
             
             <Upload_button/>
-            <Box><Sidebar/></Box>
+            <Box><Sidebar handleShift={handleShift}/></Box>
             
 
-            <Box className="main_div">
+            <Box className="main_div" sx={{marginLeft: leftMargin, width: mainWidth}}>
                 <Header/>
                 {/* block 1 */}
                 <Box className="block">
@@ -93,6 +102,8 @@ export const HomePage = () => {
                         <>{insert_image(it3)}</>
                         <>{insert_image(it4)}</>
                         <>{insert_image(it5)}</>
+                        <>{insert_image(it5)}</>
+                        <>{insert_image(it2)}</>
                     </Box>
                     <hr/>
                 </Box>
