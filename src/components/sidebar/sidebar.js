@@ -4,9 +4,10 @@ import ListIcon from '@mui/icons-material/List'
 import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
 
-var sidebar_expanded;
 
-export const Sidebar = () => {
+
+
+export const Sidebar = ({handleShift}) => {
 
     // make the categories slide down
     // allow for selections
@@ -32,24 +33,26 @@ export const Sidebar = () => {
 
     const expandSidebar = () => {
         setExpand(!expand);
-        document.documentElement.setAttribute("sidebar_expanded", expand);
-        if(expand)
+        if(expand){
             sidebar_width = "15vw";
-        else
+            handleShift("6vw");
+        }
+        else{
             sidebar_width = "4vw";
+            handleShift("17vw");
+        }
     }
-    sidebar_expanded = expand;
-
 
     const Sidebar = () => {
         return <Box sx = {{
-            height: "95vh", 
-            top: "5",
-            width: {sidebar_width}, 
-            display: "block", 
-            position: "fixed",
-            borderRight: "solid 1px"
-            }}>
+                            height: "95vh", 
+                            top: "5",
+                            width: {sidebar_width}, 
+                            display: "block", 
+                            position: "fixed",
+                            borderRight: "solid 1px"
+                            }}
+                >
             
             <ListIcon sx = {{margin:"8px 0 0 8px", fontSize: "4vh", color: "#57201B"}} onClick={expandSidebar}/>
 
@@ -60,5 +63,3 @@ export const Sidebar = () => {
 
     return <Sidebar/>
 }
-
-export var expandedSidebar = true;
