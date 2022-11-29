@@ -13,13 +13,11 @@
 
 .header-logo{
     top: 0px;
-    height: 100%;
-    width: auto;
     margin-top: 1vh;
     margin-left: 1vw;
     position: relative;
-    width: 7vw;
-    height: 7vw;
+    width: 9vw;
+    height: auto;
 }
 
 .the-logo{
@@ -30,16 +28,16 @@
 .hl_bg{
     position: relative;
     margin-left: 1vw;
-    width: 7vw;
-    height: 7vw;
+    width: 8vw;
+    height: 8vw;
 }
 
 .hl_bg:before{
     position: relative;
     content: "";
     display: block;
-    width: 7vw;
-    height: 7vw;
+    width: 8vw;
+    height: 8vw;
     transform: rotate(45deg);
 }
 
