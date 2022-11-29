@@ -17,12 +17,16 @@
     width: auto;
     margin: 1vh;
     position: relative;
+    width: 7vw;
+    height: 7vw;
 }
 
 .the-logo{
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     top: 0px;
+    width: 7vw;
+    height: 7vw;
 }
 
 .hl_bg{
@@ -48,13 +52,6 @@
 
 .hl_bg:hover:before{
     background: rgba(200, 180, 150, .08);
-}
-
-.hl_bg:hover .the-logo{
-    animation: 2.5s rotate infinite linear;
-    animation-direction: reverse;
-    top: 0;
-    left: 0;
 }
 
 .right-group{

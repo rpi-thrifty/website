@@ -13,9 +13,9 @@ export const HomePage = () => {
     const [leftMargin, setLeftMargin] = useState("17vw");
     const [mainWidth, setMainWidth] = useState("82vw");
     const handleShift = (value) => {
-        console.log("LeftMargin before:" + leftMargin);
+        // console.log("LeftMargin before:" + leftMargin);
         setLeftMargin(value);
-        console.log("value: " + value + "\nLeftMargin after:" + leftMargin + "\n-\n");
+        // console.log("value: " + value + "\nLeftMargin after:" + leftMargin + "\n-\n");
 
         if(leftMargin === "17vw")
             setMainWidth("93vw");
@@ -51,7 +51,7 @@ export const HomePage = () => {
                         <img className="item" src={item_.img_path}/>
                     </Box>
                     {/* text */}
-                    <Box sx={{display: "block", width: "200px", height: "70px", marginTop: "0px", overflow: "hidden"}}>
+                    <Box sx={{display: "block", width: "200px", height: "70vw", marginTop: "0px", overflow: "hidden"}}>
                         {
                             <Typography sx={{
                                 fontWeight: "bold", 
