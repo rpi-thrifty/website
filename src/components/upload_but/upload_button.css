@@ -71,10 +71,15 @@
 .black_bg{
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 250%;
     inset: 0;
     z-index: 1;
     background: #000D;
     justify-content: center;
     align-items: center;
+    transition: 1s ease;
+}
+
+.black_bg:hover{
+    background: rgba(0, 0, 0, 0.7);
 }

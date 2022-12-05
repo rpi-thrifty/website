@@ -4,6 +4,7 @@ import { Header } from "../components/header/header";
 import { Box, Typography } from "@mui/material";
 import { writeData, setData } from "../utilities/firebase";
 import { Upload_button } from "../components/upload_but/upload_button";
+import { Cards } from "../components/items/cards_parse";
 import "./home.css"
 
 export const HomePage = () => {
@@ -51,15 +52,15 @@ export const HomePage = () => {
                         <img className="item" src={item_.img_path}/>
                     </Box>
                     {/* text */}
-                    <Box sx={{display: "block", width: "200px", height: "70vw", marginTop: "0px", overflow: "hidden"}}>
+                    <Box sx={{display: "block", width: "200px", marginTop: "0px", overflow: "hidden"}}>
                         {
                             <Typography sx={{
-                                fontWeight: "bold", 
-                                fontSize:"h6.fontSize", 
-                                fontFamily: "Helvetica Neue", 
-                                textTransform:"uppercase",
-                                marginLeft: "12.5px"
-                            }}>
+                                            fontWeight: "bold", 
+                                            fontSize:"h6.fontSize", 
+                                            fontFamily: "Helvetica Neue", 
+                                            textTransform:"uppercase",
+                                            marginLeft: "12.5px"
+                                            }}>
                                 {typeof item_.price == "number" ? <>$</> : <></>}
                                 {item_.price}
                             </Typography>
@@ -84,14 +85,15 @@ export const HomePage = () => {
 
     return (
         // outside box
-        <Box className='everything'>
+        <div className='everything'>
             
             <Upload_button/>
-            <Box><Sidebar handleShift={handleShift}/></Box>
+            <Sidebar handleShift={handleShift}/>
             
 
             <Box className="main_div" sx={{marginLeft: leftMargin, width: mainWidth}}>
                 <Header/>
+                <Cards/>
                 {/* block 1 */}
                 <Box className="block">
                     {insert_text("today's picks", "https://www.google.com")}
@@ -134,6 +136,6 @@ export const HomePage = () => {
                 </Box>
                 {/* add footer here */}
             </Box>  
-        </Box>
+        </div>
     )
 };

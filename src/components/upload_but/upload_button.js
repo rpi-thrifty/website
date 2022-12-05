@@ -27,8 +27,11 @@ export const Upload_button = () => {
         if(item_desc === "")
             return;
         var item_catg = category;
+        var item_cont = document.getElementById("input_contact").value;
+        if(item_cont === "")
+            return;
 
-        console.log("Name : " +item_title,"\n","Price : " +item_price + "\nDesc : " + item_desc+ "\nCategory : " + item_catg);
+        console.log("Name : " +item_title,"\n","Price : " +item_price + "\nDesc : " + item_desc+ "\nCategory : " + item_catg + "\nContact: "+item_cont);
 
         const current = new Date();
         const date = `${current.getFullYear()}${current.getMonth()+1}${current.getDate()}`;
@@ -40,7 +43,8 @@ export const Upload_button = () => {
             item_title: item_title,
             item_price: item_price,
             item_desc: item_desc,
-            item_category: item_catg
+            item_category: item_catg,
+            user_contact: item_cont
         });
 
         alert('Saved \"' + item_title+"\"");
@@ -148,6 +152,22 @@ export const Upload_button = () => {
         )
     }
 
+    const Contact = () => {
+        return (
+            <Box sx={{margin: "2vh"}}>
+                {text("Please list all ways to contact you:")}
+                <TextField
+                    label="Contact info"
+                    id='input_contact'
+                    multiline
+                    fullWidth
+                    minRows={4}
+                />
+            </Box>
+        )
+    }
+    
+
     const Submit = () => {
         return (
             <Box sx={{display: "flex", justifyContent: "center"}}>
@@ -167,6 +187,7 @@ export const Upload_button = () => {
             <Title/>
             <Price/>
             <Description/>
+            <Contact/>
             <Submit/>
 
             <Box sx={{margin:"2vh"}}>
@@ -178,17 +199,17 @@ export const Upload_button = () => {
 
     const button = (button_text) => {
         return (
-        <Button onClick={() => setUpload(!upload)}>            
-            <Collapse orientation="horizontal" in={upload} collapsedSize={40}>
-                <Box className="but">
+            <Button onClick={() => setUpload(!upload)}>   
+                <Box className='but'>         
+                {/* <Collapse orientation="horizontal" in={upload} collapsedSize={40}> */}
                     <a className="butText">{button_text} </a>
                     {upload
                         ? <CloseFullscreenOutlinedIcon className='butText'/>
                         : <SellOutlinedIcon className='butText'/>
                     }
+                {/* </Collapse> */}
                 </Box>
-            </Collapse>
-        </Button>
+            </Button>
         )
     }
 
@@ -200,17 +221,17 @@ export const Upload_button = () => {
     
 
     return (
-    <Box>
+    <Box sx={{background: "green"}}>
         {
             upload ?
             <>
-            {obscure_background()}
-            {button('collapse')}
-            {text_box()}
+                {obscure_background()}
+                {button('collapse')}
+                {text_box()}
             </>
             :
             <>
-            {button("Sell")}
+                {button("Sell")}
             </>
             
         }

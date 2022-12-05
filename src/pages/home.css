@@ -1,12 +1,16 @@
-img.item {
-    border-radius: 15px;
-    width: 200px;
-    height: 225px;
+.everything{
+    background-color: rgb(255, 255, 245);
 }
 
 .main_div {
     display: block;
     justify-content: space-between;
+}
+
+img.item {
+    border-radius: 15px;
+    width: 200px;
+    height: 225px;
 }
 
 .link {
