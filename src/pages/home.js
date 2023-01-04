@@ -93,7 +93,7 @@ export const HomePage = () => {
 
             <Box className="main_div" sx={{marginLeft: leftMargin, width: mainWidth}}>
                 <Header/>
-                <Cards/>
+                {/* <Cards/> */}
                 {/* block 1 */}
                 <Box className="block">
                     {insert_text("today's picks", "https://www.google.com")}

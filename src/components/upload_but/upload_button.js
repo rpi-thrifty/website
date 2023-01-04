@@ -199,17 +199,28 @@ export const Upload_button = () => {
 
     const button = (button_text) => {
         return (
-            <Button onClick={() => setUpload(!upload)}>   
-                <Box className='but'>         
-                {/* <Collapse orientation="horizontal" in={upload} collapsedSize={40}> */}
-                    <a className="butText">{button_text} </a>
+            // <Button onClick={() => setUpload(!upload)}>
+            //     <Box classname="but">   
+            //     {/* <Collapse easing="1s" orientation="horizontal" in={!upload} collapsedSize="13vw" className='but'> */}
+            //         <a className="butText">
+            //             {button_text}
+            //         </a>
+            //         {upload
+            //             ? <CloseFullscreenOutlinedIcon className='butText'/>
+            //             : <SellOutlinedIcon className='butText'/>
+            //         }
+            //     {/* </Collapse> */}
+            //     </Box>
+            // </Button>
+            <Collapse onClick={() => setUpload(!upload)} easing="1s" orientation="horizontal" in={!upload} collapsedSize="12vw" className='but'>
+                    <a className="butText">
+                        {button_text}
+                    </a>
                     {upload
                         ? <CloseFullscreenOutlinedIcon className='butText'/>
                         : <SellOutlinedIcon className='butText'/>
                     }
-                {/* </Collapse> */}
-                </Box>
-            </Button>
+            </Collapse>
         )
     }
 
@@ -220,21 +231,18 @@ export const Upload_button = () => {
     }
     
 
-    return (
-    <Box sx={{background: "green"}}>
-        {
-            upload ?
-            <>
+    if(upload)
+        return (
+            <div>
                 {obscure_background()}
                 {button('collapse')}
                 {text_box()}
-            </>
-            :
-            <>
+            </div>
+        )
+    else  
+        return (
+            <div>
                 {button("Sell")}
-            </>
-            
-        }
-    </Box>
-    )
+            </div>
+        )
 }

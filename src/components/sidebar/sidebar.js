@@ -13,14 +13,14 @@ export const Sidebar = ({handleShift}) => {
     // allow for selections
 
     const button_sidebar = (name) => {
-        return <Button sx = {{ display: "block", margin: "2vh 0vw 2vh 1vw", color: "#57201B", fontSize: "1.5vh" }}>
+        return <Button sx = {{ display: "block", margin: "1vw 0 0 1vw", color: "#57201B", fontSize: "2.5vh" }}>
             <Box sx={{display:"flex", justifyContent:"left", verticalAlign:"center"}}>
                 {name === 'home'
                     ? <HomeIcon sx={{fontSize: "2.5vh", color:"#57201B"}}/>
-                    : <CategoryIcon sx={{fontSize: "2.5vh", color:"#57201B", verticalAlign:"center"}}/>
+                    : <CategoryIcon sx={{fontSize: "2.5vh", color:"#57201B"}}/>
                 }
                 {expand
-                    ? <Typography variant="h5" sx={{marginLeft:"10px"}}>{name}</Typography>
+                    ? <Typography variant="h5" sx={{marginLeft:"10px", marginBottom: "0", marginTop: "0"}}>{name}</Typography>
                     : <></>
                 }
             </Box>
@@ -46,7 +46,7 @@ export const Sidebar = ({handleShift}) => {
     const Sidebar = () => {
         return <Box sx = {{
                             height: "95vh", 
-                            top: "5",
+                            top: "2vh",
                             width: {sidebar_width}, 
                             display: "block", 
                             position: "fixed",

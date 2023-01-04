@@ -1,8 +1,7 @@
 
-
 .but {
     height: 8vh;
-    width: 13vw;
+    width: 29vw;
     transition: background-color 1s ease;
     background-color: #91655E;
     border-radius: 15vw;
@@ -13,17 +12,20 @@
     text-transform: uppercase;
     font-size: 4vh;
     font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .but:hover {
     transition: background-color 0.5s ease;
     background-color: #e3bcb7;
+    cursor:pointer;
 }
 
 .butText {
-    margin-top: 2vh;
     text-align: center;
-    font-size: 3.25vh;
+    font-size: 1.5vw;
     font-family: sans-serif;
     color: white;
     font-weight: normal;
