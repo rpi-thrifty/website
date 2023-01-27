@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { Box } from '@mui/system';
-import { db, auth } from '../../firebase_export'
-import { getDatabase, ref, set, orderByChild, query } from "firebase/database";
 
 export const Cards = () => {
     class Filter{

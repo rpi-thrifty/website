@@ -2,7 +2,6 @@ import { React, useState} from 'react';
 import { Sidebar } from "../components/sidebar/sidebar";
 import { Header } from "../components/header/header";
 import { Box, Typography } from "@mui/material";
-import { writeData, setData } from "../utilities/firebase";
 import { Upload_button } from "../components/upload_but/upload_button";
 import "./home.css"
 

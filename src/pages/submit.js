@@ -1,9 +1,5 @@
 import { useState } from 'react';
 import { Header } from "../components/header/header";
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getDatabase, ref, set } from "firebase/database";
-import { app, analytics, db } from "../firebase_export";
 
 export const SubmitPage = () => {
 
@@ -17,12 +13,6 @@ export const SubmitPage = () => {
         var input_desc = document.getElementById("item_desc").value;
 
         console.log("Name : " +input_name,"\n","Url : " +input_url + "\nDesc : " + input_desc);
-
-        set(ref(db, 'items/' + input_name), {
-            item_name: input_name,
-            item_url: input_url,
-            item_desc: input_desc
-        });
 
         alert('Saved \"' + input_name+"\"");
     }

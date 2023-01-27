@@ -4,47 +4,11 @@ import InputAdornment from '@mui/material/InputAdornment';
 import Collapse from '@mui/material/Collapse';
 import { useState } from 'react'
 import "./upload_button.css"
-import { getDatabase, ref, set } from "firebase/database";
-import { app, analytics, db } from "../../firebase_export";
-import { v1 } from "uuid";
 import SellOutlinedIcon from '@mui/icons-material/SellOutlined';
 import CloseFullscreenOutlinedIcon from '@mui/icons-material/CloseFullscreenOutlined';
-// import { bgcolor } from '@mui/system';
 
 
 export const Upload_button = () => {
-
-    const save_firebase = () => {
-        console.log("saving");
-
-        var item_title = document.getElementById("input_title").value;
-        if(item_title === "")
-            return;
-        var item_price = document.getElementById("input_price").value;
-        if(item_price < 0)
-            return;
-        var item_desc = document.getElementById("input_description").value;
-        if(item_desc === "")
-            return;
-        var item_catg = category;
-
-        console.log("Name : " +item_title,"\n","Price : " +item_price + "\nDesc : " + item_desc+ "\nCategory : " + item_catg);
-
-        const current = new Date();
-        const date = `${current.getFullYear()}${current.getMonth()+1}${current.getDate()}`;
-        console.log(date);
-
-
-        set(ref(db, 'items/' + item_title + ": " + v1()), {
-            date_posted: date,
-            item_title: item_title,
-            item_price: item_price,
-            item_desc: item_desc,
-            item_category: item_catg
-        });
-
-        alert('Saved \"' + item_title+"\"");
-    }
 
     const [upload, setUpload] = useState(false);
 
@@ -153,7 +117,7 @@ export const Upload_button = () => {
             <Box sx={{display: "flex", justifyContent: "center"}}>
                 <Button>
                     <Box className="but_inside">
-                        <a className="but_inside_text" onClick={save_firebase}>submit</a>
+                        <a className="but_inside_text" >submit</a>
                     </Box>
                 </Button>
             </Box>
