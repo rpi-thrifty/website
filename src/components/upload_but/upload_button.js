@@ -176,7 +176,6 @@ export const UPLOAD_BUTTON = () => {
             <>
             {button("Sell")}
             </>
-            
         }
     </Box>
     )

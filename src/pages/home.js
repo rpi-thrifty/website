@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { Sidebar } from "../components/sidebar/sidebar";
+import { SIDEBAR } from "../components/sidebar/sidebar";
 import { Header } from "../components/header/header";
 import { Box, Typography } from "@mui/material";
 import { UPLOAD_BUTTON } from "../components/upload_but/upload_button";
@@ -86,7 +86,7 @@ export const HomePage = () => {
         <Box className='everything'>
             
             <UPLOAD_BUTTON/>
-            <Box><Sidebar handleShift={handleShift}/></Box>
+            <Box><SIDEBAR handleShift={handleShift}/></Box>
             
 
             <Box className="main_div" sx={{marginLeft: leftMargin, width: mainWidth}}>

@@ -1,11 +1,11 @@
-import { React, useState} from 'react';
+import React, { useState } from 'react';
 import { Box, Button, Typography } from '@mui/material';
 import ListIcon from '@mui/icons-material/List'
 import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
 
 
-export const Sidebar = ({handleShift}) => {
+export const SIDEBAR = ({handleShift}) => {
 
     // make the categories slide down
     // allow for selections
@@ -41,7 +41,6 @@ export const Sidebar = ({handleShift}) => {
         }
     }
 
-    const Sidebar = () => {
         return <Box sx = {{
                             height: "95vh", 
                             top: "5",
@@ -57,7 +56,4 @@ export const Sidebar = ({handleShift}) => {
             <>{button_sidebar("home")}</>
             <>{button_sidebar("categories")}</>
         </Box>
-    }
-
-    return <Sidebar/>
 }
