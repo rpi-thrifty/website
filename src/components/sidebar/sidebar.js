@@ -5,8 +5,6 @@ import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
 
 
-
-
 export const Sidebar = ({handleShift}) => {
 
     // make the categories slide down

@@ -1,4 +1,4 @@
-import { React, useState} from 'react';
+import React, { useState} from 'react';
 import { Sidebar } from "../components/sidebar/sidebar";
 import { Header } from "../components/header/header";
 import { Box, Typography } from "@mui/material";
