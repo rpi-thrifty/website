@@ -27,6 +27,7 @@
     font-family: sans-serif;
     color: white;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .but_inside {
@@ -47,6 +48,7 @@
     font-family: sans-serif;
     color: white;
     font-weight:normal;
+    text-decoration: none;
 }
 
 .hrefnohighlight {

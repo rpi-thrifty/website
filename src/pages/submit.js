@@ -14,7 +14,7 @@ export const SubmitPage = () => {
 
         console.log("Name : " +input_name,"\n","Url : " +input_url + "\nDesc : " + input_desc);
 
-        alert('Saved \"' + input_name+"\"");
+        alert('Saved "' + input_name+"\"");
     }
 
     return(
