@@ -1,9 +1,8 @@
-import { React, useState} from 'react';
-import { Sidebar } from "../components/sidebar/sidebar";
+import React, { useState} from 'react';
+import { SIDEBAR } from "../components/sidebar/sidebar";
 import { Header } from "../components/header/header";
 import { Box, Typography } from "@mui/material";
-import { writeData, setData } from "../utilities/firebase";
-import { Upload_button } from "../components/upload_but/upload_button";
+import { UPLOAD_BUTTON } from "../components/upload_but/upload_button";
 import "./home.css"
 
 export const HomePage = () => {
@@ -48,7 +47,7 @@ export const HomePage = () => {
                 <a href={item_.url} className="link">
                     {/* image */}
                     <Box sx={{display: "flex", justifyContent: "center", marginTop: "1vh"}}>
-                        <img className="item" src={item_.img_path}/>
+                        <img className="item" alt='each item' src={item_.img_path}/>
                     </Box>
                     {/* text */}
                     <Box sx={{display: "block", width: "200px", height: "70vw", marginTop: "0px", overflow: "hidden"}}>
@@ -86,8 +85,8 @@ export const HomePage = () => {
         // outside box
         <Box className='everything'>
             
-            <Upload_button/>
-            <Box><Sidebar handleShift={handleShift}/></Box>
+            <UPLOAD_BUTTON/>
+            <Box><SIDEBAR handleShift={handleShift}/></Box>
             
 
             <Box className="main_div" sx={{marginLeft: leftMargin, width: mainWidth}}>
@@ -97,6 +96,7 @@ export const HomePage = () => {
                     {insert_text("today's picks", "https://www.google.com")}
                     {/* images for the block */}
                     <Box sx={{display: "flex", flexWrap: "wrap"}}>
+                        <>{insert_image(it1)}</>
                         <>{insert_image(it6)}</>
                         <>{insert_image(it2)}</>
                         <>{insert_image(it3)}</>
