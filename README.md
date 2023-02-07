@@ -14,4 +14,4 @@ $ npm start
 
 ## Contributing
 
-As of Fall 2022, the beginning of the project will not be accepting any external contributions.
+As of Spring 2023, the beginning of the project will not be accepting any external contributions.
