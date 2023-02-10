@@ -64,45 +64,100 @@ export const UPLOAD_BUTTON = () => {
         </Box>
         )
     }
+    // -------------------- USER INFORMATION --------------------
+    const NAME = () => {
+        return (
+            <Box sx={{margin: "2vh", display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+                <Box>
+                    {text("first name:")}
+                    <FormControl halfWidth>
+                        <InputLabel>optional</InputLabel>
+                        <OutlinedInput label="optional" id='first_name'/>
+                    </FormControl>
+                </Box>
+                <Box>
+                    {text("last name:")}
+                    <FormControl halfWidth>
+                        <InputLabel>optional</InputLabel>
+                        <OutlinedInput label="optional" id='last_name'/>
+                    </FormControl>
+                </Box>
+            </Box>
+        )
+    }
 
+    const CONTACT = () => {
+        return (
+            <Box sx={{margin: "2vh", display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+                <Box>
+                    {text("email:")}
+                    <FormControl halfWidth>
+                        <InputLabel>required*</InputLabel>
+                        <OutlinedInput label="required*" id='email'/>
+                    </FormControl>
+                </Box>
+                <Box>
+                    {text("phone number:")}
+                    <FormControl halfWidth>
+                        <InputLabel>optional</InputLabel>
+                        <OutlinedInput label="optional" id='phone'/>
+                    </FormControl>
+                </Box>
+            </Box>
+        )
+    }
+    // -------------------- ITEM INFORMATION --------------------
     const TITLE = () => {
         return (
         <Box sx={{margin: "2vh"}}>
-            {text("please enter a title for your post:")}
+            {text("Title:")}
             <FormControl fullWidth>
-                <InputLabel>Title</InputLabel>
-                <OutlinedInput label="title" id='input_title'/>
+                <InputLabel>required*</InputLabel>
+                <OutlinedInput label="required*" id='input_title'/>
             </FormControl>
-            
         </Box>
         )
     }
 
-    const PRICE = () => {
+    const PRICE_QUANTITY = () => {
         return (
-        <Box sx={{margin: "2vh"}}>
-            {text("price you are looking for:")}
-            <FormControl fullWidth>
-                <InputLabel>Price</InputLabel>
-                <OutlinedInput label="Price" 
-                    startAdornment=
-                        {<InputAdornment position="start">$</InputAdornment>} 
-                    type="number"
-                    id='input_price'
-                    defaultValue={-1}
-                />
-            </FormControl>
-            
-        </Box>
+            <Box sx={{margin: "2vh", display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+                <Box>
+                    {text("price (0 if free):")}
+                    <FormControl halfWidth>
+                        <InputLabel>required*</InputLabel>
+                        <OutlinedInput label="required*" 
+                            startAdornment=
+                                {<InputAdornment position="start">$</InputAdornment>} 
+                            type="number"
+                            id='input_price'
+                            defaultValue={0}
+                        />
+                    </FormControl>
+                </Box>
+
+                <Box>
+                    {text("quantity:")}
+                    <FormControl halfWidth>
+                        <InputLabel>required*</InputLabel>
+                        <OutlinedInput label="required*" 
+                            type="number"
+                            id='quantity'
+                            defaultValue={0}
+                        />
+                    </FormControl>
+                </Box>
+            </Box>
+        
         )
     }
 
     const DESCRIPTION = () => {
         return (
         <Box sx={{margin: "2vh"}}>
-            {text("describe your product:")}
+            {text("Description:")}
             <TextField
-                label="Description"
+                label="optional"
                 id='input_description'
                 multiline
                 fullWidth
@@ -128,8 +183,16 @@ export const UPLOAD_BUTTON = () => {
         return (
         <Box className="submit_box">
             <CATEGORY_DROPDOWN/>
+            {/* -------------------USER------------------- */}
+            <Typography align="center"> USER INFORMATION </Typography>
+            <hr className='bold_black'/>
+            <NAME/>
+            <CONTACT/>
+            {/* -------------------ITEM------------------- */}
+            <Typography align="center"> ITEM INFORMATION </Typography>
+            <hr className='bold_black'/>
             <TITLE/>
-            <PRICE/>
+            <PRICE_QUANTITY/>
             <DESCRIPTION/>
             <SUBMIT/>
 
