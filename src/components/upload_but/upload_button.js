@@ -6,14 +6,14 @@ import { useState } from 'react'
 import "./upload_button.css"
 import SellOutlinedIcon from '@mui/icons-material/SellOutlined';
 import CloseFullscreenOutlinedIcon from '@mui/icons-material/CloseFullscreenOutlined';
+import { Category } from '@mui/icons-material';
 
 
 export const UPLOAD_BUTTON = () => {
 
     const [upload, setUpload] = useState(false);
 
-    const [category, setCategory] = useState(0);
-
+    const [category, setCategory] = useState('');
     const changeCategory = (e) => {
         setCategory(e.target.value);
     };
@@ -173,6 +173,7 @@ export const UPLOAD_BUTTON = () => {
                 <Button>
                     <Box className="but_inside">
                         <a className="but_inside_text" href="/submitfield">submit</a>
+                        <Typography>{Category}</Typography>
                     </Box>
                 </Button>
             </Box>
