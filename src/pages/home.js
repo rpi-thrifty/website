@@ -32,8 +32,8 @@ export const HomePage = () => {
     }
 
     // some definitions
-    const it1 = new Item(12, "This this an example item", "images/logo.jpg", "https://www.google.com");
-    const it2 = new Item(43, "This this an example item", "images/a2.jpg", "https://www.google.com");
+    const it1 = new Item(12, "This this an example item", "images/logo.jpg", "/itempage");
+    const it2 = new Item(43, "This this an example item", "images/a2.jpg", "/itempage");
     const it3 = new Item("free", "This this an example item with an endless description so that I can determine how to cut off", "images/a3.jpg", "https://www.google.com");
     const it4 = new Item(9230, "This this an example item", "images/a4.jpg", "https://www.google.com");
     const it5 = new Item(19923, "This this an example item", "images/a5.jpg", "https://www.google.com");
