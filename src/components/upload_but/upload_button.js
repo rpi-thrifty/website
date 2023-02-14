@@ -6,14 +6,33 @@ import { useState } from 'react'
 import "./upload_button.css"
 import SellOutlinedIcon from '@mui/icons-material/SellOutlined';
 import CloseFullscreenOutlinedIcon from '@mui/icons-material/CloseFullscreenOutlined';
-import { Category } from '@mui/icons-material';
 
 
 export const UPLOAD_BUTTON = () => {
 
     const [upload, setUpload] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+    const [category, setCategory] = useState(0);
 
-    const [category, setCategory] = useState('');
+    // functions to retrieve value
+    const getUserInfo = () => {
+        const firstName = document.getElementById('first_name').value;
+        const lastName = document.getElementById('last_name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+
+        console.log(firstName, lastName, email, phone);
+    }
+
+    const getItemInfo = () => {
+        const title = document.getElementById('item_title').value;
+        const price = document.getElementById('item_price').value;
+        const quantity = document.getElementById('item_quantity').value;
+        const description = document.getElementById('item_description').value;
+
+        console.log(title, price, quantity, description);
+    }
+
     const changeCategory = (e) => {
         setCategory(e.target.value);
     };
@@ -21,18 +40,22 @@ export const UPLOAD_BUTTON = () => {
     const categories = [
         {
             value: 0,
-            label: "Electronics"
+            label: "None"
         },
         {
             value: 1,
-            label: "Clothing"
+            label: "Electronics"
         },
         {
             value: 2,
-            label: "Furniture"
+            label: "Clothing"
         },
         {
             value: 3,
+            label: "Furniture"
+        },
+        {
+            value: 4,
             label: "Miscellaneous"
         }
     ]
@@ -46,13 +69,14 @@ export const UPLOAD_BUTTON = () => {
     const CATEGORY_DROPDOWN = () => {
         return (
         <Box sx={{margin: "2vh"}}>
-            {text("please select your category:")}
+            {text("category:")}
             {/* drop down menu */}
             <TextField
                 select
-                label="Select"
+                label="required"
                 onChange={changeCategory}
                 value={category}
+                required
                 helperText="Please select your category">
                     {/* loop to access values*/}
                     {categories.map((option) => (
@@ -83,6 +107,7 @@ export const UPLOAD_BUTTON = () => {
                     </FormControl>
                 </Box>
             </Box>
+            
         )
     }
 
@@ -113,7 +138,7 @@ export const UPLOAD_BUTTON = () => {
             {text("Title:")}
             <FormControl fullWidth>
                 <InputLabel>required*</InputLabel>
-                <OutlinedInput label="required*" id='input_title'/>
+                <OutlinedInput label="required*" id='item_title'/>
             </FormControl>
         </Box>
         )
@@ -130,7 +155,7 @@ export const UPLOAD_BUTTON = () => {
                             startAdornment=
                                 {<InputAdornment position="start">$</InputAdornment>} 
                             type="number"
-                            id='input_price'
+                            id='item_price'
                             defaultValue={0}
                         />
                     </FormControl>
@@ -142,7 +167,7 @@ export const UPLOAD_BUTTON = () => {
                         <InputLabel>required*</InputLabel>
                         <OutlinedInput label="required*" 
                             type="number"
-                            id='quantity'
+                            id='item_quantity'
                             defaultValue={0}
                         />
                     </FormControl>
@@ -158,7 +183,7 @@ export const UPLOAD_BUTTON = () => {
             {text("Description:")}
             <TextField
                 label="optional"
-                id='input_description'
+                id='item_description'
                 multiline
                 fullWidth
                 minRows={4}
@@ -170,10 +195,9 @@ export const UPLOAD_BUTTON = () => {
     const SUBMIT = () => {
         return (
             <Box sx={{display: "flex", justifyContent: "center"}}>
-                <Button>
+                <Button onClick={() => setSubmitted(true)}>
                     <Box className="but_inside">
-                        <a className="but_inside_text" href="/submitfield">submit</a>
-                        <Typography>{Category}</Typography>
+                        <text className="but_inside_text">submit</text>
                     </Box>
                 </Button>
             </Box>
@@ -196,10 +220,18 @@ export const UPLOAD_BUTTON = () => {
             <PRICE_QUANTITY/>
             <DESCRIPTION/>
             <SUBMIT/>
-
-            <Box sx={{margin:"2vh"}}>
-
+            <Box sx={{marginBottom: "2vh"}}>
+                {submitted ?
+                    <Box>
+                        <Typography className="textSubmitted">status: submitted</Typography>
+                        <Button onClick={() => getUserInfo()}>Click to get User Info (console.log)</Button>
+                        <Button onClick={() => getItemInfo()}>Click to get Item Info (console.log)</Button>
+                    </Box>
+                    :
+                    <Typography className="textNotSubmitted">status: not submitted</Typography>
+                }
             </Box>
+
         </Box>
         )
     }
@@ -244,3 +276,4 @@ export const UPLOAD_BUTTON = () => {
     </Box>
     )
 }
+
