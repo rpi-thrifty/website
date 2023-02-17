@@ -7,7 +7,7 @@ import "./home.css"
 
 export const HomePage = () => {
 
-    // document.title = 'Why not buy the world!'; // New title :)
+    document.title = 'Why not buy the world!'; // New title :)
 
     // const [leftMargin, setLeftMargin] = useState("17vw");
     // const [mainWidth, setMainWidth] = useState("82vw");

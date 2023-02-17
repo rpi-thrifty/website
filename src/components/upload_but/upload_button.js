@@ -6,9 +6,12 @@ import { useState } from 'react'
 import "./upload_button.css"
 import SellOutlinedIcon from '@mui/icons-material/SellOutlined';
 import CloseFullscreenOutlinedIcon from '@mui/icons-material/CloseFullscreenOutlined';
+import axios from 'axios';
 
 
 export const UPLOAD_BUTTON = () => {
+    // -------------------- HTTP REQ --------------------
+
 
     const [upload, setUpload] = useState(false);
     const [submitted, setSubmitted] = useState(false);
@@ -22,6 +25,7 @@ export const UPLOAD_BUTTON = () => {
         const phone = document.getElementById('phone').value;
 
         console.log(firstName, lastName, email, phone);
+        return [firstName, lastName, email, phone]
     }
 
     const getItemInfo = () => {
@@ -31,6 +35,7 @@ export const UPLOAD_BUTTON = () => {
         const description = document.getElementById('item_description').value;
 
         console.log(title, price, quantity, description);
+        return [title, price, quantity, description]
     }
 
     const changeCategory = (e) => {
