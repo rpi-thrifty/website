@@ -1,0 +1,24 @@
+body {
+  overflow: hidden;
+}
+
+.main_div {
+    display: block;
+    justify-content: space-between;
+}
+  
+.left {
+    float: left;
+    width: 39%;
+    height: 39%;
+    box-sizing: border-box;
+    padding: 0.5em;
+  }
+  
+.right {
+    float: left;
+    width: 58.5%;
+    height: 560px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
