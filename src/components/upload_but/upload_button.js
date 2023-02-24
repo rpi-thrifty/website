@@ -24,18 +24,46 @@ export const UPLOAD_BUTTON = () => {
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
 
-        console.log(firstName, lastName, email, phone);
-        return [firstName, lastName, email, phone]
+        var data = [firstName, lastName, email, phone]
+
+        // post data in the backend
+        axios.post('localhost:3002/api/array', { data })
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+        return data
     }
 
-    const getItemInfo = () => {
+    const getItemInfo = async () => {
         const title = document.getElementById('item_title').value;
         const price = document.getElementById('item_price').value;
         const quantity = document.getElementById('item_quantity').value;
         const description = document.getElementById('item_description').value;
 
-        console.log(title, price, quantity, description);
-        return [title, price, quantity, description]
+        var data = [title, price, quantity, description]
+        // wait for post to be done and then return the new data
+        // frontend hostname add it to the list of whitelist/blacklist (accepted domains) -> if in that list, accept a request for it
+        // post data in the backend
+        console.log(data)
+        try{
+            let axiospost = await axios.post('localhost:3002/api/array', { data });
+            return axiospost;
+        }catch(e){
+            console.error(e);
+        }
+        return "failed"
+        
+            // .then(response => {
+            //     console.log(response.data);
+            // })
+            // .catch(error => {
+            //     console.error(error);
+            // });
+        // return data
     }
 
     const changeCategory = (e) => {
@@ -236,7 +264,6 @@ export const UPLOAD_BUTTON = () => {
                     <Typography className="textNotSubmitted">status: not submitted</Typography>
                 }
             </Box>
-
         </Box>
         )
     }
