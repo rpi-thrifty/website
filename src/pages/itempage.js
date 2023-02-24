@@ -18,12 +18,6 @@ export const ItemPage = () => {
             setMainWidth("82vw");
     }
 
-    // const insert_image = (image) => {
-    //     return (
-    //         <img className = "itempage-img-div" src={image.img_path} alt = "Item_Name" />
-    //     )
-    // }
-
     const insert_itemName = (text) => {
         return (
             <Box>
@@ -59,27 +53,25 @@ export const ItemPage = () => {
     }
     
     class Item {
-        constructor(price, desc, img_path, url) {
-            this.price = price;
-            this.desc = desc;
+        constructor(img_path, url) {
             this.img_path = img_path;
             this.url = url;
         }
     }
 
     // Temp Item Definition
-    const it1 = new Item(12, "This this an example item", "images/logo.jpg", "/itempage");
+    const it1 = new Item("images/item1/item1_1.jpg", "/itempage");
 
     return(
         <Box className='everything'>
 
-            <Box> <SIDEBAR handleShift={handleShift}/> </Box>
+            <Box> <SIDEBAR handleShift = {handleShift}/> </Box>
             
-            <Box className="main_div" sx={{marginLeft: leftMargin, width: mainWidth}}>
+            <Box className="main_div" sx = {{marginLeft: leftMargin, width: mainWidth}}>
                 <Header/>
 
                 <Box className = "left">
-                    <img src={it1.img_path} alt = "Item_Name" />
+                    <img className = "preview_img" src = {it1.img_path} alt = "Item_Name"/>
                 </Box>
 
                 <Box className = "right">
@@ -93,4 +85,5 @@ export const ItemPage = () => {
 
         </Box>
     )
+    
 }
