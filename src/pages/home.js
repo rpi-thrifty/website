@@ -50,7 +50,7 @@ export const HomePage = () => {
                         <img className="item" alt='each item' src={item_.img_path}/>
                     </Box>
                     {/* text */}
-                    <Box sx={{display: "block", width: "200px", height: "70vw", marginTop: "0px", overflow: "hidden"}}>
+                    <Box sx={{display: "block", width: "200px", marginTop: "0px", overflow: "hidden"}}>
                         {
                             <Typography sx={{
                                 fontWeight: "bold", 

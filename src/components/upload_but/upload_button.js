@@ -2,12 +2,18 @@ import * as React from 'react'
 import { Box, Button, Typography, TextField, MenuItem, FormControl, InputLabel, OutlinedInput } from "@mui/material"
 import InputAdornment from '@mui/material/InputAdornment';
 import Collapse from '@mui/material/Collapse';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import "./upload_button.css"
 import SellOutlinedIcon from '@mui/icons-material/SellOutlined';
 import CloseFullscreenOutlinedIcon from '@mui/icons-material/CloseFullscreenOutlined';
 import axios from 'axios';
 
+let userInfo = [];
+let itemInfo = [];
+
+export const getData = () => {
+    return [userInfo, itemInfo];
+}
 
 export const UPLOAD_BUTTON = () => {
     // -------------------- HTTP REQ --------------------
@@ -16,55 +22,63 @@ export const UPLOAD_BUTTON = () => {
     const [upload, setUpload] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [category, setCategory] = useState(0);
-
+    
     // functions to retrieve value
     const getUserInfo = () => {
         const firstName = document.getElementById('first_name').value;
         const lastName = document.getElementById('last_name').value;
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
-
-        var data = [firstName, lastName, email, phone]
-
-        // post data in the backend
-        axios.post('localhost:3002/api/array', { data })
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        
+        const data = {
+            "firstName": firstName,
+            "lastName": lastName,
+            "email": email,
+            "phone": phone
+        }
 
         return data
     }
 
-    const getItemInfo = async () => {
+    const getItemInfo = () => {
+        const category = document.getElementById('item_category').value;
         const title = document.getElementById('item_title').value;
         const price = document.getElementById('item_price').value;
         const quantity = document.getElementById('item_quantity').value;
         const description = document.getElementById('item_description').value;
-
-        var data = [title, price, quantity, description]
-        // wait for post to be done and then return the new data
-        // frontend hostname add it to the list of whitelist/blacklist (accepted domains) -> if in that list, accept a request for it
-        // post data in the backend
-        console.log(data)
-        try{
-            let axiospost = await axios.post('localhost:3002/api/array', { data });
-            return axiospost;
-        }catch(e){
-            console.error(e);
-        }
-        return "failed"
         
-            // .then(response => {
-            //     console.log(response.data);
-            // })
-            // .catch(error => {
-            //     console.error(error);
-            // });
-        // return data
+        const data = {
+            "category": category,
+            "title": title,
+            "price": price,
+            "quantity": quantity,
+            "description": description
+        }
+
+        return data;
     }
+
+    const submitData = async(combineDict, e) => {
+        
+        try{
+            alert("submitted");
+            await axios.post("http://localhost:3002", {combineDict})
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    const getAllData = async() => {
+        userInfo = getUserInfo();
+        itemInfo = getItemInfo();
+
+        const combineDict = Object.assign(userInfo, itemInfo);
+        submitData(combineDict);
+
+        setSubmitted(true);
+    }
+
+    
 
     const changeCategory = (e) => {
         setCategory(e.target.value);
@@ -109,6 +123,7 @@ export const UPLOAD_BUTTON = () => {
                 label="required"
                 onChange={changeCategory}
                 value={category}
+                id="item_category"
                 required
                 helperText="Please select your category">
                     {/* loop to access values*/}
@@ -228,7 +243,7 @@ export const UPLOAD_BUTTON = () => {
     const SUBMIT = () => {
         return (
             <Box sx={{display: "flex", justifyContent: "center"}}>
-                <Button onClick={() => setSubmitted(true)}>
+                <Button onClick={() => getAllData()}>
                     <Box className="but_inside">
                         <text className="but_inside_text">submit</text>
                     </Box>
@@ -252,16 +267,17 @@ export const UPLOAD_BUTTON = () => {
             <TITLE/>
             <PRICE_QUANTITY/>
             <DESCRIPTION/>
-            <SUBMIT/>
+            
             <Box sx={{marginBottom: "2vh"}}>
                 {submitted ?
                     <Box>
                         <Typography className="textSubmitted">status: submitted</Typography>
-                        <Button onClick={() => getUserInfo()}>Click to get User Info (console.log)</Button>
-                        <Button onClick={() => getItemInfo()}>Click to get Item Info (console.log)</Button>
                     </Box>
                     :
-                    <Typography className="textNotSubmitted">status: not submitted</Typography>
+                    <Box>
+                        <SUBMIT/>
+                        <Typography className="textNotSubmitted">status: not submitted</Typography>
+                    </Box>
                 }
             </Box>
         </Box>
