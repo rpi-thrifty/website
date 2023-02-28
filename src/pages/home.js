@@ -9,19 +9,6 @@ export const HomePage = () => {
 
     document.title = 'Why not buy the world!'; // New title :)
 
-    // const [leftMargin, setLeftMargin] = useState("17vw");
-    // const [mainWidth, setMainWidth] = useState("82vw");
-    // const handleShift = (value) => {
-        // console.log("LeftMargin before:" + leftMargin);
-        // setLeftMargin(value);
-        // console.log("value: " + value + "\nLeftMargin after:" + leftMargin + "\n-\n");
-
-    //     if(leftMargin === "17vw")
-    //         setMainWidth("93vw");
-    //     else
-    //         setMainWidth("82vw");
-    // };
-
     class Item {
         constructor(price, desc, img_path, url) {
             this.price = price;
