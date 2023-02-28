@@ -1,22 +1,28 @@
-import { React, useState } from 'react';
+import { React, useState} from 'react';
 import { SIDEBAR } from "../components/sidebar/sidebar";
 import { Header } from "../components/header/header";
-import { Box, Typography } from "@mui/material";
-import "./itempage.css"
+import { Box, Typography } from "@mui/material"
 
 export const ItemPage = () => {
 
     const [leftMargin, setLeftMargin] = useState("17vw");
     const [mainWidth, setMainWidth] = useState("82vw");
-
     const handleShift = (value) => {
+        // console.log("LeftMargin before:" + leftMargin);
         setLeftMargin(value);
+        // console.log("value: " + value + "\nLeftMargin after:" + leftMargin + "\n-\n");
 
         if(leftMargin === "17vw")
             setMainWidth("93vw");
         else
             setMainWidth("82vw");
     }
+
+    // const insert_image = (image) => {
+    //     return (
+    //         <img className = "itempage-img-div" src={image.img_path} alt = "Item_Name" />
+    //     )
+    // }
 
     const insert_itemName = (text) => {
         return (
@@ -53,25 +59,28 @@ export const ItemPage = () => {
     }
     
     class Item {
-        constructor(img_path, url) {
+        constructor(price, desc, img_path, url) {
+            this.price = price;
+            this.desc = desc;
             this.img_path = img_path;
             this.url = url;
         }
     }
 
     // Temp Item Definition
-    const it1 = new Item("images/item1/item1_1.jpg", "/itempage");
+    const it1 = new Item(12, "This this an example item", "images/logo.jpg", "/itempage");
 
     return(
+        
         <Box className='everything'>
 
-            <Box> <SIDEBAR handleShift = {handleShift}/> </Box>
+            <Box> <SIDEBAR handleShift={handleShift}/> </Box>
             
-            <Box className="main_div" sx = {{marginLeft: leftMargin, width: mainWidth}}>
+            <Box className="main_div" sx={{marginLeft: leftMargin, width: mainWidth}}>
                 <Header/>
 
                 <Box className = "left">
-                    <img className = "preview_img" src = {it1.img_path} alt = "Item_Name"/>
+                    <img src={it1.img_path} alt = "Item_Name" />
                 </Box>
 
                 <Box className = "right">
@@ -82,8 +91,8 @@ export const ItemPage = () => {
                     {insert_itemContact("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc aliquet bibendum enim facilisis gravida neque convallis. Placerat orci nulla pellentesque dignissim enim sit amet venenatis urna. Elit at imperdiet dui accumsan sit. Ultrices sagittis orci a scelerisque purus. Id faucibus nisl tincidunt eget nullam non nisi est sit. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Enim tortor at auctor urna nunc. Sed viverra tellus in hac habitasse platea dictumst. Proin sed libero enim sed faucibus turpis in eu mi. Etiam erat velit scelerisque in. Ut tristique et egestas quis ipsum suspendisse. Imperdiet sed euismod nisi porta lorem mollis. Enim facilisis gravida neque convallis a cras. Sed odio morbi quis commodo. Vel fringilla est ullamcorper eget nulla facilisi etiam. Donec ac odio tempor orci dapibus ultrices in iaculis nunc. Pellentesque habitant morbi tristique senectus et netus. Eget magna fermentum iaculis eu non diam phasellus. Donec enim diam vulputate ut pharetra sit amet aliquam.")}
                 </Box>  
             </Box>
-
         </Box>
+        
+        
     )
-    
 }

@@ -1,5 +1,5 @@
-.itemPageBody {
-    overflow: hidden;
+body {
+  overflow: hidden;
 }
 
 .main_div {
@@ -10,15 +10,10 @@
 .left {
     float: left;
     width: 39%;
-    height: 100%;
+    height: 39%;
     box-sizing: border-box;
-    padding-right: 0.5em;
-    
-    display:flex;
-    flex-direction: row;
-    justify-content:center;
-    align-items:center;
-}
+    padding: 0.5em;
+  }
   
 .right {
     float: left;
@@ -26,9 +21,4 @@
     height: 560px;
     box-sizing: border-box;
     overflow-y: auto;
-}
-
-.preview_img {
-    max-width: 100%; /* or any custom size */
-    max-height: 561px;
-}
+  }
