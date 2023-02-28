@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React from 'react';
 import { SIDEBAR } from "../components/sidebar/sidebar";
 import { Header } from "../components/header/header";
 import { Box, Typography } from "@mui/material";
@@ -7,20 +7,20 @@ import "./home.css"
 
 export const HomePage = () => {
 
-    // document.title = 'Why not buy the world!'; // New title :)
+    document.title = 'Why not buy the world!'; // New title :)
 
-    const [leftMargin, setLeftMargin] = useState("17vw");
-    const [mainWidth, setMainWidth] = useState("82vw");
-    const handleShift = (value) => {
+    // const [leftMargin, setLeftMargin] = useState("17vw");
+    // const [mainWidth, setMainWidth] = useState("82vw");
+    // const handleShift = (value) => {
         // console.log("LeftMargin before:" + leftMargin);
-        setLeftMargin(value);
+        // setLeftMargin(value);
         // console.log("value: " + value + "\nLeftMargin after:" + leftMargin + "\n-\n");
 
-        if(leftMargin === "17vw")
-            setMainWidth("93vw");
-        else
-            setMainWidth("82vw");
-    };
+    //     if(leftMargin === "17vw")
+    //         setMainWidth("93vw");
+    //     else
+    //         setMainWidth("82vw");
+    // };
 
     class Item {
         constructor(price, desc, img_path, url) {
@@ -50,7 +50,7 @@ export const HomePage = () => {
                         <img className="item" alt='each item' src={item_.img_path}/>
                     </Box>
                     {/* text */}
-                    <Box sx={{display: "block", width: "200px", height: "70vw", marginTop: "0px", overflow: "hidden"}}>
+                    <Box sx={{display: "block", width: "200px", marginTop: "0px", overflow: "hidden"}}>
                         {
                             <Typography sx={{
                                 fontWeight: "bold", 
@@ -83,13 +83,13 @@ export const HomePage = () => {
 
     return (
         // outside box
-        <Box className='everything'>
+        <Box>
             
             <UPLOAD_BUTTON/>
-            <Box><SIDEBAR handleShift={handleShift}/></Box>
+            <Box><SIDEBAR/></Box>
             
 
-            <Box className="main_div" sx={{marginLeft: leftMargin, width: mainWidth}}>
+            <Box className="main_div">
                 <Header/>
                 {/* block 1 */}
                 <Box className="block">
@@ -125,7 +125,6 @@ export const HomePage = () => {
                     {/* title of the block */}
                     {insert_text("miscellaneous", "https://www.google.com")}
                     {/* images for the block */}
-                    {/* <Button onClick={writeData("thisisdescription", 20, {phone: "500", email: "wuj22"})}>hi</Button> */}
                     <Box sx={{display: "flex", flexWrap: "wrap"}}>
                         <>{insert_image(it7)}</>
                     </Box>

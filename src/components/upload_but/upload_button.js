@@ -2,17 +2,83 @@ import * as React from 'react'
 import { Box, Button, Typography, TextField, MenuItem, FormControl, InputLabel, OutlinedInput } from "@mui/material"
 import InputAdornment from '@mui/material/InputAdornment';
 import Collapse from '@mui/material/Collapse';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import "./upload_button.css"
 import SellOutlinedIcon from '@mui/icons-material/SellOutlined';
 import CloseFullscreenOutlinedIcon from '@mui/icons-material/CloseFullscreenOutlined';
+import axios from 'axios';
 
+let userInfo = [];
+let itemInfo = [];
+
+export const getData = () => {
+    return [userInfo, itemInfo];
+}
 
 export const UPLOAD_BUTTON = () => {
+    // -------------------- HTTP REQ --------------------
+
 
     const [upload, setUpload] = useState(false);
-
+    const [submitted, setSubmitted] = useState(false);
     const [category, setCategory] = useState(0);
+    
+    // functions to retrieve value
+    const getUserInfo = () => {
+        const firstName = document.getElementById('first_name').value;
+        const lastName = document.getElementById('last_name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        
+        const data = {
+            "firstName": firstName,
+            "lastName": lastName,
+            "email": email,
+            "phone": phone
+        }
+
+        return data
+    }
+
+    const getItemInfo = () => {
+        const category = document.getElementById('item_category').value;
+        const title = document.getElementById('item_title').value;
+        const price = document.getElementById('item_price').value;
+        const quantity = document.getElementById('item_quantity').value;
+        const description = document.getElementById('item_description').value;
+        
+        const data = {
+            "category": category,
+            "title": title,
+            "price": price,
+            "quantity": quantity,
+            "description": description
+        }
+
+        return data;
+    }
+
+    const submitData = async(combineDict, e) => {
+        
+        try{
+            alert("submitted");
+            await axios.post("http://localhost:3002", {combineDict})
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    const getAllData = async() => {
+        userInfo = getUserInfo();
+        itemInfo = getItemInfo();
+
+        const combineDict = Object.assign(userInfo, itemInfo);
+        submitData(combineDict);
+
+        setSubmitted(true);
+    }
+
+    
 
     const changeCategory = (e) => {
         setCategory(e.target.value);
@@ -21,18 +87,22 @@ export const UPLOAD_BUTTON = () => {
     const categories = [
         {
             value: 0,
-            label: "Electronics"
+            label: "None"
         },
         {
             value: 1,
-            label: "Clothing"
+            label: "Electronics"
         },
         {
             value: 2,
-            label: "Furniture"
+            label: "Clothing"
         },
         {
             value: 3,
+            label: "Furniture"
+        },
+        {
+            value: 4,
             label: "Miscellaneous"
         }
     ]
@@ -46,13 +116,15 @@ export const UPLOAD_BUTTON = () => {
     const CATEGORY_DROPDOWN = () => {
         return (
         <Box sx={{margin: "2vh"}}>
-            {text("please select your category:")}
+            {text("category:")}
             {/* drop down menu */}
             <TextField
                 select
-                label="Select"
+                label="required"
                 onChange={changeCategory}
                 value={category}
+                id="item_category"
+                required
                 helperText="Please select your category">
                     {/* loop to access values*/}
                     {categories.map((option) => (
@@ -83,6 +155,7 @@ export const UPLOAD_BUTTON = () => {
                     </FormControl>
                 </Box>
             </Box>
+            
         )
     }
 
@@ -113,7 +186,7 @@ export const UPLOAD_BUTTON = () => {
             {text("Title:")}
             <FormControl fullWidth>
                 <InputLabel>required*</InputLabel>
-                <OutlinedInput label="required*" id='input_title'/>
+                <OutlinedInput label="required*" id='item_title'/>
             </FormControl>
         </Box>
         )
@@ -130,7 +203,7 @@ export const UPLOAD_BUTTON = () => {
                             startAdornment=
                                 {<InputAdornment position="start">$</InputAdornment>} 
                             type="number"
-                            id='input_price'
+                            id='item_price'
                             defaultValue={0}
                         />
                     </FormControl>
@@ -142,7 +215,7 @@ export const UPLOAD_BUTTON = () => {
                         <InputLabel>required*</InputLabel>
                         <OutlinedInput label="required*" 
                             type="number"
-                            id='quantity'
+                            id='item_quantity'
                             defaultValue={0}
                         />
                     </FormControl>
@@ -158,7 +231,7 @@ export const UPLOAD_BUTTON = () => {
             {text("Description:")}
             <TextField
                 label="optional"
-                id='input_description'
+                id='item_description'
                 multiline
                 fullWidth
                 minRows={4}
@@ -170,9 +243,9 @@ export const UPLOAD_BUTTON = () => {
     const SUBMIT = () => {
         return (
             <Box sx={{display: "flex", justifyContent: "center"}}>
-                <Button>
+                <Button onClick={() => getAllData()}>
                     <Box className="but_inside">
-                        <a className="but_inside_text" href="/submitfield">submit</a>
+                        <text className="but_inside_text">submit</text>
                     </Box>
                 </Button>
             </Box>
@@ -194,10 +267,18 @@ export const UPLOAD_BUTTON = () => {
             <TITLE/>
             <PRICE_QUANTITY/>
             <DESCRIPTION/>
-            <SUBMIT/>
-
-            <Box sx={{margin:"2vh"}}>
-
+            
+            <Box sx={{marginBottom: "2vh"}}>
+                {submitted ?
+                    <Box>
+                        <Typography className="textSubmitted">status: submitted</Typography>
+                    </Box>
+                    :
+                    <Box>
+                        <SUBMIT/>
+                        <Typography className="textNotSubmitted">status: not submitted</Typography>
+                    </Box>
+                }
             </Box>
         </Box>
         )
@@ -243,3 +324,4 @@ export const UPLOAD_BUTTON = () => {
     </Box>
     )
 }
+
