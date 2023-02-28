@@ -11,20 +11,56 @@ export const SIDEBAR = ({handleShift}) => {
     // allow for selections
 
     const button_sidebar = (name) => {
-        return <Button sx = {{ display: "block", margin: "2vh 0vw 2vh 1vw", color: "#57201B", fontSize: "1.5vh" }}>
-            <Box sx={{display:"flex", justifyContent:"left", verticalAlign:"center"}}>
-                {name === 'home'
-                    ? <HomeIcon sx={{fontSize: "2.5vh", color:"#57201B"}}/>
-                    : <CategoryIcon sx={{fontSize: "2.5vh", color:"#57201B", verticalAlign:"center"}}/>
-                }
-                {expand
-                    ? <Typography variant="h5" sx={{marginLeft:"10px"}}>{name}</Typography>
-                    : <></>
-                }
+        let path = "/";
+        if (name === "home") {
+          path = "/home";
+        } else if (name === "categories") {
+          path = "/categories";
+        } else if (name === "support") {
+          path = "/support";
+        } else if (name === "about") {
+          path = "/about";
+        }
+      
+        return (
+          <Button
+            sx={{
+              display: "block",
+              margin: "2vh 0vw 2vh 1vw",
+              color: "#57201B",
+              fontSize: "1.5vh",
+            }}
+            href={path}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                verticalAlign: "center",
+              }}
+            >
+              {name === "home" ? (
+                <HomeIcon sx={{ fontSize: "2.5vh", color: "#57201B" }} />
+              ) : (
+                <CategoryIcon
+                  sx={{
+                    fontSize: "2.5vh",
+                    color: "#57201B",
+                    verticalAlign: "center",
+                  }}
+                />
+              )}
+              {expand ? (
+                <Typography variant="h5" sx={{ marginLeft: "10px" }}>
+                  {name}
+                </Typography>
+              ) : (
+                <></>
+              )}
             </Box>
-            
-        </Button>;
-    }
+          </Button>
+        );
+      };
 
     const [expand, setExpand] = useState(true);
     var sidebar_width = "15vw";
