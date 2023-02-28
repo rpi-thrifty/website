@@ -33,27 +33,25 @@ export const SIDEBAR = ({handleShift}) => {
         setExpand(!expand);
         if(expand){
             sidebar_width = "15vw";
-            handleShift("6vw");
         }
         else{
             sidebar_width = "4vw";
-            handleShift("17vw");
         }
     }
 
-        return <Box sx = {{
-                            height: "95vh", 
-                            top: "5",
-                            width: {sidebar_width}, 
-                            display: "block", 
-                            position: "fixed",
-                            borderRight: "solid 1px"
-                            }}
-                >
+        return (<Box sx = {{
+            height: "95vh", 
+            top: "5",
+            width: {sidebar_width}, 
+            display: "block", 
+            position: "fixed",
+            borderRight: "solid 1px"
+            }}
+        >
             
             <ListIcon sx = {{margin:"8px 0 0 8px", fontSize: "4vh", color: "#57201B"}} onClick={expandSidebar}/>
 
             <>{button_sidebar("home")}</>
             <>{button_sidebar("categories")}</>
-        </Box>
+        </Box>)
 }
