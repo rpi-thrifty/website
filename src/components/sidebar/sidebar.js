@@ -34,9 +34,8 @@ export const SIDEBAR = ({handleShift}) => {
           >
             <Box
               sx={{
-                display: "flex",
-                justifyContent: "left",
-                verticalAlign: "center",
+                display: "inline-flex",
+                alignItems: "center",
               }}
             >
               {name === "home" ? (
@@ -51,7 +50,7 @@ export const SIDEBAR = ({handleShift}) => {
                 />
               )}
               {expand ? (
-                <Typography variant="h5" sx={{ marginLeft: "10px" }}>
+                <Typography variant="h5" sx={{ marginLeft: "5px", fontSize: "2.5vh", alignItems: "center", marginBottom: 0,  marginTop: "0px" }}>
                   {name}
                 </Typography>
               ) : (
@@ -63,19 +62,17 @@ export const SIDEBAR = ({handleShift}) => {
       };
 
     const [expand, setExpand] = useState(true);
+    const [sidebarWidth, setSidebarWidth] = useState("15vw");
     var sidebar_width = "15vw";
 
     const expandSidebar = () => {
         setExpand(!expand);
-        if(expand){
-            sidebar_width = "15vw";
-        }
-        else{
-            sidebar_width = "4vw";
-        }
-    }
-
-        return (<Box sx = {{
+        setSidebarWidth(expand ? "15vw" : "4vw");
+    };
+    
+        return (
+        <Box sx = 
+            {{
             height: "95vh", 
             top: "5",
             width: {sidebar_width}, 
