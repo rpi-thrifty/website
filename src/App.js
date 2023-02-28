@@ -5,7 +5,6 @@ import { HomePage } from './pages/home.js';
 import { AboutPage } from './pages/about.js';
 import { ItemPage } from './pages/itempage.js';
 import { SubmitPage } from './pages/submit.js';
-import { ItemPage } from './pages/items';
 
 function App() {
   return (

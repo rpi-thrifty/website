@@ -72,13 +72,15 @@ export const HomePage = () => {
         // outside box
         <Box>
             
-            <UPLOAD_BUTTON/>
-            <Box><SIDEBAR/></Box>
+            
+            {/* <Box><SIDEBAR/></Box> */}
             
 
             <Box className="main_div">
                 <Header/>
-                {/* block 1 */}
+                <Box>
+                    <UPLOAD_BUTTON/>
+                </Box>
                 <Box className="block">
                     {insert_text("today's picks", "https://www.google.com")}
                     {/* images for the block */}
