@@ -1,0 +1,140 @@
+@font-face {
+    font-family: Raleway;
+    src: "/fonts/Raleway" ;
+ 
+  }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-size: 30px;
+    width:100%;
+    justify-content: center;
+    font-family: Raleway;
+    font-weight: bold;
+    font-size:xx-large;
+    font-style: italic;
+}
+
+button {
+    padding: 10px
+}
+/*Sell Section 1st row --------------------- */
+#sell-section {
+    background-color: #FFFFF0;
+}
+
+.sell-section-left {
+    display: flex;
+    width: 600px;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.sell-image-left {
+    width: 300px;
+    height: 200px;
+    box-shadow: 0 4px 8px 0 rgb(34, 60, 80, .16);
+    border-radius: 50%;
+}
+
+.sell-section-right{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+}
+.sell-button {
+    color: #FFFFF0;
+    background-color: #57201B;
+}
+/*Buy Section 2nd row -----------------------*/
+#buy-section {
+    background-color: #57201B;
+}
+
+.buy-button {
+    color: #57201B;
+    background-color: #FFFFF0;
+}
+
+.buy-section-left{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy-section-right {
+    width: 600px;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+
+.buy-image-right {
+    width: 300px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+/*Project Description 3rd row ---------------*/
+#project-description {
+    background-color: #FFFFF0;
+    color: black;
+    font-size: 24px;
+    border: 3px outset black;
+}
+
+/*About Us Section 4th row ------------------*/
+#about-section {
+    display: flex;
+    text-align: center;
+}
+
+.members-box {
+    background-color: #57201B;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.contact-wrapper{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    background-color: white;
+}
+.contact-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 330px;
+    width: 600px;
+}
+
+.aboutimg {
+    width: 80px;
+    height: 50px;
+}
+
+.project-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin:100px;
+    margin-top: 50px;
+}
