@@ -53,5 +53,7 @@ export const SIDEBAR = ({handleShift}) => {
 
             <>{button_sidebar("home")}</>
             <>{button_sidebar("categories")}</>
+            <>{button_sidebar("support")}</>
+            <>{button_sidebar("about")}</>
         </Box>)
 }
