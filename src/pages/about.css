@@ -1,6 +1,6 @@
 @font-face {
-    font-family: Raleway;
-    src: "/fonts/Raleway" ;
+    font-family: Chivo;
+    src: "/fonts/Chivo" ;
  
   }
 
@@ -11,10 +11,6 @@
     font-size: 30px;
     width:100%;
     justify-content: center;
-    font-family: Raleway;
-    font-weight: bold;
-    font-size:xx-large;
-    font-style: italic;
 }
 
 button {
@@ -90,7 +86,6 @@ button {
 #project-description {
     background-color: #FFFFF0;
     color: black;
-    font-size: 24px;
     border: 3px outset black;
 }
 
@@ -102,7 +97,6 @@ button {
 
 .members-box {
     background-color: #57201B;
-    font-size: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
