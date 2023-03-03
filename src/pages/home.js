@@ -9,19 +9,6 @@ export const HomePage = () => {
 
     document.title = 'Why not buy the world!'; // New title :)
 
-    // const [leftMargin, setLeftMargin] = useState("17vw");
-    // const [mainWidth, setMainWidth] = useState("82vw");
-    // const handleShift = (value) => {
-        // console.log("LeftMargin before:" + leftMargin);
-        // setLeftMargin(value);
-        // console.log("value: " + value + "\nLeftMargin after:" + leftMargin + "\n-\n");
-
-    //     if(leftMargin === "17vw")
-    //         setMainWidth("93vw");
-    //     else
-    //         setMainWidth("82vw");
-    // };
-
     class Item {
         constructor(price, desc, img_path, url) {
             this.price = price;
@@ -32,8 +19,8 @@ export const HomePage = () => {
     }
 
     // some definitions
-    const it1 = new Item(12, "This this an example item", "images/logo.jpg", "https://www.google.com");
-    const it2 = new Item(43, "This this an example item", "images/a2.jpg", "https://www.google.com");
+    const it1 = new Item(12, "This this an example item", "images/logo.jpg", "/itempage");
+    const it2 = new Item(43, "This this an example item", "images/a2.jpg", "/itempage");
     const it3 = new Item("free", "This this an example item with an endless description so that I can determine how to cut off", "images/a3.jpg", "https://www.google.com");
     const it4 = new Item(9230, "This this an example item", "images/a4.jpg", "https://www.google.com");
     const it5 = new Item(19923, "This this an example item", "images/a5.jpg", "https://www.google.com");
@@ -85,13 +72,15 @@ export const HomePage = () => {
         // outside box
         <Box>
             
-            <UPLOAD_BUTTON/>
-            <Box><SIDEBAR/></Box>
+            
+            {/* <Box><SIDEBAR/></Box> */}
             
 
             <Box className="main_div">
                 <Header/>
-                {/* block 1 */}
+                <Box>
+                    <UPLOAD_BUTTON/>
+                </Box>
                 <Box className="block">
                     {insert_text("today's picks", "https://www.google.com")}
                     {/* images for the block */}
