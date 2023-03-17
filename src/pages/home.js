@@ -70,7 +70,7 @@ export const HomePage = () => {
 
     return (
         // outside box
-        <Box>
+        <Box className='outside_div'>
             <Header/>
             <UPLOAD_BUTTON/>
             <Box className="main_div">
@@ -84,8 +84,8 @@ export const HomePage = () => {
                             <>{insert_image(it2)}</>
                             <>{insert_image(it3)}</>
                             <>{insert_image(it4)}</>
-                            <>{insert_image(it5)}</>
-                            <>{insert_image(it7)}</>
+                            {/* <>{insert_image(it5)}</>
+                            <>{insert_image(it7)}</> */}
                         </Box>
                         <hr/>
                     </Box>

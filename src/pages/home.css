@@ -4,7 +4,16 @@ img.item {
     height: 225px;
 }
 
+.outside_div {
+    height: 100%;
+}
+
 .main_div {
+    margin-top: 10vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    width: 80vw;
+    overflow: hidden;
     display: block;
     justify-content: space-between;
 }
