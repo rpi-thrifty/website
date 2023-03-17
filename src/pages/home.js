@@ -1,6 +1,7 @@
 import React from 'react';
 import { SIDEBAR } from "../components/sidebar/sidebar";
 import { Header } from "../components/header/header";
+import { Footer } from '../components/footer/footer';
 import { Box, Typography } from "@mui/material";
 import { UPLOAD_BUTTON } from "../components/upload_but/upload_button";
 import "./home.css"
@@ -119,7 +120,7 @@ export const HomePage = () => {
                         </Box>
                     </Box>
                 </Box>
-                {/* add footer here */}
+                <Footer/>
             </Box>  
         </Box>
     )
