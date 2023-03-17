@@ -28,15 +28,15 @@ export const Header = () => {
             {/* right side */}
             <div className='right-group header-text'>
                 <a className='header_link' href='/about'>About</a>
-                <a className='header_link' href='#' onClick={handleClick}>Categories</a>
+                <a className='header_link' href='#' onMouseOver={handleClick}>Categories</a>
                 <Menu
                     anchorEl={anchorEl}
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                 >
-                    <MenuItem onClick={handleClose}>Category 1</MenuItem>
-                    <MenuItem onClick={handleClose}>Category 2</MenuItem>
-                    <MenuItem onClick={handleClose}>Category 3</MenuItem>
+                    <MenuItem onMouseLeave={handleClose}>Category 1</MenuItem>
+                    <MenuItem onMouseLeave={handleClose}>Category 2</MenuItem>
+                    <MenuItem onMouseLeave={handleClose}>Category 3</MenuItem>
                 </Menu>
                 <a className='header_link' href='https://github.com/rpi-thrifty'>Github</a>
                 <a className='header_link' href='https://discord.gg/PFqRbcPq'>Discord</a>
