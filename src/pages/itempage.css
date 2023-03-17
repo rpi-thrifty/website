@@ -1,24 +1,28 @@
-body {
+.itemPageBody {
   overflow: hidden;
 }
 
-.main_div {
-    display: block;
-    justify-content: space-between;
-}
-  
 .left {
-    float: left;
-    width: 39%;
-    height: 39%;
-    box-sizing: border-box;
-    padding: 0.5em;
-  }
+  float: left;
+  width: 37vw;
+  height: 79vh;
+  box-sizing: border-box;
+  padding-right: 0.5em;
   
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
 .right {
-    float: left;
-    width: 58.5%;
-    height: 560px;
-    box-sizing: border-box;
-    overflow-y: auto;
-  }
+  float: left;
+  width: 58.65vw;
+  height: 79vh;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.preview_img {
+  max-width: 100%; /* or any custom size */
+  max-height: 79vh;
+}
