@@ -308,7 +308,7 @@ export const UPLOAD_BUTTON = () => {
     
 
     return (
-    <Box>
+    <Box className='but'>
         {
             upload ?
             <>

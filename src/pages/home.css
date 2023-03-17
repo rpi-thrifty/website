@@ -7,7 +7,6 @@ img.item {
 .main_div {
     display: block;
     justify-content: space-between;
-    margin-left: 15vw;
 }
 
 .link {
@@ -39,4 +38,13 @@ img.item {
     width: 210px;
     height: 290px;
     margin: 10px 5px 10px 5px ;
+}
+
+.img-row {
+    display: flex;
+    flex-wrap: row;
+}
+
+.row {
+    margin-left: 3vw;
 }
