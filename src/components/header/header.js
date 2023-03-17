@@ -7,21 +7,26 @@ export const Header = () => {
     return(
 
         <Box className="bar">
-            {/* left side */}
-            <div>
+            {/* left */}
+            <Box>
                 <a href='/' className='header-logo'>
                     <img src={process.env.PUBLIC_URL + 'images/logo_transparent.png'} className="header-logo the-logo" title='Home_page' alt=""/>
-                    <div className='hl_bg'/>
                 </a>
-            </div>
+            </Box>
 
-            {/* right side */}
-            <div className='right-group header-text'>
+            {/* middle */}
+            <Box className='group header-text'>
                 <a className='header_link' href='/about'>About</a>
                 <a className='header_link' href=''>Categories</a>
                 <a className='header_link' href='https://github.com/rpi-thrifty'>Github</a>
                 <a className='header_link' href='https://discord.gg/PFqRbcPq'>Discord</a>
-            </div>
+            </Box>
+
+            {/* right */}
+            <Box>
+
+            </Box>
+            
         </Box>
         
     )

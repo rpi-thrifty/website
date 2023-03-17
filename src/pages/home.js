@@ -71,51 +71,52 @@ export const HomePage = () => {
     return (
         // outside box
         <Box>
-            
-            
-            {/* <Box><SIDEBAR/></Box> */}
-            
-
+            <Header/>
+            <UPLOAD_BUTTON/>
             <Box className="main_div">
-                <Header/>
-                <Box>
-                    <UPLOAD_BUTTON/>
-                </Box>
                 <Box className="block">
-                    {insert_text("today's picks", "https://www.google.com")}
-                    {/* images for the block */}
-                    <Box sx={{display: "flex", flexWrap: "wrap"}}>
-                        <>{insert_image(it1)}</>
-                        <>{insert_image(it6)}</>
-                        <>{insert_image(it2)}</>
-                        <>{insert_image(it3)}</>
-                        <>{insert_image(it4)}</>
-                        <>{insert_image(it5)}</>
-                        <>{insert_image(it7)}</>
+                    <Box className='row'>
+                        {insert_text("today's picks", "https://www.google.com")}
+                        {/* images for the block */}
+                        <Box className='img-row'>
+                            <>{insert_image(it1)}</>
+                            <>{insert_image(it6)}</>
+                            <>{insert_image(it2)}</>
+                            <>{insert_image(it3)}</>
+                            <>{insert_image(it4)}</>
+                            <>{insert_image(it5)}</>
+                            <>{insert_image(it7)}</>
+                        </Box>
+                        <hr/>
                     </Box>
-                    <hr/>
+                    
                 </Box>
                 
                 
                 {/* blocks 2 */}
                 <Box className="block">
-                    {/* title of the block */}
-                    {insert_text("discounted", "https://www.google.com")}
-                    {/* images for the block */}
-                    <Box sx={{display: "flex", flexWrap: "wrap"}}>
-                        <>{insert_image(it3)}</>
-                        <>{insert_image(it4)}</>
+                    <Box className='row'>
+                        {/* title of the block */}
+                        {insert_text("discounted", "https://www.google.com")}
+                        {/* images for the block */}
+                        <Box className='img-row'>
+                            <>{insert_image(it3)}</>
+                            <>{insert_image(it4)}</>
+                        </Box>
+                        <hr/>
                     </Box>
-                    <hr/>
+                    
                 </Box>
                 
                 {/* blocks 2 */}
                 <Box className="block">
-                    {/* title of the block */}
-                    {insert_text("miscellaneous", "https://www.google.com")}
-                    {/* images for the block */}
-                    <Box sx={{display: "flex", flexWrap: "wrap"}}>
-                        <>{insert_image(it7)}</>
+                    <Box className="row">
+                        {/* title of the block */}
+                        {insert_text("miscellaneous", "https://www.google.com")}
+                        {/* images for the block */}
+                        <Box className="img-row">
+                            <>{insert_image(it7)}</>
+                        </Box>
                     </Box>
                 </Box>
                 {/* add footer here */}
