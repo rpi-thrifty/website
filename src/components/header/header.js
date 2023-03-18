@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Box, Menu, MenuItem } from '@mui/material';
 import { useState } from 'react';
+import LoginIcon from '@mui/icons-material/Login';
 
 import "./header.css";
 
@@ -18,7 +19,7 @@ export const Header = () => {
     return(
         <Box className="bar">
             {/* left */}
-            <Box>
+            <Box className='group' marginLeft={"20vw"}>
                 <a href='/' className='header-logo'>
                     <img src={process.env.PUBLIC_URL + 'images/logo_transparent.png'} className="header-logo the-logo" title='Home_page' alt=""/>
                 </a>
@@ -43,10 +44,11 @@ export const Header = () => {
             </Box>
 
             {/* right */}
-            <Box>
-
+            <Box className='group' marginRight={"20vw"}>
+                <Box className="header-text">
+                    <LoginIcon/>
+                </Box>
             </Box>
-            
         </Box>
     )
 }
