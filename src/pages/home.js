@@ -1,8 +1,9 @@
 import React from 'react';
-import { SIDEBAR } from "../components/sidebar/sidebar";
 import { Header } from "../components/header/header";
 import { Box, Typography } from "@mui/material";
 import { UPLOAD_BUTTON } from "../components/upload_but/upload_button";
+import { Card } from "../components/items/item_card";
+import { Banner } from '../components/banner/banner';
 import "./home.css"
 
 export const HomePage = () => {
@@ -19,44 +20,17 @@ export const HomePage = () => {
     }
 
     // some definitions
-    const it1 = new Item(12, "This this an example item", "images/logo.jpg", "/itempage");
-    const it2 = new Item(43, "This this an example item", "images/a2.jpg", "/itempage");
-    const it3 = new Item("free", "This this an example item with an endless description so that I can determine how to cut off", "images/a3.jpg", "https://www.google.com");
-    const it4 = new Item(9230, "This this an example item", "images/a4.jpg", "https://www.google.com");
-    const it5 = new Item(19923, "This this an example item", "images/a5.jpg", "https://www.google.com");
-    const it6 = new Item(82, "This this an example item", "images/a6.jpg", "https://www.google.com");
-    const it7 = new Item("free", "This this an example item", "images/a7.jpg", "https://www.google.com");
+    const it1 = new Item("12", "This this an example item", "images/logo.jpg", "/itempage");
+    const it2 = new Item("43", "This this an example item", "images/a2.jpg", "/itempage");
+    const it3 = new Item("0", "This this an example item with an endless description so that I can determine how to cut off", "images/a3.jpg", "https://www.google.com");
+    const it4 = new Item("9230", "This this an example item", "images/a4.jpg", "https://www.google.com");
+    const it5 = new Item("19923", "This this an example item", "images/a5.jpg", "https://www.google.com");
+    const it6 = new Item("82", "This this an example item", "images/a6.jpg", "https://www.google.com");
+    const it7 = new Item("0", "This this an example item", "images/a7.jpg", "https://www.google.com");
 
 
     const insert_image = (item_) => {
-        return (
-            <Box className="img-div">
-                <a href={item_.url} className="link">
-                    {/* image */}
-                    <Box sx={{display: "flex", justifyContent: "center", marginTop: "1vh"}}>
-                        <img className="item" alt='each item' src={item_.img_path}/>
-                    </Box>
-                    {/* text */}
-                    <Box sx={{display: "block", width: "200px", marginTop: "0px", overflow: "hidden"}}>
-                        {
-                            <Typography sx={{
-                                fontWeight: "bold", 
-                                fontSize:"h6.fontSize", 
-                                fontFamily: "Helvetica Neue", 
-                                textTransform:"uppercase",
-                                marginLeft: "12.5px"
-                            }}>
-                                {typeof item_.price == "number" ? <>$</> : <></>}
-                                {item_.price}
-                            </Typography>
-
-                        }
-                        
-                        <Typography sx={{marginLeft: "5px",fontSize: "11px", fontFamily: "Helvetica Neue", lineHeight: "1", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>{item_.desc}</Typography>
-                    </Box>
-                </a>
-            </Box>
-        )
+        return Card(item_)
     }
 
     const insert_text = (title, urlToAll) => {
@@ -72,6 +46,9 @@ export const HomePage = () => {
         // outside box
         <Box className='outside_div'>
             <Header/>
+            <Box className='banner_div'>
+                <Banner/>
+            </Box>
             <UPLOAD_BUTTON/>
             <Box className="main_div">
                 <Box className="block">
@@ -89,7 +66,6 @@ export const HomePage = () => {
                         </Box>
                         <hr/>
                     </Box>
-                    
                 </Box>
                 
                 

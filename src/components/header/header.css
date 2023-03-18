@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    height: 7vh;
+    height: 50px;
     justify-content: space-between;
     border-bottom: #ECECEC;
     -webkit-box-shadow: 0 3px 6px #ECECEC;
@@ -14,9 +14,8 @@
 }
 
 .header-logo{
-    top: 0px;
     margin-right: 2vw;
-    width: 3vw;
+    width: 45px;
     height: auto;
 }
 

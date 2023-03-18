@@ -1,20 +1,20 @@
-img.item {
-    border-radius: 15px;
-    width: 200px;
-    height: 225px;
-}
-
 .outside_div {
     height: 100%;
 }
 
+.banner_div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 .main_div {
-    margin-top: 10vh;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    display: block;
+    margin-top: 50px;
+    margin-left: 15vw;
+    margin-right: 15vw;
     width: 80vw;
     overflow: hidden;
-    display: block;
     justify-content: space-between;
 }
 
@@ -36,24 +36,10 @@ img.item {
 
 .block {
     display: block;
-    margin-top: 3vh;
     width: 97.5%;
-}
-
-.img-div {
-    justify-content: center;
-    border-radius: 10px;
-    background-color: #E4D6D4;
-    width: 210px;
-    height: 290px;
-    margin: 10px 5px 10px 5px ;
 }
 
 .img-row {
     display: flex;
     flex-wrap: row;
-}
-
-.row {
-    margin-left: 3vw;
 }

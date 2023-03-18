@@ -8,7 +8,7 @@ export const Header = () => {
     return(
         <Box className="bar">
             {/* left */}
-            <Box className='group'>
+            <Box className='group' marginLeft={"20vw"}>
                 <a href='/' className='header-logo'>
                     <img src={process.env.PUBLIC_URL + 'images/logo_transparent.png'} className="header-logo the-logo" title='Home_page' alt=""/>
                 </a>
@@ -22,13 +22,11 @@ export const Header = () => {
             </Box>
 
             {/* right */}
-            <Box className='group'>
+            <Box className='group' marginRight={"20vw"}>
                 <Box className="header-text">
                     <LoginIcon/>
                 </Box>
             </Box>
-            
         </Box>
-        
     )
 }

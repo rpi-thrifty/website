@@ -1,29 +1,33 @@
 import React from 'react'
+import { Box, Typography } from '@mui/material'
+import "./items.css"
 
-function Card(props) {
+export function Card(props) {
     return (
-        <Box className="img-div">
-            <a href={props.url} className="link">
+        <a href={props.url} className="link clickable-div">
+            <Box>
                 {/* image */}
-                <Box sx={{display: "flex", justifyContent: "center", marginTop: "1vh"}}>
+                <Box className='img-block'>
                     <img className="item" src={props.img_path}/>
                 </Box>
+                
                 {/* text */}
-                <Box sx={{display: "block", width: "200px", height: "70px", margin: "10px 0 0 12.5px", overflow: "hidden"}}>
-                    {
-                        <Typography sx={{
-                            fontWeight: "bold", 
-                            fontSize:"h6.fontSize", 
-                            fontFamily: "Helvetica Neue", 
-                            textTransform:"uppercase"
-                        }}>
-                            {typeof props.price == 0 ? <>${props.price}</> : <>FREE</>}
-                        </Typography>
-                    }
-                    <Typography sx={{fontSize: "11px", fontFamily: "Helvetica Neue", lineHeight: "1"}}>{props.desc}</Typography>
+                <Box className='img-text-block'>
+                    {/* title here */}
+                    <Box>
+                        {
+                            <text className='img-title'>
+                                {props.price == "0" ? <>Free</> :<>${props.price}</>}
+                            </text>
+                        }
+                    </Box>
+                    {/* description here */}
+                    <Box className='img-desc'>
+                        <text>{props.desc}</text>
+                    </Box>
                 </Box>
-            </a>
-        </Box>
+            </Box>
+        </a>
     )
 }
 
