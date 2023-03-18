@@ -6,7 +6,7 @@ import "./footer.css";
 export const Footer = () => {
   return(
     <>
-      <Box bgcolor="black" height={2} />
+      <Box bgcolor="#74423B" height={2} />
       <Box bgcolor="black" color="white" className="footer">
         <Box display="flex" justifyContent="center" alignItems="center" flexWrap="wrap">
           <Box mx={2} my={1}>
