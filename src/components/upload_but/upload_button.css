@@ -27,6 +27,7 @@
     font-family: sans-serif;
     color: white;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .but_inside {
@@ -47,6 +48,7 @@
     font-family: sans-serif;
     color: white;
     font-weight:normal;
+    text-decoration: none;
 }
 
 .hrefnohighlight {
@@ -60,7 +62,7 @@
     background-color: #E4D6D4;
     border-radius: 2vh;
     width: 30vw;
-    height: 60vh;
+    height: 65vh;
     position: fixed;
     bottom: 12.5vh;
     right: 3vw;
@@ -77,4 +79,20 @@
     background: #000D;
     justify-content: center;
     align-items: center;
+}
+
+hr.bold_black{
+    border: 1px solid black;
+}
+
+.textNotSubmitted{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.textSubmitted{
+    text-align: center;
+    color: green;
+    font-weight: bold;
 }

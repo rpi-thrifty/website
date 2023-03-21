@@ -1,54 +1,84 @@
 import * as React from 'react'
-import { Box, Button, Typography, TextField, MenuItem, FormControl, InputLabel, OutlinedInput, unstable_useId } from "@mui/material"
+import { Box, Button, Typography, TextField, MenuItem, FormControl, InputLabel, OutlinedInput } from "@mui/material"
 import InputAdornment from '@mui/material/InputAdornment';
 import Collapse from '@mui/material/Collapse';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import "./upload_button.css"
-import { getDatabase, ref, set } from "firebase/database";
-import { app, analytics, db } from "../../firebase_export";
-import { v1 } from "uuid";
 import SellOutlinedIcon from '@mui/icons-material/SellOutlined';
 import CloseFullscreenOutlinedIcon from '@mui/icons-material/CloseFullscreenOutlined';
-// import { bgcolor } from '@mui/system';
+import axios from 'axios';
 
+let userInfo = [];
+let itemInfo = [];
 
-export const Upload_button = () => {
+export const getData = () => {
+    return [userInfo, itemInfo];
+}
 
-    const save_firebase = () => {
-        console.log("saving");
+export const UPLOAD_BUTTON = () => {
+    // -------------------- HTTP REQ --------------------
 
-        var item_title = document.getElementById("input_title").value;
-        if(item_title === "")
-            return;
-        var item_price = document.getElementById("input_price").value;
-        if(item_price < 0)
-            return;
-        var item_desc = document.getElementById("input_description").value;
-        if(item_desc === "")
-            return;
-        var item_catg = category;
-
-        console.log("Name : " +item_title,"\n","Price : " +item_price + "\nDesc : " + item_desc+ "\nCategory : " + item_catg);
-
-        const current = new Date();
-        const date = `${current.getFullYear()}${current.getMonth()+1}${current.getDate()}`;
-        console.log(date);
-
-
-        set(ref(db, 'items/' + item_title + ": " + v1()), {
-            date_posted: date,
-            item_title: item_title,
-            item_price: item_price,
-            item_desc: item_desc,
-            item_category: item_catg
-        });
-
-        alert('Saved \"' + item_title+"\"");
-    }
 
     const [upload, setUpload] = useState(false);
-
+    const [submitted, setSubmitted] = useState(false);
     const [category, setCategory] = useState(0);
+    
+    // functions to retrieve value
+    const getUserInfo = () => {
+        const firstName = document.getElementById('first_name').value;
+        const lastName = document.getElementById('last_name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        
+        const data = {
+            "firstName": firstName,
+            "lastName": lastName,
+            "email": email,
+            "phone": phone
+        }
+
+        return data
+    }
+
+    const getItemInfo = () => {
+        const category = document.getElementById('item_category').value;
+        const title = document.getElementById('item_title').value;
+        const price = document.getElementById('item_price').value;
+        const quantity = document.getElementById('item_quantity').value;
+        const description = document.getElementById('item_description').value;
+        
+        const data = {
+            "category": category,
+            "title": title,
+            "price": price,
+            "quantity": quantity,
+            "description": description
+        }
+
+        return data;
+    }
+
+    const submitData = async(combineDict, e) => {
+        
+        try{
+            alert("submitted");
+            await axios.post("http://localhost:3002", {combineDict})
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    const getAllData = async() => {
+        userInfo = getUserInfo();
+        itemInfo = getItemInfo();
+
+        const combineDict = Object.assign(userInfo, itemInfo);
+        submitData(combineDict);
+
+        setSubmitted(true);
+    }
+
+    
 
     const changeCategory = (e) => {
         setCategory(e.target.value);
@@ -57,18 +87,22 @@ export const Upload_button = () => {
     const categories = [
         {
             value: 0,
-            label: "Electronics"
+            label: "None"
         },
         {
             value: 1,
-            label: "Clothing"
+            label: "Electronics"
         },
         {
             value: 2,
-            label: "Furniture"
+            label: "Clothing"
         },
         {
             value: 3,
+            label: "Furniture"
+        },
+        {
+            value: 4,
             label: "Miscellaneous"
         }
     ]
@@ -79,16 +113,18 @@ export const Upload_button = () => {
         )
     }
 
-    const Category_dropdown = () => {
+    const CATEGORY_DROPDOWN = () => {
         return (
         <Box sx={{margin: "2vh"}}>
-            {text("please select your category:")}
+            {text("category:")}
             {/* drop down menu */}
             <TextField
                 select
-                label="Select"
+                label="required"
                 onChange={changeCategory}
                 value={category}
+                id="item_category"
+                required
                 helperText="Please select your category">
                     {/* loop to access values*/}
                     {categories.map((option) => (
@@ -100,46 +136,102 @@ export const Upload_button = () => {
         </Box>
         )
     }
+    // -------------------- USER INFORMATION --------------------
+    const NAME = () => {
+        return (
+            <Box sx={{margin: "2vh", display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+                <Box>
+                    {text("first name:")}
+                    <FormControl halfWidth>
+                        <InputLabel>optional</InputLabel>
+                        <OutlinedInput label="optional" id='first_name'/>
+                    </FormControl>
+                </Box>
+                <Box>
+                    {text("last name:")}
+                    <FormControl halfWidth>
+                        <InputLabel>optional</InputLabel>
+                        <OutlinedInput label="optional" id='last_name'/>
+                    </FormControl>
+                </Box>
+            </Box>
+            
+        )
+    }
 
-    const Title = () => {
+    const CONTACT = () => {
+        return (
+            <Box sx={{margin: "2vh", display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+                <Box>
+                    {text("email:")}
+                    <FormControl halfWidth>
+                        <InputLabel>required*</InputLabel>
+                        <OutlinedInput label="required*" id='email'/>
+                    </FormControl>
+                </Box>
+                <Box>
+                    {text("phone number:")}
+                    <FormControl halfWidth>
+                        <InputLabel>optional</InputLabel>
+                        <OutlinedInput label="optional" id='phone'/>
+                    </FormControl>
+                </Box>
+            </Box>
+        )
+    }
+    // -------------------- ITEM INFORMATION --------------------
+    const TITLE = () => {
         return (
         <Box sx={{margin: "2vh"}}>
-            {text("please enter a title for your post:")}
+            {text("Title:")}
             <FormControl fullWidth>
-                <InputLabel>Title</InputLabel>
-                <OutlinedInput label="title" id='input_title'/>
+                <InputLabel>required*</InputLabel>
+                <OutlinedInput label="required*" id='item_title'/>
             </FormControl>
-            
         </Box>
         )
     }
 
-    const Price = () => {
+    const PRICE_QUANTITY = () => {
         return (
-        <Box sx={{margin: "2vh"}}>
-            {text("price you are looking for:")}
-            <FormControl fullWidth>
-                <InputLabel>Price</InputLabel>
-                <OutlinedInput label="Price" 
-                    startAdornment=
-                        {<InputAdornment position="start">$</InputAdornment>} 
-                    type="number"
-                    id='input_price'
-                    defaultValue={-1}
-                />
-            </FormControl>
-            
-        </Box>
+            <Box sx={{margin: "2vh", display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+                <Box>
+                    {text("price (0 if free):")}
+                    <FormControl halfWidth>
+                        <InputLabel>required*</InputLabel>
+                        <OutlinedInput label="required*" 
+                            startAdornment=
+                                {<InputAdornment position="start">$</InputAdornment>} 
+                            type="number"
+                            id='item_price'
+                            defaultValue={0}
+                        />
+                    </FormControl>
+                </Box>
+
+                <Box>
+                    {text("quantity:")}
+                    <FormControl halfWidth>
+                        <InputLabel>required*</InputLabel>
+                        <OutlinedInput label="required*" 
+                            type="number"
+                            id='item_quantity'
+                            defaultValue={0}
+                        />
+                    </FormControl>
+                </Box>
+            </Box>
+        
         )
     }
 
-    const Description = () => {
+    const DESCRIPTION = () => {
         return (
         <Box sx={{margin: "2vh"}}>
-            {text("describe your product:")}
+            {text("Description:")}
             <TextField
-                label="Description"
-                id='input_description'
+                label="optional"
+                id='item_description'
                 multiline
                 fullWidth
                 minRows={4}
@@ -148,12 +240,12 @@ export const Upload_button = () => {
         )
     }
 
-    const Submit = () => {
+    const SUBMIT = () => {
         return (
             <Box sx={{display: "flex", justifyContent: "center"}}>
-                <Button>
+                <Button onClick={() => getAllData()}>
                     <Box className="but_inside">
-                        <a className="but_inside_text" onClick={save_firebase}>submit</a>
+                        <text className="but_inside_text">submit</text>
                     </Box>
                 </Button>
             </Box>
@@ -163,14 +255,30 @@ export const Upload_button = () => {
     const text_box = () => {
         return (
         <Box className="submit_box">
-            <Category_dropdown/>
-            <Title/>
-            <Price/>
-            <Description/>
-            <Submit/>
-
-            <Box sx={{margin:"2vh"}}>
-
+            <CATEGORY_DROPDOWN/>
+            {/* -------------------USER------------------- */}
+            <Typography align="center"> USER INFORMATION </Typography>
+            <hr className='bold_black'/>
+            <NAME/>
+            <CONTACT/>
+            {/* -------------------ITEM------------------- */}
+            <Typography align="center"> ITEM INFORMATION </Typography>
+            <hr className='bold_black'/>
+            <TITLE/>
+            <PRICE_QUANTITY/>
+            <DESCRIPTION/>
+            
+            <Box sx={{marginBottom: "2vh"}}>
+                {submitted ?
+                    <Box>
+                        <Typography className="textSubmitted">status: submitted</Typography>
+                    </Box>
+                    :
+                    <Box>
+                        <SUBMIT/>
+                        <Typography className="textNotSubmitted">status: not submitted</Typography>
+                    </Box>
+                }
             </Box>
         </Box>
         )
@@ -181,7 +289,7 @@ export const Upload_button = () => {
         <Button onClick={() => setUpload(!upload)}>            
             <Collapse orientation="horizontal" in={upload} collapsedSize={40}>
                 <Box className="but">
-                    <a className="butText">{button_text} </a>
+                    <text className="butText">{button_text}</text>
                     {upload
                         ? <CloseFullscreenOutlinedIcon className='butText'/>
                         : <SellOutlinedIcon className='butText'/>
@@ -200,7 +308,7 @@ export const Upload_button = () => {
     
 
     return (
-    <Box>
+    <Box className='but'>
         {
             upload ?
             <>
@@ -212,8 +320,8 @@ export const Upload_button = () => {
             <>
             {button("Sell")}
             </>
-            
         }
     </Box>
     )
 }
+

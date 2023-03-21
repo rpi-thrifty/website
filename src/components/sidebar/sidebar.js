@@ -1,13 +1,11 @@
-import { React, useState} from 'react';
+import React, { useState } from 'react';
 import { Box, Button, Typography } from '@mui/material';
 import ListIcon from '@mui/icons-material/List'
 import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
 
 
-
-
-export const Sidebar = ({handleShift}) => {
+export const SIDEBAR = ({handleShift}) => {
 
     // make the categories slide down
     // allow for selections
@@ -35,31 +33,25 @@ export const Sidebar = ({handleShift}) => {
         setExpand(!expand);
         if(expand){
             sidebar_width = "15vw";
-            handleShift("6vw");
         }
         else{
             sidebar_width = "4vw";
-            handleShift("17vw");
         }
     }
 
-    const Sidebar = () => {
-        return <Box sx = {{
-                            height: "95vh", 
-                            top: "5",
-                            width: {sidebar_width}, 
-                            display: "block", 
-                            position: "fixed",
-                            borderRight: "solid 1px"
-                            }}
-                >
+        return (<Box sx = {{
+            height: "95vh", 
+            top: "5",
+            width: {sidebar_width}, 
+            display: "block", 
+            position: "fixed",
+            borderRight: "solid 1px"
+            }}
+        >
             
             <ListIcon sx = {{margin:"8px 0 0 8px", fontSize: "4vh", color: "#57201B"}} onClick={expandSidebar}/>
 
             <>{button_sidebar("home")}</>
             <>{button_sidebar("categories")}</>
-        </Box>
-    }
-
-    return <Sidebar/>
+        </Box>)
 }

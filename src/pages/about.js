@@ -1,3 +1,4 @@
+import React from 'react';
 import { Header } from "../components/header/header";
 import { Box, Button } from "@mui/material"
 import "./about.css"
