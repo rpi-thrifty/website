@@ -1,27 +1,32 @@
 import * as React from 'react';
 import { Box } from '@mui/system';
+import LoginIcon from '@mui/icons-material/Login';
 
 import "./header.css";
 
 export const Header = () => {
     return(
-
         <Box className="bar">
-            {/* left side */}
-            <div>
+            {/* left */}
+            <Box className='group' marginLeft={"20vw"}>
                 <a href='/' className='header-logo'>
                     <img src={process.env.PUBLIC_URL + 'images/logo_transparent.png'} className="header-logo the-logo" title='Home_page' alt=""/>
-                    <div className='hl_bg'/>
                 </a>
-            </div>
+                <Box className='header-text'>
+                    <a className='header_link' href='/about'>About ▾</a>
+                    <a className='header_link' href=''>Categories ▾</a>
+                    <a className='header_link' href='https://github.com/rpi-thrifty'>Github</a>
+                    <a className='header_link' href='https://discord.gg/PFqRbcPq'>Discord</a>
+                </Box>
+                
+            </Box>
 
-            {/* right side */}
-            <div className='right-group header-text'>
-                <a className='header_link' href='/about'>About</a>
-                <a className='header_link' href='https://github.com/rpi-thrifty'>Github</a>
-                <a className='header_link' href='https://discord.gg/PFqRbcPq'>Discord</a>
-            </div>
+            {/* right */}
+            <Box className='group' marginRight={"20vw"}>
+                <Box className="header-text">
+                    <LoginIcon/>
+                </Box>
+            </Box>
         </Box>
-        
     )
 }
