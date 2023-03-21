@@ -13,6 +13,7 @@
     align-items: center;
     justify-content: center;
     width:100%;
+    height: 350px;
     background-color: white;
 }
 
@@ -38,8 +39,8 @@ button {
 }
 
 .sell-image-left {
-    width: 300px;
-    height: 180px;
+    width: 50%;
+    height: 60%;
     box-shadow: 10px 8px 0 rgb(34, 60, 80, .16);
     aspect-ratio: auto;
     object-fit: cover;
@@ -48,6 +49,7 @@ button {
 }
 
 .sell-section-right{
+    overflow:auto;
     color: black;
     display: flex;
     font-size: 15px;
@@ -79,9 +81,11 @@ button {
 }
 
 .buy-section-left{
+    overflow: auto;
     display: flex;
     flex-direction: column;
     width: 350px;
+    min-width: 350px;
     height: 30vh;
     justify-content: center;
     align-items: center;
@@ -98,8 +102,8 @@ button {
 }   
 
 .buy-image-right {
-    width:300px;
-    height: 180px;
+    width: 50%;
+    height: 70%;
     aspect-ratio: auto;
     object-fit: cover;
     border-radius: 20%;
@@ -108,6 +112,7 @@ button {
 
 /*Project Description 3rd row ---------------*/
 #project-description {
+    overflow:auto;
     color: black;
     font-size: 30px;
 }
@@ -155,6 +160,8 @@ button {
     align-items: center;
     margin:100px;
     margin-top: 50px;
+    box-shadow: 0 4px 8px 0 rgb(34, 60, 80, .16);
+
 }
 
 .sell-section-right:hover{
@@ -165,3 +172,13 @@ button {
 .buy-section-left:hover{
     box-shadow: 0 16px 32px 0 rgb(34, 60, 80, .16);
 }
+
+@media (width < 1200px) {
+    .sell-section-left{
+      display: none;
+    }
+    .buy-section-right{
+        display:none;
+    }
+}
+
