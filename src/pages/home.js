@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from "../components/header/header";
-import { Footer } from '../components/footer/footer';
+import Footer from '../components/footer/footer';
 import { Box, Typography } from "@mui/material";
 import { UPLOAD_BUTTON } from "../components/upload_but/upload_button";
 import { Card } from "../components/items/item_card";
@@ -96,8 +96,9 @@ export const HomePage = () => {
                         </Box>
                     </Box>
                 </Box>
-                <Footer/>
-            </Box>  
+                
+            </Box>
+            <Footer/>  
         </Box>
     )
 };
