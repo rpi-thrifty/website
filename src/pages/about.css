@@ -1,56 +1,67 @@
 @font-face {
-    font-family: Chivo;
-    src: "/fonts/Chivo" ;
- 
+    font-family: 'Chivo';
+    src: url(/Users/alexrougebec/Documents/GitHub/website/public/fonts/Chivo/static/Chivo-Thin.ttf);
+    font-weight: normal;
+    font-style: normal;
   }
-
+* {
+    font-family: 'Chivo';
+}
 .row {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    font-size: 30px;
-    width:100%;
+    align-items: center;
     justify-content: center;
+    width:100%;
+    background-color: white;
 }
 
 button {
     padding: 10px
 }
-/*Sell Section 1st row --------------------- */
-#sell-section {
-    background-color: #FFFFF0;
-}
 
 .sell-section-left {
     display: flex;
-    width: 600px;
+    width: 50vw;
+    min-width: 350px;
     height: 40vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.sell-section-right-wrapper{
+    display:flex;
+    width: 50vw;
+    min-width: 350px;
     justify-content: center;
     align-items: center;
 }
 
 .sell-image-left {
     width: 300px;
-    height: 200px;
-    box-shadow: 0 4px 8px 0 rgb(34, 60, 80, .16);
-    border-radius: 50%;
+    height: 180px;
+    box-shadow: 10px 8px 0 rgb(34, 60, 80, .16);
+    aspect-ratio: auto;
+    object-fit: cover;
+    border-radius: 20%;
+
 }
 
 .sell-section-right{
     color: black;
     display: flex;
+    font-size: 15px;
     flex-direction: column;
-    width: 600px;
+    width: 350px;
     align-items: center;
     justify-content: center;
-    height: 40vh;
+    text-align: center;
+    height: 30vh;
+    box-shadow: 0 4px 8px 0 rgb(34, 60, 80, .16);
+
 }
 .sell-button {
     color: #FFFFF0;
-    background-color: #57201B;
-}
-/*Buy Section 2nd row -----------------------*/
-#buy-section {
     background-color: #57201B;
 }
 
@@ -59,34 +70,46 @@ button {
     background-color: #FFFFF0;
 }
 
-.buy-section-left{
-    display: flex;
-    flex-direction: column;
-    width: 600px;
-    height: 40vh;
+.buy-section-left-wrapper{
+    display:flex;
+    width:50vw;
+    min-width: 45vw;
     justify-content: center;
     align-items: center;
 }
 
+.buy-section-left{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 30vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgb(34, 60, 80, .16);
+}
+
 .buy-section-right {
-    width: 600px;
-    height: 40vh;
+    width: 50vw;
+    height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }   
 
 .buy-image-right {
-    width: 300px;
-    height: 200px;
-    border-radius: 50%;
+    width:300px;
+    height: 180px;
+    aspect-ratio: auto;
+    object-fit: cover;
+    border-radius: 20%;
+    box-shadow: 10px 8px 0 rgb(34, 60, 80, .16);
 }
 
 /*Project Description 3rd row ---------------*/
 #project-description {
-    background-color: #FFFFF0;
     color: black;
-    border: 3px outset black;
+    font-size: 30px;
 }
 
 /*About Us Section 4th row ------------------*/
@@ -96,12 +119,12 @@ button {
 }
 
 .members-box {
-    background-color: #57201B;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
+    font-size: 25px;
 }
 
 .contact-wrapper{
@@ -120,8 +143,9 @@ button {
 }
 
 .aboutimg {
-    width: 80px;
-    height: 50px;
+    aspect-ratio: auto;
+    max-width: 80px;
+
 }
 
 .project-wrapper {
@@ -131,4 +155,13 @@ button {
     align-items: center;
     margin:100px;
     margin-top: 50px;
+}
+
+.sell-section-right:hover{
+    box-shadow: 0 16px 32px 0 rgb(34, 60, 80, .16);
+
+}
+
+.buy-section-left:hover{
+    box-shadow: 0 16px 32px 0 rgb(34, 60, 80, .16);
 }

@@ -6,19 +6,26 @@ export const AboutPage = () => {
     return(
         <Box sx={{marginLeft:"2.55%"}}> 
             <Header/>
+            
             <div class = "row " id = "sell-section">
                 <div class = "sell-section-left">
                     <img class="sell-image-left" src="/images/sell.jpg" alt="Sell"/>
                 </div>
-                <div class = "sell-section-right">
-                    <p id="sell text"> Sell an Item! </p>
-                    <Button class="sell-button">Sell</Button>
+                <div class = "sell-section-right-wrapper">
+                    <div class = "sell-section-right">
+                        <h2 id="sell text"> Sell an Item! </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis elit et vehicula ullamcorper. Nulla id metus scelerisque, vestibulum sem eu, feugiat ante.</p>
+                        <Button class="sell-button">Sell</Button>
+                    </div>
                 </div>
             </div>
             <div class = "row" id = "buy-section">
-                <div class = "buy-section-left">
-                    <p id="buy text"> Buy an Item! </p>
-                    <Button class="buy-button">Buy</Button>
+                <div class="buy-section-left-wrapper">
+                    <div class = "buy-section-left">
+                        <h2 id="buy text"> Buy an Item! </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis elit et vehicula ullamcorper. Nulla id metus scelerisque, vestibulum sem eu, feugiat ante.</p>
+                        <Button class="buy-button">Buy</Button>
+                    </div>
                 </div>
                 <div class ="buy-section-right">
                     <img class="buy-image-right" src="/images/buy.jpg" alt="Buy"/>
@@ -65,3 +72,12 @@ export const AboutPage = () => {
             
     )
 }
+
+/*
+circle image
+keep aspect ratio
+enlarge image to half the page
+make 3-4 lines of custom text with a title
+make background white
+
+*/
