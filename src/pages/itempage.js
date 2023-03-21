@@ -61,7 +61,7 @@ export const ItemPage = () => {
     ]
 
     return(
-        <Box sx = {{marginLeft: "4vh"}}>
+        <Box sx = {{marginLeft: "4vh", marginTop: "14vh"}}>
             <Header/>
 
             <Box className = "left">
