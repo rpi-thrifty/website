@@ -13,8 +13,8 @@ export const Header = () => {
                     <img src={process.env.PUBLIC_URL + 'images/logo_transparent.png'} className="header-logo the-logo" title='Home_page' alt=""/>
                 </a>
                 <Box className='header-text'>
-                    <a className='header_link' href='/about'>About ▾</a>
-                    <a className='header_link' href=''>Categories ▾</a>
+                    <a className='header_link' href='/about'>About</a>
+                    <a className='header_link' href=''>Categories</a>
                     <a className='header_link' href='https://github.com/rpi-thrifty'>Github</a>
                     <a className='header_link' href='https://discord.gg/PFqRbcPq'>Discord</a>
                 </Box>
