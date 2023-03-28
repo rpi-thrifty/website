@@ -15,9 +15,8 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  max-width: 1000px; /* added so no vertical scrolling */
-  padding: 1rem; /* padding space to separate top and bottom part */
 }
+
 
 .column {
   display: flex;
@@ -28,8 +27,66 @@
   justify-content: left;
   text-align:left;
   background-color: #e3bcb7;
+
 }
 
+@media (max-width: 1200px){ /* width for 125% zoom rate */
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    font-family: Oswald;
+    font-size: 15px;
+    justify-content: left;
+    text-align:left;
+    background-color: #e3bcb7;
+    }
+  }
+
+@media (max-width: 1000px){ /* width for 150% zoom rate */
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  font-family: Oswald;
+  font-size: 15px;
+  justify-content: left;
+  text-align:left;
+  background-color: #e3bcb7;
+
+  }
+}
+
+@media (max-width: 500px){ /*width for iphone XR and 175% zoom rate */
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    font-family: Oswald;
+    font-size: 15px;
+    justify-content: left;
+    text-align:left;
+    background-color: #e3bcb7;
+    }
+  }
+
+  @media (max-width: 376px){ /* width for iphone SE*/
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      width: 80px;
+      font-family: Oswald;
+      font-size: 12px;
+      justify-content: left;
+      text-align:left;
+      background-color: #e3bcb7;
+    
+      }
+    }
 .footer_link {
   color: black;
   text-decoration: none;
@@ -46,7 +103,7 @@
 }
 
 .bottom-part {
-  width: 97.9%; /*had to change to fit dimensions */
+  width: 96%; /*had to change to fit dimensions */
   height: 10vh;
   background-color: rgb(227, 188, 183);
   color: black;

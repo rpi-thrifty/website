@@ -17,21 +17,21 @@ const Footer = () =>
                   <Box className="column">
                   
                   <h4> Customer Service</h4>
-                  <a className='footer_link' href='/'>Home</a>
-                  <a className='footer_link' href='/help'>Contact Us</a>
-                  <a className='footer_link' href='/terms-of-service'>Terms of Service</a>
-                  <a className='footer_link' href='/privacy-policy'>Privacy Policy</a>
-                  <a className='footer_link' href='/cookie-policy'>Cookie Policy</a>
+                  <a className='footer_link' href='/'>Home </a>
+                  <a className='footer_link' href='/help'>Contact Us </a>
+                  <a className='footer_link' href='/terms-of-service'>Terms of Service </a>
+                  <a className='footer_link' href='/privacy-policy'>Privacy Policy </a>
+                  <a className='footer_link' href='/cookie-policy'>Cookie Policy </a>
                   </Box>  
                   
                 {/* column 2 */}
                   <Box className="column">
                   <h4> Inside Thrifty</h4>
-                  <a className='footer_link' href='/about'>About us</a>
-                  <a className='footer_link' href='/testing'>something1</a>
-                  <a className='footer_link' href='/testing'>something2</a>
-                  <a className='footer_link' href='/testing'>something3</a>
-                  <a className='footer_link' href='/testing'>something4</a>
+                  <a className='footer_link' href='/about'>About us </a>
+                  <a className='footer_link' href='/testing'>something1 </a>
+                  <a className='footer_link' href='/testing'>something2 </a>
+                  <a className='footer_link' href='/testing'>something3 </a>
+                  <a className='footer_link' href='/testing'>something4 </a>
 
                   </Box>
 
