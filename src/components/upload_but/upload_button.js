@@ -67,6 +67,11 @@ export const UPLOAD_BUTTON = () => {
         }catch(e){
             console.log(e)
         }
+
+    }
+
+    const receiveData = async() => {
+        
     }
 
     const getAllData = async() => {

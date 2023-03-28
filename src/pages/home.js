@@ -8,7 +8,7 @@ import "./home.css"
 
 export const HomePage = () => {
 
-    document.title = 'Why not buy the world!'; // New title :)
+    document.title = 'Thrifty'; // New title :)
 
     class Item {
         constructor(price, desc, img_path, url) {
@@ -27,6 +27,8 @@ export const HomePage = () => {
     const it5 = new Item("19923.00", "This this an example item", "images/a5.jpg", "https://www.google.com");
     const it6 = new Item("82.00", "This this an example item", "images/a6.jpg", "https://www.google.com");
     const it7 = new Item("0", "This this an example item", "images/a7.jpg", "https://www.google.com");
+
+    const today = [it1, it2, it3, it4, it5, it6, it7];
 
 
     const insert_image = (item_) => {
@@ -56,13 +58,9 @@ export const HomePage = () => {
                         {insert_text("Highlight", "https://www.google.com")}
                         {/* images for the block */}
                         <Box className='img-row'>
-                            <>{insert_image(it1)}</>
-                            <>{insert_image(it6)}</>
-                            <>{insert_image(it2)}</>
-                            <>{insert_image(it3)}</>
-                            <>{insert_image(it4)}</>
-                            {/* <>{insert_image(it5)}</>
-                            <>{insert_image(it7)}</> */}
+                            {today.map((i) => (
+                                <>{insert_image(i)}</>
+                            ))}
                         </Box>
                     </Box>
                 </Box>

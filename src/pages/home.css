@@ -17,9 +17,8 @@
 .main_div {
     display: block;
     margin-top: 50px;
-    margin-left: 15vw;
-    margin-right: 15vw;
-    width: 70vw;
+    margin-left: 200px;
+    margin-right: 200px;
     overflow: hidden;
     justify-content: space-between;
 }
