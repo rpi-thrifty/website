@@ -1,23 +1,24 @@
 import React, {useState, useEffect} from "react";
+import { Typography } from "@mui/material";
 import Card from './item_card';
 
 // card width 215
-const Render_Card = ( {cards, containerWidth} ) => {
-    const [numCardsToRender, setNumCardsToRender] = useState(cards.length);
+const RenderCard = ( {cards, containerWidth} ) => {
+    const [nRender, setnRender] = useState(cards.length);
     const cardWidth = 215;
 
     useEffect(() => {
-        const numCardsThatFit = Math.floor(containerWidth / cardWidth);
-        if (numCardsThatFit < cards.length) {
-            setNumCardsToRender(numCardsThatFit);
+        const nFit = Math.floor(containerWidth / cardWidth);
+        if (nFit < cards.length && nFit != 0) {
+            setnRender(nFit);
         }
-    }, [cardWidth, cards.length, containerWidth]);
+    }, [containerWidth]);
 
-    const renderedCards = cards.slice(0, numCardsToRender).map((card, index) => (
-        Card(card)
+    const renderedCards = cards.slice(0, nRender).map( (card, index) => (
+        <Card content={card}/>
     ));
 
-    return renderedCards;
-};
+    return renderedCards
+}
 
-export default Render_Card;
+export default RenderCard;

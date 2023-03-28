@@ -1,12 +1,12 @@
 import React from 'react';
 import { Header } from "../components/header/header";
 import Footer from '../components/footer/footer';
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { UPLOAD_BUTTON } from "../components/upload_but/upload_button";
-import { Card } from "../components/items/item_card";
 import { Banner } from '../components/banner/banner';
 import "./home.css"
 import Render_Card from '../components/items/render_card';
+import Row from '../components/items/item_row';
 
 export const HomePage = () => {
 
@@ -51,40 +51,13 @@ export const HomePage = () => {
             <UPLOAD_BUTTON/>
             <Box className="main_div">
                 <Box className="block">
-                    <Box className='row' id='row1'>
-                        {insert_text("Highlight", "https://www.google.com")}
-                        {/* images for the block */}
-                        <Box className='img-row'>
-                            <Render_Card cards={today} containerWidth={document.getElementById("row1").offsetWidth}/>
-                        </Box>
-                    </Box>
+                    {insert_text("Highlight", "https://www.google.com")}
+                    <Row cards={today} id={"block1"}/>
                 </Box>
                 
-                
-                {/* blocks 2 */}
                 <Box className="block">
-                    <Box className='row'>
-                        {/* title of the block */}
-                        {insert_text("discounted", "https://www.google.com")}
-                        {/* images for the block */}
-                        <Box className='img-row'>
-                            <>{Card(it3)}</>
-                            <>{Card(it4)}</>
-                        </Box>
-                    </Box>
-                    
-                </Box>
-                
-                {/* blocks 2 */}
-                <Box className="block">
-                    <Box className="row">
-                        {/* title of the block */}
-                        {insert_text("miscellaneous", "https://www.google.com")}
-                        {/* images for the block */}
-                        <Box className="img-row">
-                            <>{Card(it7)}</>
-                        </Box>
-                    </Box>
+                    {insert_text("Split", "https://www.google.com")}
+                    <Row cards={today} id={"block2"}/>
                 </Box>
                 
             </Box>
