@@ -53,16 +53,17 @@ const Footer = () =>
                   </Box>   
 
 
-            <Box className="column"> {/*newsletter signup */}
-                <h4>Join our discord</h4>
-                <input type="email" placeholder="Enter your discord ID" id="footer-email"></input>
-                <input type="submit" value="Sign up" id="footer-email-button"></input>
-                <p>
-                  <GoogleIcon></GoogleIcon> <InstagramIcon></InstagramIcon> <FacebookIcon></FacebookIcon> <TwitterIcon> </TwitterIcon> <GitHubIcon></GitHubIcon>
-                </p>
-            </Box>
+                  <Box className="column"> {/*newsletter signup */}
+                      <h4>Social Media</h4>
+                      <p>
+                        <GoogleIcon></GoogleIcon> <InstagramIcon></InstagramIcon> <FacebookIcon></FacebookIcon> <TwitterIcon> </TwitterIcon> <GitHubIcon></GitHubIcon>
+                      </p>
+                  </Box>
         </Box>  
 
+        <Box className="bottom-part">
+          <p>Thrifty &copy; An RCOS project</p>
+        </Box>
 
  
 
