@@ -23,24 +23,13 @@ export const Header = () => {
                 <a href='/' className='header-logo'>
                     <img src={process.env.PUBLIC_URL + 'images/logo_transparent.png'} className="header-logo the-logo" title='Home_page' alt=""/>
                 </a>
-            </Box>
-
-            {/* middle */}
-            <Box className='group header-text'>
-                <a className='header_link' href='/about'>About</a>
-                <a className='header_link' href='#' onMouseOver={handleClick}>Categories</a>
-                <Menu
-                    anchorEl={anchorEl}
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                    MenuListProps={{ style: { maxHeight: '50vh' } }}
-                >
-                    <MenuItem onClick={handleClose}>Category 1</MenuItem>
-                    <MenuItem onClick={handleClose}>Category 2</MenuItem>
-                    <MenuItem onClick={handleClose}>Category 3</MenuItem>
-                </Menu>
-                <a className='header_link' href='https://github.com/rpi-thrifty'>Github</a>
-                <a className='header_link' href='https://discord.gg/PFqRbcPq'>Discord</a>
+                <Box className='header-text'>
+                    <a className='header_link' href='/about'>About</a>
+                    <a className='header_link' href=''>Categories</a>
+                    <a className='header_link' href='https://github.com/rpi-thrifty'>Github</a>
+                    <a className='header_link' href='https://discord.gg/PFqRbcPq'>Discord</a>
+                </Box>
+                
             </Box>
 
             {/* right */}
