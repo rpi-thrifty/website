@@ -22,7 +22,7 @@
 .column {
   display: flex;
   flex-direction: column;
-  width: 12.5vw;
+  width: 200px;
   font-family: Oswald;
   font-size: 18px;
   justify-content: left;
