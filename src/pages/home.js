@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header } from "../components/header/header";
+import Footer from '../components/footer/footer';
 import { Box, Typography } from "@mui/material";
 import { UPLOAD_BUTTON } from "../components/upload_but/upload_button";
 import { Card } from "../components/items/item_card";
@@ -35,8 +36,8 @@ export const HomePage = () => {
 
     const insert_text = (title, urlToAll) => {
         return (
-            <Box sx={{display: "flex", justifyContent: "space-between"}}>
-                <Typography sx={{fontSize: "25px"}} textTransform={"uppercase"}>{title}</Typography>
+            <Box className='title-line'>
+                <text className='title'>{title}</text>
                 <a className="link see_all" href={urlToAll}>See all</a>
             </Box>
         )
@@ -53,7 +54,7 @@ export const HomePage = () => {
             <Box className="main_div">
                 <Box className="block">
                     <Box className='row'>
-                        {insert_text("today's picks", "https://www.google.com")}
+                        {insert_text("Highlight", "https://www.google.com")}
                         {/* images for the block */}
                         <Box className='img-row'>
                             <>{insert_image(it1)}</>
@@ -64,7 +65,6 @@ export const HomePage = () => {
                             {/* <>{insert_image(it5)}</>
                             <>{insert_image(it7)}</> */}
                         </Box>
-                        <hr/>
                     </Box>
                 </Box>
                 
@@ -79,7 +79,6 @@ export const HomePage = () => {
                             <>{insert_image(it3)}</>
                             <>{insert_image(it4)}</>
                         </Box>
-                        <hr/>
                     </Box>
                     
                 </Box>
@@ -95,8 +94,9 @@ export const HomePage = () => {
                         </Box>
                     </Box>
                 </Box>
-                {/* add footer here */}
-            </Box>  
+                
+            </Box>
+            <Footer/>  
         </Box>
     )
 };
