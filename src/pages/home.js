@@ -1,10 +1,12 @@
 import React from 'react';
 import { Header } from "../components/header/header";
-import { Box } from "@mui/material";
+import Footer from '../components/footer/footer';
+import { Box, Typography } from "@mui/material";
 import { UPLOAD_BUTTON } from "../components/upload_but/upload_button";
 import { Card } from "../components/items/item_card";
 import { Banner } from '../components/banner/banner';
 import "./home.css"
+import Render_Card from '../components/items/render_card';
 
 export const HomePage = () => {
 
@@ -30,11 +32,6 @@ export const HomePage = () => {
 
     const today = [it1, it2, it3, it4, it5, it6, it7];
 
-
-    const insert_image = (item_) => {
-        return Card(item_)
-    }
-
     const insert_text = (title, urlToAll) => {
         return (
             <Box className='title-line'>
@@ -54,13 +51,11 @@ export const HomePage = () => {
             <UPLOAD_BUTTON/>
             <Box className="main_div">
                 <Box className="block">
-                    <Box className='row'>
+                    <Box className='row' id='row1'>
                         {insert_text("Highlight", "https://www.google.com")}
                         {/* images for the block */}
                         <Box className='img-row'>
-                            {today.map((i) => (
-                                <>{insert_image(i)}</>
-                            ))}
+                            <Render_Card cards={today} containerWidth={document.getElementById("row1").offsetWidth}/>
                         </Box>
                     </Box>
                 </Box>
@@ -73,8 +68,8 @@ export const HomePage = () => {
                         {insert_text("discounted", "https://www.google.com")}
                         {/* images for the block */}
                         <Box className='img-row'>
-                            <>{insert_image(it3)}</>
-                            <>{insert_image(it4)}</>
+                            <>{Card(it3)}</>
+                            <>{Card(it4)}</>
                         </Box>
                     </Box>
                     
@@ -87,12 +82,13 @@ export const HomePage = () => {
                         {insert_text("miscellaneous", "https://www.google.com")}
                         {/* images for the block */}
                         <Box className="img-row">
-                            <>{insert_image(it7)}</>
+                            <>{Card(it7)}</>
                         </Box>
                     </Box>
                 </Box>
-                {/* add footer here */}
-            </Box>  
+                
+            </Box>
+            <Footer/>  
         </Box>
     )
 };

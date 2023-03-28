@@ -5,6 +5,8 @@
     border-radius: 10px;
     margin: 10px 5px 10px 5px;
     background-color: #f5f1ed;
+    width: 215px;
+    height: 300px;
 }
 
 .item {
@@ -17,7 +19,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 215px;
     height: 240px;
 }
 
@@ -30,7 +31,6 @@
 }
 
 .img-title {
-
     font-size: 20px;
     font-family: Chivo;
     letter-spacing: 1px;
