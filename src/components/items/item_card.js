@@ -22,8 +22,8 @@ const Card = ( {content} ) => {
                         }
                     </Box>
                     {/* description here */}
-                    <Box className='img-desc'>
-                        <text>{content.desc}</text>
+                    <Box className='desc-box'>
+                        <p className='desc-text' title={content.desc}>{content.desc}</p>
                     </Box>
                 </Box>
             </Box>

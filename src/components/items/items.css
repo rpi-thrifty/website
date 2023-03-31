@@ -6,7 +6,7 @@
     margin: 10px 5px 10px 5px;
     background-color: #f5f1ed;
     width: 215px;
-    height: 300px;
+    height: 350px;
 }
 
 .item {
@@ -23,11 +23,9 @@
 }
 
 .img-text-block {
-    display: block;
     width: 200px;
     height: 70px;
     margin: 10px;
-    overflow: hidden;
 }
 
 .img-title {
@@ -36,11 +34,19 @@
     letter-spacing: 1px;
 }
 
-.img-desc {
+.desc-box {
+    width: 200px;
+    height: 60px;
     font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    white-space: nowrap;
+    font-family: Chivo;
     overflow: hidden;
-    text-overflow: ellipsis;
-    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.desc-text {
+    display: -webkit-box;
+    max-width: 200px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
