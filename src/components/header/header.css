@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 
 .bar{
     display: flex;
@@ -29,19 +31,24 @@
 
 .header-text{
     font-size: 15px;
+    font-family: Oswald;
     text-transform: capitalize;
-    font-family: sans-serif;
+    margin-right: 15px;
 }
 
 .header_link {
     color: black;
     text-decoration: none;
     background-color: none;
-    margin-left: 2vw;
-    margin-right: 2vw;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 5px;
+    border-radius: 6px;
+    box-shadow: inset 1 0 0 0 #E4D6D4;
+    transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out; 
 }
 
 .header_link:hover {
-    color: #C8AFAB;
-    transition: ease-in 0.1s;
+    box-shadow: inset 100px 0 0 0 #E4D6D4;
+    color: black;
 }
