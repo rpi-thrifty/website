@@ -32,6 +32,8 @@ export const HomePage = () => {
 
     const today = [it1, it2, it3, it4, it5, it6, it7];
 
+    const furniture = [];
+
     const insert_text = (title, urlToAll) => {
         return (
             <Box className='title-line'>
@@ -58,6 +60,11 @@ export const HomePage = () => {
                 <Box className="block">
                     {insert_text("Split", "https://www.google.com")}
                     <Row cards={today} id={"block2"}/>
+                </Box>
+
+                <Box className="block">
+                    {insert_text("Furniture", "https://www.google.com")}
+                    <Row cards={furniture} id={"block3"}/>
                 </Box>
                 
             </Box>
