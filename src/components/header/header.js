@@ -5,6 +5,7 @@ import LoginIcon from '@mui/icons-material/Login';
 
 import "./header.css";
 
+
 export const Header = () => {
     const [anchorEl, setAnchorEl] = useState(null);
 
@@ -16,6 +17,7 @@ export const Header = () => {
         setAnchorEl(null);
     };
 
+
     return(
         <Box className="bar">
             {/* left */}
@@ -25,7 +27,15 @@ export const Header = () => {
                 </a>
                 <Box className='header-text'>
                     <a className='header_link' href='/about'>About</a>
-                    <a className='header_link' href=''>Categories</a>
+                    <a className="dropdown">
+                        <button className="dropbtn">Categories</button>
+                        <div className="dropdown-content">
+                            <a href="#">Electronics</a>
+                            <a href="#">Clothing</a>
+                            <a href="#">Furniture</a>
+                            <a href="#">Miscellaneous</a>
+                        </div>
+                    </a>
                     <a className='header_link' href='https://github.com/rpi-thrifty'>Github</a>
                     <a className='header_link' href='https://discord.gg/PFqRbcPq'>Discord</a>
                 </Box>
