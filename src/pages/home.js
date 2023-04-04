@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from "../components/header/header";
 import Footer from '../components/footer/footer';
 import { Box } from "@mui/material";
 import { UPLOAD_BUTTON } from "../components/upload_but/upload_button";
 import { Banner } from '../components/banner/banner';
 import "./home.css"
-import Render_Card from '../components/items/render_card';
 import Row from '../components/items/item_row';
+import axios from 'axios';
 
 export const HomePage = () => {
 
@@ -32,7 +32,19 @@ export const HomePage = () => {
 
     const today = [it1, it2, it3, it4, it5, it6, it7];
 
-    const furniture = [];
+    const [furniture, setFurniture] = useState([[]])
+
+    useEffect(() => {
+        async function fetchItems() {
+            try {
+                const response = await axios.get('/api/category');
+                setFurniture(response.data);
+            } catch(error) {
+                console.log(error);
+            }
+        }
+        fetchItems();
+    }, [])
 
     const insert_text = (title, urlToAll) => {
         return (
@@ -64,7 +76,7 @@ export const HomePage = () => {
 
                 <Box className="block">
                     {insert_text("Furniture", "https://www.google.com")}
-                    <Row cards={furniture} id={"block3"}/>
+                    
                 </Box>
                 
             </Box>

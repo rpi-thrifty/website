@@ -6,7 +6,7 @@ export const Banner = () => {
     return (
         <Box className="banner-main">
             <a href="www.google.com">
-                <img src="thrifty_logos/NEW_Thrifty_Logo.png" className="banner-img"></img>
+                <img src="thrifty_logos/NEW_Thrifty_Logo.png" alt="banner of Thrifty" className="banner-img"></img>
             </a>
         </Box>
     )

@@ -54,8 +54,6 @@ export const UPLOAD_BUTTON = () => {
             "description": description
         }
 
-        console.log(data);
-
         return data;
     }
 
@@ -70,10 +68,6 @@ export const UPLOAD_BUTTON = () => {
 
     }
 
-    const receiveData = async() => {
-        
-    }
-
     const getAllData = async() => {
         userInfo = getUserInfo();
         itemInfo = getItemInfo();
@@ -83,8 +77,6 @@ export const UPLOAD_BUTTON = () => {
 
         setSubmitted(true);
     }
-
-    
 
     const changeCategory = (e) => {
         setCategory(e.target.value);

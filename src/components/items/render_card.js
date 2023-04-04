@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import { Typography } from "@mui/material";
 import Card from './item_card';
 
 // card width 215
@@ -9,7 +8,7 @@ const RenderCard = ( {cards, containerWidth} ) => {
 
     useEffect(() => {
         const nFit = Math.floor(containerWidth / cardWidth);
-        if (nFit < cards.length && nFit != 0) {
+        if (nFit < cards.length && nFit !== 0) {
             setnRender(nFit);
         }
     }, [containerWidth]);
