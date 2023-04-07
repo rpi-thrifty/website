@@ -3,7 +3,9 @@ import { Box, Menu, MenuItem } from '@mui/material';
 import { useState } from 'react';
 import LoginIcon from '@mui/icons-material/Login';
 
+
 import "./header.css";
+import {UPLOAD_BUTTON} from "../upload_but/upload_button";
 
 export const Header = () => {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -35,7 +37,7 @@ export const Header = () => {
             {/* right */}
             <Box className='group' marginRight={"20vw"}>
                 <Box className="header-text">
-                    <LoginIcon/>
+                    <a className='header_link' href='/submit'>Upload</a>
                 </Box>
             </Box>
         </Box>

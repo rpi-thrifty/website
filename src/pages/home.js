@@ -50,7 +50,6 @@ export const HomePage = () => {
             <Box className='banner_div'>
                 <Banner/>
             </Box>
-            <UPLOAD_BUTTON/>
             <Box className="main_div">
                 <Box className="block">
                     {insert_text("Highlight", "https://www.google.com")}
@@ -66,7 +65,7 @@ export const HomePage = () => {
                     {insert_text("Furniture", "https://www.google.com")}
                     <Row cards={furniture} id={"block3"}/>
                 </Box>
-                
+                <UPLOAD_BUTTON/>
             </Box>
             <Footer/>  
         </Box>

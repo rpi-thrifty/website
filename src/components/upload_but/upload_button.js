@@ -8,6 +8,7 @@ import SellOutlinedIcon from '@mui/icons-material/SellOutlined';
 import CloseFullscreenOutlinedIcon from '@mui/icons-material/CloseFullscreenOutlined';
 import axios from 'axios';
 
+
 let userInfo = [];
 let itemInfo = [];
 

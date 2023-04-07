@@ -1,19 +1,20 @@
 
+.container {
+    display: flex;
+    justify-content: flex-end;
+}
 
 .but {
-    height: 8vh;
-    width: 13vw;
+    height: 1vh;
+    width: 2vw;
     transition: background-color 1s ease;
     background-color: #91655E;
     border-radius: 15vw;
-    position: fixed;
-    bottom: 3.5vh;
-    right: 3.5vw;
-    z-index: 1;
     text-transform: uppercase;
     font-size: 4vh;
     font-family: sans-serif;
 }
+
 
 .but:hover {
     transition: background-color 0.5s ease;
@@ -28,6 +29,7 @@
     color: white;
     font-weight: bold;
     text-decoration: none;
+
 }
 
 .but_inside {
@@ -54,7 +56,6 @@
 .hrefnohighlight {
     color: white;
     text-decoration: none;
-    background-color: none;
 }
 
 .submit_box {
