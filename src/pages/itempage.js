@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Header } from "../components/header/header";
-import { Button, Box, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { ImageSlider } from "../components/image_slider/ImageSlider"
 import "./itempage.css"
 
@@ -39,19 +39,6 @@ export const ItemPage = () => {
             </Box>
         )
     }
-    
-    class Item {
-        constructor(img_path, url) {
-            this.img_path = img_path;
-            this.url = url;
-        }
-    }
-
-    // // Temp Item Definition
-    // const it1 = new Item("images/item1/item1_1.jpg", "/itempage");
-    // const it2 = new Item("images/item1/item1_2.jpg", "/itempage");
-    // const it3 = new Item("images/item1/item1_3.jpg", "/itempage");
-    // const it4 = new Item("images/item1/item1_4.jpg", "/itempage");
 
     const slides = [ 
         {url: "images/item1/item1_1.jpg", title: "item1_img1"},

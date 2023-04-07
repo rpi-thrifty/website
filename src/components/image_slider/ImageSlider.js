@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 export const ImageSlider = ({ slides }) => {
     const[currentIndex, setCurrentIndex] = useState(0);
