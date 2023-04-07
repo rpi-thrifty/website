@@ -9,7 +9,7 @@ export const ItemPage = () => {
     const insert_itemName = (text) => {
         return (
             <Box>
-                <Typography sx = {{wordBreak: "break-word", fontSize: "50px", fontWeight: "bold"}}> {text} </Typography>
+                <Typography sx = {{wordBreak: "break-word", fontSize: "50px", fontWeight: "bold", fontFamily: "Comfortaa"}}> {text} </Typography>
             </Box>
         )
     }
@@ -17,7 +17,7 @@ export const ItemPage = () => {
     const insert_itemPrice = (text) => {
         return (
             <Box>
-                <Typography sx = {{wordBreak: "break-word", fontSize: "30px", fontWeight: "bold", fontStyle: "italic"}}> {text} </Typography>
+                <Typography sx = {{wordBreak: "break-word", fontSize: "30px", fontWeight: "bold", fontStyle: "italic", fontFamily: "Comfortaa"}}> {text} </Typography>
             </Box>
         )
     }
@@ -25,8 +25,8 @@ export const ItemPage = () => {
     const insert_itemDesc = (text) => {
         return (
             <Box sx = {{display: "block"}}>
-                <Typography sx = {{wordBreak: "break-word", fontSize: "20px", fontWeight: "bold"}}> About This Item </Typography>
-                <Typography sx = {{wordBreak: "break-word", fontSize: "20px"}}> {text} </Typography>
+                <Typography sx = {{wordBreak: "break-word", fontSize: "20px", fontWeight: "bold", fontFamily: "Comfortaa"}}> About This Item </Typography>
+                <Typography sx = {{wordBreak: "break-word", fontSize: "15px"}}> {text} </Typography>
             </Box>
         )
     }
@@ -34,8 +34,8 @@ export const ItemPage = () => {
     const insert_itemContact = (text) => {
         return (
             <Box sx = {{display: "block"}}>
-                <Typography sx = {{wordBreak: "break-word", fontSize: "20px", fontWeight: "bold"}}> Seller Contact Info </Typography>
-                <Typography sx = {{wordBreak: "break-word", fontSize: "20px"}}> {text} </Typography>
+                <Typography sx = {{wordBreak: "break-word", fontSize: "20px", fontWeight: "bold", fontFamily: "Comfortaa"}}> Seller Contact Info </Typography>
+                <Typography sx = {{wordBreak: "break-word", fontSize: "15px"}}> {text} </Typography>
             </Box>
         )
     }
@@ -48,7 +48,7 @@ export const ItemPage = () => {
     ]
 
     return(
-        <Box sx = {{marginLeft: "4vh", marginTop: "14vh"}}>
+        <Box sx = {{ marginTop: "9vh"}}>
             <Header/>
 
             <Box className = "left">
