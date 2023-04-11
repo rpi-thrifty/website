@@ -2,7 +2,10 @@ import React from 'react';
 import { Header } from "../components/header/header";
 import { Box, Button } from "@mui/material"
 import "./about.css"
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
+export const AboutPage = () => {
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 document.addEventListener("DOMContentLoaded", function(){
     observe('.description');
@@ -96,74 +99,12 @@ function hackereffectslow(selector){
 }
 };
 
-export const AboutPage = () => {
     return(
-        <Box sx={{marginLeft:"2.55%"}}> 
+        <Box sx={{marginLeft:"2.5%"}}>
             <Header/>
-            <div class = "row " id = "sell-section">
-                <div class = "sell-section-left">
-                    <img class="sell-image-left" src="/images/sell.jpg" alt="Sell"/>
-                </div>
-                <div class = "sell-section-right-wrapper">
-                    <div class = "sell-section-right">
-                        <h2 id="sell text"> Sell an Item! </h2>
-                        <h4 data-value='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis elit et vehicula ullamcorper. Nulla id metus scelerisque, vestibulum sem eu, feugiat ante.'class='selltext'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis elit et vehicula ullamcorper. Nulla id metus scelerisque, vestibulum sem eu, feugiat ante.</h4>
-                        <Button class="sell-button">Sell</Button>
-                    </div>
-                </div>
-            </div>
-            <div class = "row" id = "buy-section">
-                <div class="buy-section-left-wrapper">
-                    <div class = "buy-section-left">
-                        <h2 id="buy text"> Buy an Item! </h2>
-                        <h4 data-value='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis elit et vehicula ullamcorper. Nulla id metus scelerisque, vestibulum sem eu, feugiat ante.'class='buytext'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis elit et vehicula ullamcorper. Nulla id metus scelerisque, vestibulum sem eu, feugiat ante.</h4>
-                        <Button class="buy-button">Buy</Button>
-                    </div>
-                </div>
-                <div class ="buy-section-right">
-                    <img class="buy-image-right" src="/images/buy.jpg" alt="Buy"/>
-                </div>
-            </div>
-            <div class = "row" id = "project-description">
-                <div class = "project-wrapper">
-                <h4 data-value = 'Welcome to Thrifty! We are an ecommerce website created to facilitate the many transactions made between RPI students annually. Our vision this year is to create a platform where students can post miscellaneous items and find interested buyers. This project creates a solution for graduating students who have extra school supplies and little storage space as well as freshmen with a tight budget. This allows freshmen to save money by buying second hand products at a discounted price, sort of like a permanent online garage sale.' class = 'description'>
-                    Welcome to Thrifty! We are an ecommerce website created 
-                    to facilitate the many transactions made between RPI students 
-                    annually. Our vision this year is to create a 
-                    platform where students can post miscellaneous 
-                    items and find interested buyers. This project 
-                    creates a solution for graduating 
-                    students who have extra school supplies and little storage space
-                    as well as freshmen with a tight budget. This allows freshmen to 
-                    save money by buying second hand products at a discounted price, 
-                    sort of like a permanent online garage sale.
-                </h4>
-                </div>
-            </div>
-            <div class = "row" id = "about-section">
-                <div id = "team-members-title-box">
-                    <h1 id='team'>Meet The Team</h1>
-                </div>
-                <div id = "team-members">
-                    <h5 data-value = 'Alex Rougebec' class = 'a'>AAAA AAAAAAAA</h5>
-                    <h5 data-value = 'Jiawei Wu' class = 'b'> AAAAAA AA</h5>
-                    <h5 data-value = 'Nikhil Belgaonkar' class = 'c'>AAAAAA AAAAAAAAAA</h5>
-                    <h5 data-value = 'Jericho Dizon' class = 'd'>AAAAAAA AAAAA</h5>
-                    <h5 data-value = 'Andrew Hua' class = 'e'>AAAAAA AAA</h5>
-                </div>
+            <div>
+                Us.
             </div>
         </Box>
-        
     )
 }
-
-
-
-/*
-circle image
-keep aspect ratio
-enlarge image to half the page
-make 3-4 lines of custom text with a title
-make background white
-
-*/
