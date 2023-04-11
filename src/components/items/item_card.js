@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import "./items.css"
 
 export function Card(props) {
@@ -13,7 +13,7 @@ export function Card(props) {
                 
                 {/* text */}
                 <Box className='img-text-block'>
-                    {/* price here */}
+                    {/* title here */}
                     <Box>
                         {
                             <text className='img-title'>

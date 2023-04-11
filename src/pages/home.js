@@ -36,8 +36,8 @@ export const HomePage = () => {
 
     const insert_text = (title, urlToAll) => {
         return (
-            <Box className='title-line'>
-                <text className='title'>{title}</text>
+            <Box sx={{display: "flex", justifyContent: "space-between"}}>
+                <Typography sx={{fontSize: "25px"}} textTransform={"uppercase"}>{title}</Typography>
                 <a className="link see_all" href={urlToAll}>See all</a>
             </Box>
         )
