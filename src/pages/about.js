@@ -51,7 +51,7 @@ function hackereffectfast(selector){
             const interval = setInterval(() => {
                 target.innerText = target.innerText.split("")
                 .map((letter, index) => {
-                    if(target.dataset.value[index] == " "){
+                    if(target.dataset.value[index] === " "){
                         return target.dataset.value[index];
                     }
                     if(index < iterations){ 
@@ -79,7 +79,7 @@ function hackereffectslow(selector){
         const interval = setInterval(() => {
             target.innerText = target.innerText.split("")
             .map((letter, index) => {
-                if(target.dataset.value[index] == " "){
+                if(target.dataset.value[index] === " "){
                     return target.dataset.value[index];
                 }
                 if(index < iterations){ 
