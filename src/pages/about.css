@@ -64,6 +64,7 @@ button {
     height: 30vh;
     box-shadow: 0 4px 8px 0 rgb(34, 60, 80, .16);
     background-color: white;
+    border-radius: 10%;
 }
 .sell-button {
     color: #FFFFF0;
@@ -97,7 +98,7 @@ button {
     text-align: center;
     box-shadow: 0 4px 8px 0 rgb(34, 60, 80, .16);
     background-color: white;
-
+    border-radius: 10%;
 }
 
 .buy-section-right {
@@ -109,7 +110,7 @@ button {
 }   
 
 .buy-image-right {
-    width: 50%;
+    width: 40%;
     height: 70%;
     aspect-ratio: auto;
     object-fit: cover;
@@ -150,7 +151,7 @@ button {
     margin-top: 50px;
     box-shadow: 0 4px 8px 0 rgb(34, 60, 80, .16);
     background-color: white;
-
+    border-radius: 5%;
 }
 
 .sell-section-right:hover{
@@ -178,6 +179,8 @@ button {
     flex-direction: column;
     justify-content: top;
     background-color: white;
+    border-radius: 1%;
+    margin: 10px;
 }
 
 #team-members {
@@ -188,6 +191,7 @@ button {
     flex-direction: row;
     justify-content: space-evenly;
     background-color: white;
+    border-radius: 5%;
 }
 
 .a, .b, .c, .d, .e{
