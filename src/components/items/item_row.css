@@ -1,0 +1,4 @@
+.img-row {
+    display: flex;
+    flex-wrap: row;
+}
