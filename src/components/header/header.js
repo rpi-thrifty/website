@@ -1,25 +1,14 @@
 import * as React from 'react';
-import { Box, Menu, MenuItem } from '@mui/material';
-import { useState } from 'react';
-import LoginIcon from '@mui/icons-material/Login';
+import { Box } from '@mui/material';
 
 import "./header.css";
 
 export const Header = () => {
-    const [anchorEl, setAnchorEl] = useState(null);
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    const handleSearch = (event) => { { /* redirects to another page based on user input */}
-        event.preventDefault(); { /* ensures no return to current page */}
+    const handleSearch = (event) => { 
+        event.preventDefault();
         const searchInput = event.target.elements.searchInput.value;
-        window.location.href = `/search/${searchInput}`; { /* search output */}
+        window.location.href = `/search/${searchInput}`;
     }
 
     return(
