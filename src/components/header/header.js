@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { Box } from '@mui/system';
 import LoginIcon from '@mui/icons-material/Login';
 
@@ -6,7 +7,6 @@ import "./header.css";
 
 
 export const Header = () => {
-<<<<<<< HEAD
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleClick = (event) => {
@@ -18,8 +18,6 @@ export const Header = () => {
     };
 
 
-=======
->>>>>>> parent of d38be9d (fixing merge conflicts)
     return(
         <Box className="bar">
             {/* left */}
@@ -28,7 +26,6 @@ export const Header = () => {
                     <img src={process.env.PUBLIC_URL + 'thrifty_logos/NEW_Thrifty_Mini_Logo.png'} className="header-logo the-logo" title='Home_page' alt=""/>
                 </a>
                 <Box className='header-text'>
-<<<<<<< HEAD
                     <a className='header_link' href='/about'>About</a>
                     <a className="dropdown">
                         <button className="dropbtn">Categories</button>
@@ -39,10 +36,6 @@ export const Header = () => {
                             <a href="#">Miscellaneous</a>
                         </div>
                     </a>
-=======
-                    <a className='header_link' href='/about'>About ▾</a>
-                    <a className='header_link' href=''>Categories ▾</a>
->>>>>>> parent of d38be9d (fixing merge conflicts)
                     <a className='header_link' href='https://github.com/rpi-thrifty'>Github</a>
                     <a className='header_link' href='https://discord.gg/PFqRbcPq'>Discord</a>
                 </Box>

@@ -71,7 +71,7 @@ export const ItemPage = () => {
     return(
         <Box className='everything'>
 
-            <Box> <SIDEBAR handleShift = {handleShift}/> </Box>
+            {/* <Box> <SIDEBAR handleShift = {handleShift}/> </Box> */}
             
             <Box className="main_div" sx = {{marginLeft: leftMargin, width: mainWidth}}>
                 <Header/>
