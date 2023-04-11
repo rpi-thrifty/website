@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography, Link } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkIcon from '@mui/icons-material/Link';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GoogleIcon from '@mui/icons-material/Google';
 import InstagramIcon from '@mui/icons-material/Instagram';
