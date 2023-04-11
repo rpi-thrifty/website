@@ -1,25 +1,24 @@
+
 .itemPageBody {
   overflow: hidden;
 }
 
 .left {
   float: left;
-  width: 37vw;
-  height: 79vh;
+  width: 40vw;
+  height: 89vh;
   box-sizing: border-box;
-  padding-right: 0.5em;
-  
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
+  padding-right: 1em;
+  padding-left: 1em;
 }
 
 .right {
   float: left;
-  width: 58.65vw;
-  height: 79vh;
+  width: 59vw;
+  height: 89vh;
   box-sizing: border-box;
   overflow-y: auto;
+  padding-right: 0.5em;
 }
 
 .preview_img {
