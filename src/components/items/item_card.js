@@ -1,29 +1,29 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 import "./items.css"
 
-export function Card(props) {
+const Card = ( {content} ) => {
     return (
-        <a href={props.url} className="link clickable-div">
+        <a href={content.url} className="link clickable-div">
             <Box>
                 {/* image */}
                 <Box className='img-block'>
-                    <img className="item" src={props.img_path}/>
+                    <img className="item" src={content.img_path} alt={content.url}/>
                 </Box>
                 
                 {/* text */}
                 <Box className='img-text-block'>
-                    {/* title here */}
+                    {/* price here */}
                     <Box>
                         {
                             <text className='img-title'>
-                                {props.price == "0" ? <>Free</> :<>${props.price}</>}
+                                {content.price === "0" ? <>Free</> :<>${content.price}</>}
                             </text>
                         }
                     </Box>
                     {/* description here */}
-                    <Box className='img-desc'>
-                        <text>{props.desc}</text>
+                    <Box className='desc-box'>
+                        <p className='desc-text' title={content.desc}>{content.desc}</p>
                     </Box>
                 </Box>
             </Box>
@@ -31,4 +31,4 @@ export function Card(props) {
     )
 }
 
-export default Card
+export default Card;

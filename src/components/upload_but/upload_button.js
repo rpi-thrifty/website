@@ -41,7 +41,6 @@ export const UPLOAD_BUTTON = () => {
     }
 
     const getItemInfo = () => {
-        const category = document.getElementById('item_category').value;
         const title = document.getElementById('item_title').value;
         const price = document.getElementById('item_price').value;
         const quantity = document.getElementById('item_quantity').value;
@@ -66,6 +65,7 @@ export const UPLOAD_BUTTON = () => {
         }catch(e){
             console.log(e)
         }
+
     }
 
     const getAllData = async() => {
@@ -77,8 +77,6 @@ export const UPLOAD_BUTTON = () => {
 
         setSubmitted(true);
     }
-
-    
 
     const changeCategory = (e) => {
         setCategory(e.target.value);
@@ -123,7 +121,6 @@ export const UPLOAD_BUTTON = () => {
                 label="required"
                 onChange={changeCategory}
                 value={category}
-                id="item_category"
                 required
                 helperText="Please select your category">
                     {/* loop to access values*/}

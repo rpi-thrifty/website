@@ -1,34 +1,27 @@
+
 .itemPageBody {
-    overflow: hidden;
+  overflow: hidden;
 }
 
-.main_div {
-    display: block;
-    justify-content: space-between;
-}
-  
 .left {
-    float: left;
-    width: 39%;
-    height: 100%;
-    box-sizing: border-box;
-    padding-right: 0.5em;
-    
-    display:flex;
-    flex-direction: row;
-    justify-content:center;
-    align-items:center;
+  float: left;
+  width: 40vw;
+  height: 89vh;
+  box-sizing: border-box;
+  padding-right: 1em;
+  padding-left: 1em;
 }
-  
+
 .right {
-    float: left;
-    width: 58.5%;
-    height: 560px;
-    box-sizing: border-box;
-    overflow-y: auto;
+  float: left;
+  width: 59vw;
+  height: 89vh;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding-right: 0.5em;
 }
 
 .preview_img {
-    max-width: 100%; /* or any custom size */
-    max-height: 561px;
+  max-width: 100%; /* or any custom size */
+  max-height: 79vh;
 }

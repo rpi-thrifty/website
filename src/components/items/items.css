@@ -5,6 +5,8 @@
     border-radius: 10px;
     margin: 10px 5px 10px 5px;
     background-color: #f5f1ed;
+    width: 215px;
+    height: 350px;
 }
 
 .item {
@@ -17,30 +19,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 215px;
     height: 240px;
 }
 
 .img-text-block {
-    display: block;
     width: 200px;
     height: 70px;
     margin: 10px;
-    overflow: hidden;
 }
 
 .img-title {
-    font-weight: bold;
     font-size: 20px;
     font-family: Chivo;
     letter-spacing: 1px;
 }
 
-.img-desc {
+.desc-box {
+    width: 200px;
+    height: 60px;
     font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    white-space: nowrap;
+    font-family: Chivo;
     overflow: hidden;
-    text-overflow: ellipsis;
-    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.desc-text {
+    display: -webkit-box;
+    max-width: 200px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
