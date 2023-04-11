@@ -74,6 +74,7 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    
 }
   
 .dropdown-content {
@@ -95,14 +96,18 @@
     -moz-box-shadow: 0 3px 6px #ECECEC;
     box-shadow: 0 3px 6px #ECECEC;
     background: white;
+    transition: background-color 0.5s ease;
+
 }
   
 .dropdown-content a:hover {
     background-color: #ddd;
+    
 }
   
 .dropdown:hover .dropdown-content {
     display: block;
+    transition: opacity 0.5s ease-in;
 }
   
 .dropdown:hover .dropbtn {
