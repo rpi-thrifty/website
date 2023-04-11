@@ -2,7 +2,10 @@ import React from 'react';
 import { Header } from "../components/header/header";
 import { Box, Button } from "@mui/material"
 import "./about.css"
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
+export const AboutPage = () => {
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 document.addEventListener("DOMContentLoaded", function(){
     observe('.description');
@@ -96,7 +99,6 @@ function hackereffectslow(selector){
 }
 };
 
-export const AboutPage = () => {
     return(
         <Box sx={{marginLeft:"2.55%"}}> 
             <Header/>
