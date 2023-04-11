@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+.row {
+    margin-bottom: 30px;
+}
+
 .outside_div {
     height: 100%;
 }
@@ -11,11 +17,23 @@
 .main_div {
     display: block;
     margin-top: 50px;
-    margin-left: 15vw;
-    margin-right: 15vw;
-    width: 70vw;
+    margin-left: 200px;
+    margin-right: 200px;
     overflow: hidden;
     justify-content: space-between;
+}
+
+.title-line {
+    display: flex;
+    justify-content: space-between;
+    font-family: Comfortaa;
+}
+
+.title {
+    font-family: Comfortaa;
+    font-size: 25px;
+    text-transform: capitalize;
+    letter-spacing: 0.25em;
 }
 
 .link {
@@ -36,7 +54,7 @@
 
 .block {
     display: block;
-    width: 97.5%;
+    margin-bottom: 30px;
 }
 
 .img-row {
