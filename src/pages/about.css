@@ -9,7 +9,12 @@
     justify-content: center;
     width:100%;
     height: 400px;
-    background-color: white;
+    background-image: url("/images/school.png");
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 button {
@@ -56,7 +61,7 @@ button {
     text-align: center;
     height: 30vh;
     box-shadow: 0 4px 8px 0 rgb(34, 60, 80, .16);
-
+    background-color: white;
 }
 .sell-button {
     color: #FFFFF0;
@@ -89,6 +94,8 @@ button {
     align-items: center;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgb(34, 60, 80, .16);
+    background-color: white;
+
 }
 
 .buy-section-right {
@@ -132,6 +139,7 @@ button {
 }
 
 .project-wrapper {
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -139,6 +147,7 @@ button {
     margin:100px;
     margin-top: 50px;
     box-shadow: 0 4px 8px 0 rgb(34, 60, 80, .16);
+    background-color: white;
 
 }
 
@@ -162,23 +171,25 @@ button {
 
 #team-members-title-box {
     width: 50vw; 
-    height: 350px;
+    height: 60px;
     display:flex;
     flex-direction: column;
     justify-content: top;
+    background-color: white;
 }
 
 #team-members {
-    font-family: 'Space_Mono', monospace;
-    width: 0vw;
-    height: 350px;
+    width: 90vw;
+    height: 150px;
     font-size: 3em;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    background-color: white;
 }
 
 .a, .b, .c, .d, .e{
+    font-family: 'Space_Mono', monospace;
     padding: 30px;
     margin: 0px;
     color: black;
