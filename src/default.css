@@ -1,0 +1,56 @@
+.search-form {
+    display: flex;
+    align-items: center;
+  }
+  
+.search-input {
+    padding: 5px;
+    font-size: 16px;
+    font-family: Chivo;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: ease-in 0.3s;
+    width: 100%;
+  }
+  
+.search-input:focus {
+    outline: black;
+    box-shadow: 0 0 0 2.5px black;
+    background-color: #E4D6D4;
+  }
+
+.title {
+    font-family: Chivo;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.subtitle {
+    font-family: Chivo;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.small {
+    font-family: Chivo;
+    font-size: 12px;
+}
+
+.default_but {
+    color: black;
+    text-decoration: none;
+    background-color: none;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 5px;
+    border-radius: 6px;
+    box-shadow: inset 1 0 0 0 #E4D6D4;
+    transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out; 
+}
+
+.default_but:hover {
+    box-shadow: inset 100px 0 0 0 #E4D6D4;
+    color: black;
+}

@@ -3,7 +3,7 @@
     display: flex;
     height: auto;
     justify-content: center;
-    margin-top: 4vh;
+    margin-top: 6vh;
     align-items: center;
     width: 100vw;
     
@@ -11,8 +11,8 @@
 
 .banner-img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-top: 2vh;
     width: 90vw;
     height: auto;
     background-color: #FFE7C7;
+    justify-content: center;
 }
