@@ -1,25 +1,14 @@
 import * as React from 'react';
-import { Box, Menu, MenuItem } from '@mui/material';
-import { useState } from 'react';
-import LoginIcon from '@mui/icons-material/Login';
+import { Box } from '@mui/material';
 
 import "./header.css";
 
 export const Header = () => {
-    const [anchorEl, setAnchorEl] = useState(null);
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    const handleSearch = (event) => { { /* redirects to another page based on user input */}
-        event.preventDefault(); { /* ensures no return to current page */}
+    const handleSearch = (event) => { 
+        event.preventDefault();
         const searchInput = event.target.elements.searchInput.value;
-        window.location.href = `/search/${searchInput}`; { /* search output */}
+        window.location.href = `/search/${searchInput}`;
     }
 
     return(
@@ -31,7 +20,15 @@ export const Header = () => {
                 </a>
                 <Box className='header-text'>
                     <a className='header_link' href='/about'>About</a>
-                    <a className='header_link' href=''>Categories</a>
+                    <a className="dropdown">
+                        <button className="dropbtn header_link">Categories</button>
+                        <div className="dropdown-content">
+                            <a href="/categories/electronics">Electronics</a>
+                            <a href="/categories/clothing">Clothing</a>
+                            <a href="/categories/furniture">Furniture</a>
+                            <a href="/categories/miscellaneous">Miscellaneous</a>
+                        </div>
+                    </a>
                     <a className='header_link' href='https://github.com/rpi-thrifty'>Github</a>
                     <a className='header_link' href='https://discord.gg/PFqRbcPq'>Discord</a>
                 </Box>
