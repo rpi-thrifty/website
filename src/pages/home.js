@@ -30,7 +30,7 @@ export const HomePage = () => {
     const it6 = new Item("82.00", "This this an example item", "images/a6.jpg", "https://www.google.com");
     const it7 = new Item("0", "This this an example item", "images/a7.jpg", "https://www.google.com");
 
-    const today = [it1, it2, it3, it4, it5, it6, it7];
+    const today = [it1, it2, it3, it4, it5, it6, it7, it6, it5];
 
     const [furniture, setFurniture] = useState([[]])
 
@@ -62,7 +62,7 @@ export const HomePage = () => {
             <Box className='banner_div'>
                 <Banner/>
             </Box>
-            <UPLOAD_BUTTON/>
+            {/* <UPLOAD_BUTTON/> */}
             <Box className="main_div">
                 <Box className="block">
                     {insert_text("Highlight", "https://www.google.com")}
