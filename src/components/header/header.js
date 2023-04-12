@@ -20,7 +20,15 @@ export const Header = () => {
                 </a>
                 <Box className='header-text'>
                     <a className='header_link' href='/about'>About</a>
-                    <a className='header_link' href=''>Categories</a>
+                    <a className="dropdown">
+                        <button className="dropbtn header_link">Categories</button>
+                        <div className="dropdown-content">
+                            <a href="/categories/electronics">Electronics</a>
+                            <a href="/categories/clothing">Clothing</a>
+                            <a href="/categories/furniture">Furniture</a>
+                            <a href="/categories/miscellaneous">Miscellaneous</a>
+                        </div>
+                    </a>
                     <a className='header_link' href='https://github.com/rpi-thrifty'>Github</a>
                     <a className='header_link' href='https://discord.gg/PFqRbcPq'>Discord</a>
                 </Box>
