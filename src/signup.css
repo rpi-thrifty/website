@@ -1,0 +1,84 @@
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    width: 50%;
+    max-width: 500px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="password"] {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background-color: #f5f5f5;
+    transition: border-bottom-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-bottom-color: #0077cc;
+}
+
+button[type="submit"] {
+    background-color: #0077cc;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #005fa3;
+}
+
+p {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+a {
+    color: #0077cc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
